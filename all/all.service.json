@@ -1,0 +1,19 @@
+{
+  "name": "all",
+  "mixes": [],
+  "labels": [],
+  "relatedGuides": [
+    {
+      "path": "./guides/about all apis.md"
+    }
+  ],  
+  "docs": {
+    "summary": "",
+    "description": []
+  },
+  "properties": [],
+  "operations": [],
+  "callbacks": [],
+  "messages": [],
+  "extra": {}
+}
