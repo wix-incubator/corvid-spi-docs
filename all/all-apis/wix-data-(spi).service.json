@@ -25,15 +25,15 @@
   ],
   "relatedGuides": [
     {
-      "path": "../guides/wix-data-(spi)/Provisioning/Provisioning Introduction.md",
+      "path": "../guides/wix-data-(spi)/Provisioning/Provisioning Overview.md",
       "tag": "Provisioning"
     },
     {
-      "path": "../guides/wix-data-(spi)/Schema/Schema Introduction.md",
+      "path": "../guides/wix-data-(spi)/Schema/Schema Overview.md",
       "tag": "Schema"
     },
     {
-      "path": "../guides/wix-data-(spi)/Data/Data Introduction.md",
+      "path": "../guides/wix-data-(spi)/Data/Data Overview.md",
       "tag": "Data"
     },
     {
