@@ -1,0 +1,1076 @@
+{
+  "name": "Wix Data (SPI)",
+  "memberOf": "All APIs",
+  "category": "business-service",
+  "mixes": [],
+  "labels": [],
+  "docs": {
+    "summary": "Access and manage your sites data.",
+    "description": []
+  },
+  "properties": [],
+  "tags": [
+    {
+      "name": "Schema",
+      "entity": "_com_wixpress_cloud_externaldb_api_Schema"
+    },
+    {
+      "name": "Data",
+      "entity": ""
+    },
+    {
+      "name": "Provisioning",
+      "entity": ""
+    }
+  ],
+  "relatedGuides": [
+    {
+      "path": "../guides/wix-data-(spi)/Provisioning/Provisioning Introduction.md",
+      "tag": "Provisioning"
+    },
+    {
+      "path": "../guides/wix-data-(spi)/Schema/Schema Introduction.md",
+      "tag": "Schema"
+    },
+    {
+      "path": "../guides/wix-data-(spi)/Data/Data Introduction.md",
+      "tag": "Data"
+    },
+    {
+      "path": "../guides/wix-data-(spi)/Introduction.md"
+    }
+  ],
+  "operations": [
+    {
+      "name": "Count",
+      "methodName": "Count",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "filter",
+          "type": "struct",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Count",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_CountResponse"
+          ]
+        },
+        "doc": " Count Response"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/count",
+        "links": [
+          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
+        ],
+        "examples": [],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "CountRequest",
+        "rpcResponseName": "CountResponse"
+      }
+    },
+    {
+      "name": "Find Items",
+      "methodName": "Find",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "skip",
+          "type": "integer",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "filter",
+          "type": "struct",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "sort",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_OrderSpec"
+            ]
+          },
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "limit",
+          "type": "integer",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Find",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FindResponse"
+          ]
+        },
+        "doc": " Find Response"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/find",
+        "links": [
+          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
+        ],
+        "examples": [],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "FindRequest",
+        "rpcResponseName": "FindResponse"
+      }
+    },
+    {
+      "name": "Find Schemas",
+      "methodName": "FindSchemas",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "schemaIds",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "string"
+            ]
+          },
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "FindSchemas",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FindSchemasResponse"
+          ]
+        },
+        "doc": " Find Schemas Response"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/schemas/find",
+        "links": [
+          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
+        ],
+        "examples": [],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "FindSchemasRequest",
+        "rpcResponseName": "FindSchemasResponse"
+      }
+    },
+    {
+      "name": "Get Item",
+      "methodName": "Get",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "itemId",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Get",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_GetResponse"
+          ]
+        },
+        "doc": " Get Response"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/get",
+        "links": [
+          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
+        ],
+        "examples": [],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "GetRequest",
+        "rpcResponseName": "GetResponse"
+      }
+    },
+    {
+      "name": "List Available Schemas",
+      "methodName": "ListSchemas",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "ListSchemas",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ListSchemasResponse"
+          ]
+        },
+        "doc": " List Schemas Response"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/schemas/list",
+        "links": [
+          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
+        ],
+        "examples": [
+          {
+            "title": "Title of 'ListSchemas'",
+            "body": [
+              "curl -X POST \\\n   'https://example.com/schemas/list' \\\n    --data-binary '{\n                   \t\"collection\": {\n                   \t\t\"name\": \"My New Collection\"\n                   \t}\n                   }' \\\n   -H 'Content-Type: application/json' \\\n   -H 'Authorization: <AUTH>'"
+            ],
+            "response": [
+              "\n{\"collection\": {\n  \"id\": \"81093e7d-a251-4a22-a238-df3aa816f3dc\",\n  \"name\": \"My New Collection\",\n  \"media\": {\"items\": []}\n}}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Description of 'ListSchemas'"
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "ListSchemasRequest",
+        "rpcResponseName": "ListSchemasResponse"
+      }
+    },
+    {
+      "name": "Provision",
+      "methodName": "Provision",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Provisioning",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "provisionContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Provision",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionResponse"
+          ]
+        },
+        "doc": " Provision Response"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/provision",
+        "links": [
+          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
+        ],
+        "examples": [],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "ProvisionRequest",
+        "rpcResponseName": "ProvisionResponse"
+      }
+    }
+  ],
+  "events": [],
+  "callbacks": [],
+  "messages": [
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ProvisionRequest",
+      "displayName": "Provision Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "provisionContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+      "displayName": "Provision Request Context Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "settings",
+          "type": "struct",
+          "doc": ""
+        },
+        {
+          "name": "installationId",
+          "type": "string",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ProvisionResponse",
+      "displayName": "Provision Response Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_CountRequest",
+      "displayName": "Count Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "filter",
+          "type": "struct",
+          "doc": ""
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_CountResponse",
+      "displayName": "Count Response Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "totalCount",
+          "type": "integer",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_GetRequest",
+      "displayName": "Get Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "itemId",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_GetResponse",
+      "displayName": "Get Response Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "items",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_CollectionItem"
+            ]
+          },
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindRequest",
+      "displayName": "Find Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "skip",
+          "type": "integer",
+          "doc": ""
+        },
+        {
+          "name": "filter",
+          "type": "struct",
+          "doc": ""
+        },
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        },
+        {
+          "name": "sort",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_OrderSpec"
+            ]
+          },
+          "doc": ""
+        },
+        {
+          "name": "limit",
+          "type": "integer",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindResponse",
+      "displayName": "Find Response Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "items",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "struct"
+            ]
+          },
+          "doc": ""
+        },
+        {
+          "name": "totalCount",
+          "type": "integer",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindSchemasRequest",
+      "displayName": "Find Schemas Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "schemaIds",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "string"
+            ]
+          },
+          "doc": ""
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindSchemasResponse",
+      "displayName": "Find Schemas Response Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "schemas",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Schema"
+            ]
+          },
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ListSchemasRequest",
+      "displayName": "List Schemas Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ListSchemasResponse",
+      "displayName": "List Schemas Response Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "schemas",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Schema"
+            ]
+          },
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "fieldsMapEntry",
+      "displayName": "fields Map Entry Object",
+      "locations": [],
+      "docs": {
+        "summary": "Set of key-value pairs.",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "key:value",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FieldSpec",
+          "doc": "`key` of type string, `value` of type ref"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Schema",
+      "displayName": "Schema Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": [
+          {
+            "title": "This is Schema title",
+            "body": [
+              "\n{\n  \"schema\": \"Some Schema\",\n  \"id\": \"135101\"\n}"
+            ],
+            "type": "json",
+            "extra": {
+              "description": "This is Schema description"
+            }
+          }
+        ]
+      },
+      "members": [
+        {
+          "name": "maxPageSize",
+          "type": "integer",
+          "doc": ""
+        },
+        {
+          "name": "allowedOperations",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_AllowedOperation"
+            ]
+          },
+          "doc": ""
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "fields",
+          "type": "All APIs.Wix Data (SPI).fieldsMapEntry",
+          "doc": "Set of key-value pairs."
+        },
+        {
+          "name": "ttl",
+          "type": "integer",
+          "doc": ""
+        },
+        {
+          "name": "defaultSort",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_OrderSpec",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_OrderSpec",
+      "displayName": "Order Spec Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "fieldName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "direction",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Direction",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FieldSpec",
+      "displayName": "Field Spec Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "displayName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "type",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FieldType",
+          "doc": ""
+        },
+        {
+          "name": "queryOperators",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_AllowedFilterOperator"
+            ]
+          },
+          "doc": ""
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_RequestContext",
+      "displayName": "Request Context Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "instanceId",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "memberRole",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Role",
+          "doc": ""
+        },
+        {
+          "name": "installationId",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "memberId",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "settings",
+          "type": "struct",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_CollectionItem",
+      "displayName": "Collection Item Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "Id",
+          "type": "string",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_AllowedOperation",
+      "displayName": "Allowed Operation Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> INSERT </code></li><li><code> UPDATE </code></li><li><code> GET </code></li><li><code> REMOVE </code></li><li><code> FIND </code></li><li><code> COUNT </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "INSERT",
+        "UPDATE",
+        "GET",
+        "REMOVE",
+        "FIND",
+        "COUNT"
+      ],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Direction",
+      "displayName": "Direction Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> ASC </code></li><li><code> DESC </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "ASC",
+        "DESC"
+      ],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_AllowedFilterOperator",
+      "displayName": "Allowed Filter Operator Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> EQ </code></li><li><code> NE </code></li><li><code> LT </code></li><li><code> GT </code></li><li><code> GTE </code></li><li><code> HAS_SOME </code></li><li><code> HAS_ALL </code></li><li><code> CONTAINS </code></li><li><code> ENDS_WITH </code></li><li><code> URLIZED </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "EQ",
+        "NE",
+        "LT",
+        "GT",
+        "GTE",
+        "HAS_SOME",
+        "HAS_ALL",
+        "CONTAINS",
+        "ENDS_WITH",
+        "URLIZED"
+      ],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FieldType",
+      "displayName": "Field Type Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> NUMBER </code></li><li><code> TEXT </code></li><li><code> BOOLEAN </code></li><li><code> URL </code></li><li><code> DATETIME </code></li><li><code> IMAGE </code></li><li><code> OBJECT </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "NUMBER",
+        "TEXT",
+        "BOOLEAN",
+        "URL",
+        "DATETIME",
+        "IMAGE",
+        "OBJECT"
+      ],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Role",
+      "displayName": "Role Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> VISITOR </code></li><li><code> MEMBER </code></li><li><code> OWNER </code></li><li><code> BACKEND_CODE </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "VISITOR",
+        "MEMBER",
+        "OWNER",
+        "BACKEND_CODE"
+      ],
+      "extra": {},
+      "labels": []
+    }
+  ],
+  "extra": {
+    "artifactId": "com.wixpress.cloud.cloud-data-spi"
+  }
+}
