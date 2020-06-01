@@ -5,7 +5,7 @@
   "mixes": [],
   "labels": [],
   "docs": {
-    "summary": "Access and manage your sites data.",
+    "summary": "",
     "description": []
   },
   "properties": [],
@@ -33,8 +33,17 @@
       "tag": "Schema"
     },
     {
+      "path": "../guides/wix-data-(spi)/Sample Data.md"
+    },
+    {
+      "path": "../guides/wix-data-(spi)/Errors.md"
+    },
+    {
       "path": "../guides/wix-data-(spi)/Data/Data Overview.md",
       "tag": "Data"
+    },
+    {
+      "path": "../guides/wix-data-(spi)/Authentication.md"
     },
     {
       "path": "../guides/wix-data-(spi)/Introduction.md"
@@ -81,7 +90,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_CountResponse"
           ]
         },
-        "doc": " Count Response"
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid query.  \n"
       },
       "locations": [],
       "docs": {
@@ -165,7 +174,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FindResponse"
           ]
         },
-        "doc": " Find Response"
+        "doc": ""
       },
       "locations": [],
       "docs": {
@@ -174,7 +183,21 @@
         "request": "POST",
         "url": "https://example.com/data/find",
         "links": [],
-        "examples": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/find'  \\\n--header 'Content-Type: application/json'  \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"filter\": {\n        \"operator\": \"$contains\",\n        \"fieldName\": \"make\",\n        \"value\": \"Hyundai\"\n    },\n    \"sort\": [\n        {\n            \"fieldName\": \"year\",\n            \"direction\": \"asc\"\n        }\n    ],\n    \"skip\": 0,\n    \"limit\": 10000\n}'"
+            ],
+            "response": [
+              "\n{\n  \"items\":   [\n        {\n      \"_id\": \"6d04fb52-f317-4d7b-bc23-46dd1c74d5a8\",\n      \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n      \"make\": \"Hyundai\",\n      \"model\": \"Tuscon\",\n      \"year\": 2005,\n      \"date_added\": {\"$date\": \"2020-08-31T21:00:00.000Z\"}\n    },\n        {\n      \"_id\": \"f551864f-4022-430e-b311-0215b9c9ac38\",\n      \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n      \"make\": \"Hyundai\",\n      \"model\": \"I20\",\n      \"year\": 2018,\n      \"date_added\": {\"$date\": \"2018-07-31T21:00:00.000Z\"}\n    }\n  ],\n  \"totalCount\": 2\n}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Get data matching a filter from a collection."
+            }
+          }
+        ],
         "extra": {}
       },
       "extra": {
@@ -221,7 +244,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FindSchemasResponse"
           ]
         },
-        "doc": " Find Schemas Response"
+        "doc": " > **Status/Error Codes:**  \n > **404** - No schemas found  \n"
       },
       "locations": [],
       "docs": {
@@ -230,7 +253,21 @@
         "request": "POST",
         "url": "https://example.com/schemas/find",
         "links": [],
-        "examples": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST \\\n'https://mysql-adapter.com/schemas/find'  \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n    \"schemaIds\": [\n        \"car\",\n        \"manufacturer\"\n    ]\n}'"
+            ],
+            "response": [
+              "\n{\"schemas\": [\n    {\n    \"displayName\": \"car\",\n    \"id\": \"car\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"make\":       {\n        \"displayName\": \"make\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"model\":       {\n        \"displayName\": \"model\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"year\":       {\n        \"displayName\": \"year\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"date_added\":       {\n        \"displayName\": \"date_added\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  },\n    {\n    \"displayName\": \"manufacturer\",\n    \"id\": \"manufacturer\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"name\":       {\n        \"displayName\": \"name\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"country\":       {\n        \"displayName\": \"country\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"established\":       {\n        \"displayName\": \"established\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"share_price\":       {\n        \"displayName\": \"share_price\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  }\n]}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Get a list of schema objects in the list [\"car\",\"manufacturer\"]."
+            }
+          }
+        ],
         "extra": {}
       },
       "extra": {
@@ -279,7 +316,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_GetResponse"
           ]
         },
-        "doc": " Get Response"
+        "doc": " > **Status/Error Codes:**\n > **404** - Item not found.\n"
       },
       "locations": [],
       "docs": {
@@ -288,13 +325,99 @@
         "request": "POST",
         "url": "https://example.com/data/get",
         "links": [],
-        "examples": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/get' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"itemId\": \"86cbf595-d369-48bb-8649-c6c082c003ca\"\n}'"
+            ],
+            "response": [
+              "\n{\"item\": {\n  \"_id\": \"86cbf595-d369-48bb-8649-c6c082c003ca\",\n  \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n  \"make\": \"Ford\",\n  \"model\": \"Mustang\",\n  \"year\": 2001,\n  \"date_added\": {\"$date\": \"2001-06-07T21:00:00.000Z\"}\n}}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Get an item form a collection."
+            }
+          }
+        ],
         "extra": {}
       },
       "extra": {
         "hasRest": true,
         "rpcRequestName": "GetRequest",
         "rpcResponseName": "GetResponse"
+      }
+    },
+    {
+      "name": "Insert",
+      "methodName": "Insert",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "item",
+          "type": "struct",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Insert",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_InsertResponse"
+          ]
+        },
+        "doc": " > **400** - Invalid item, Constraint violation.\n > **409** - Item already exists.\n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/insert",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/insert' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"item\": {\n        \"_id\": \"12345678-abcd-9876-fedc-a9876543210\",\n        \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"make\": \"BMW\",\n        \"model\": \"i8\",\n        \"year\": 2020,\n        \"date_added\": {\n            \"$date\": \"2020-01-01T21:00:00.000Z\"\n        }\n    }\n}' \n   \n        \n{\n    \"item\": {\n        \"_id\": \"12345678-abcd-9876-fedc-a9876543210\",\n        \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"make\": \"BMW\",\n        \"model\": \"i8\",\n        \"year\": 2020,\n        \"date_added\": {\n            \"$date\": \"2020-01-01T21:00:00.000Z\"\n        }\n    }\n}"
+            ],
+            "response": [
+              "\n{}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Insert an item into a collection."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "InsertRequest",
+        "rpcResponseName": "InsertResponse"
       }
     },
     {
@@ -323,7 +446,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ListSchemasResponse"
           ]
         },
-        "doc": " List Schemas Response"
+        "doc": ""
       },
       "locations": [],
       "docs": {
@@ -334,16 +457,16 @@
         "links": [],
         "examples": [
           {
-            "title": "Title of 'ListSchemas'",
+            "title": "",
             "body": [
-              "curl -X POST \\\n   'https://example.com/schemas/list' \\\n    --data-binary '{\n                   \t\"collection\": {\n                   \t\t\"name\": \"My New Collection\"\n                   \t}\n                   }' \\\n   -H 'Content-Type: application/json' \\\n   -H 'Authorization: <AUTH>'"
+              "curl -X POST 'https://mysql-adapter.com/schemas/list' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    }\n}'"
             ],
             "response": [
-              "\n{\"collection\": {\n  \"id\": \"81093e7d-a251-4a22-a238-df3aa816f3dc\",\n  \"name\": \"My New Collection\",\n  \"media\": {\"items\": []}\n}}"
+              "\n{\"schemas\": [\n    {\n    \"displayName\": \"car\",\n    \"id\": \"car\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"make\":       {\n        \"displayName\": \"make\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"model\":       {\n        \"displayName\": \"model\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"year\":       {\n        \"displayName\": \"year\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"date_added\":       {\n        \"displayName\": \"date_added\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  },\n    {\n    \"displayName\": \"manufacturer\",\n    \"id\": \"manufacturer\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"name\":       {\n        \"displayName\": \"name\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"country\":       {\n        \"displayName\": \"country\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"established\":       {\n        \"displayName\": \"established\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"share_price\":       {\n        \"displayName\": \"share_price\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  }\n]}"
             ],
             "type": "curl",
             "extra": {
-              "description": "Description of 'ListSchemas'"
+              "description": "Get a list of all available schemas."
             }
           }
         ],
@@ -381,7 +504,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionResponse"
           ]
         },
-        "doc": " Provision Response"
+        "doc": " > **Status/Error Codes:**  \n > **401** - Not authorized.\n > **400** - Request not valid.  \n"
       },
       "locations": [],
       "docs": {
@@ -390,13 +513,171 @@
         "request": "POST",
         "url": "https://example.com/provision",
         "links": [],
-        "examples": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adaptor.com/provision' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"myBigSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    }\n}'"
+            ],
+            "response": [
+              "\n{}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Provisioning request."
+            }
+          }
+        ],
         "extra": {}
       },
       "extra": {
         "hasRest": true,
         "rpcRequestName": "ProvisionRequest",
         "rpcResponseName": "ProvisionResponse"
+      }
+    },
+    {
+      "name": "Remove",
+      "methodName": "Remove",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "itemId",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Remove",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RemoveResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **404** - Item not found  \n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/remove",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl --X POST 'https://mysql-adapter.com/data/remove' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"itemId\": \"12345678-abcd-9876-fedc-a9876543210\"\n}'\n   \n        \n{\n    \"item\": {\n        \"_id\": \"12345678-abcd-9876-fedc-a9876543210\",\n        \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"make\": \"BMW\",\n        \"model\": \"i8\",\n        \"year\": 2020,\n        \"date_added\": {\n            \"$date\": \"2020-01-01T21:00:00.000Z\"\n        }\n    }\n}"
+            ],
+            "response": [
+              "\n{}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Delete an item from a collection."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "RemoveRequest",
+        "rpcResponseName": "RemoveResponse"
+      }
+    },
+    {
+      "name": "Update",
+      "methodName": "Update",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "item",
+          "type": "struct",
+          "doc": "",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Update",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_UpdateResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.\n > **404** - Item not found\n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/update",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/update' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"item\": {\n        \"_id\": \"86cbf595-d369-48bb-8649-c6c082c003ca\",\n        \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"model\": \"Mustang GTR\"\n    }\n}'\n   \n        \n{\n    \"item\": {\n        \"_id\": \"86cbf595-d369-48bb-8649-c6c082c003ca\",\n        \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"model\": \"Mustang GTR\"\n    }\n}"
+            ],
+            "response": [
+              "\n{}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Update an item in a collection."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "InsertRequest",
+        "rpcResponseName": "UpdateResponse"
       }
     }
   ],
@@ -453,7 +734,7 @@
       "displayName": "Provision Response Object",
       "locations": [],
       "docs": {
-        "summary": "",
+        "summary": " > **Status/Error Codes:**  \n > **401** - Not authorized.\n > **400** - Request not valid.  \n",
         "links": [],
         "examples": []
       },
@@ -497,7 +778,7 @@
       "displayName": "Count Response Object",
       "locations": [],
       "docs": {
-        "summary": "",
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid query.  \n",
         "links": [],
         "examples": []
       },
@@ -547,7 +828,7 @@
       "displayName": "Get Response Object",
       "locations": [],
       "docs": {
-        "summary": "",
+        "summary": " > **Status/Error Codes:**\n > **404** - Item not found.\n",
         "links": [],
         "examples": []
       },
@@ -648,6 +929,126 @@
       "labels": []
     },
     {
+      "name": "_com_wixpress_cloud_externaldb_api_InsertRequest",
+      "displayName": "Insert Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": ""
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_InsertResponse",
+      "displayName": "Insert Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **400** - Invalid item, Constraint violation.\n > **409** - Item already exists.\n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_UpdateResponse",
+      "displayName": "Update Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.\n > **404** - Item not found\n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_RemoveRequest",
+      "displayName": "Remove Request Object",
+      "locations": [],
+      "docs": {
+        "summary": "",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "itemId",
+          "type": "string",
+          "doc": ""
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_RemoveResponse",
+      "displayName": "Remove Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **404** - Item not found  \n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
       "name": "_com_wixpress_cloud_externaldb_api_FindSchemasRequest",
       "displayName": "Find Schemas Request Object",
       "locations": [],
@@ -682,7 +1083,7 @@
       "displayName": "Find Schemas Response Object",
       "locations": [],
       "docs": {
-        "summary": "",
+        "summary": " > **Status/Error Codes:**  \n > **404** - No schemas found  \n",
         "links": [],
         "examples": []
       },
@@ -776,13 +1177,13 @@
         "links": [],
         "examples": [
           {
-            "title": "This is Schema title",
+            "title": "Schema",
             "body": [
-              "\n{\n  \"schema\": \"Some Schema\",\n  \"id\": \"135101\"\n}"
+              "\n{\"schema\": {\n  \"displayName\": \"manufacturer\",\n  \"id\": \"manufacturer\",\n  \"allowedOperations\":   [\n    \"get\",\n    \"find\",\n    \"count\",\n    \"update\",\n    \"insert\",\n    \"remove\"\n  ],\n  \"maxPageSize\": 50,\n  \"ttl\": 3600,\n  \"fields\":   {\n    \"name\":     {\n      \"displayName\": \"name\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"country\":     {\n      \"displayName\": \"country\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"established\":     {\n      \"displayName\": \"established\",\n      \"type\": \"datetime\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"_id\":     {\n      \"displayName\": \"_id\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"_owner\":     {\n      \"displayName\": \"_owner\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"share_price\":     {\n      \"displayName\": \"share_price\",\n      \"type\": \"number\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    }\n  }\n}}"
             ],
             "type": "json",
             "extra": {
-              "description": "This is Schema description"
+              "description": "Example schema object"
             }
           }
         ]
