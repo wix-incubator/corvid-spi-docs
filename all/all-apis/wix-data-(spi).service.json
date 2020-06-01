@@ -89,9 +89,7 @@
         "description": [],
         "request": "POST",
         "url": "https://example.com/data/count",
-        "links": [
-          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
-        ],
+        "links": [],
         "examples": [],
         "extra": {}
       },
@@ -175,9 +173,7 @@
         "description": [],
         "request": "POST",
         "url": "https://example.com/data/find",
-        "links": [
-          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
-        ],
+        "links": [],
         "examples": [],
         "extra": {}
       },
@@ -233,9 +229,7 @@
         "description": [],
         "request": "POST",
         "url": "https://example.com/schemas/find",
-        "links": [
-          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
-        ],
+        "links": [],
         "examples": [],
         "extra": {}
       },
@@ -293,9 +287,7 @@
         "description": [],
         "request": "POST",
         "url": "https://example.com/data/get",
-        "links": [
-          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
-        ],
+        "links": [],
         "examples": [],
         "extra": {}
       },
@@ -339,9 +331,7 @@
         "description": [],
         "request": "POST",
         "url": "https://example.com/schemas/list",
-        "links": [
-          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
-        ],
+        "links": [],
         "examples": [
           {
             "title": "Title of 'ListSchemas'",
@@ -399,9 +389,7 @@
         "description": [],
         "request": "POST",
         "url": "https://example.com/provision",
-        "links": [
-          "[Github Protobuf](https://github.com/wix-private/cloud/tree/master/data/src/main/proto/external-database-collections.proto)"
-        ],
+        "links": [],
         "examples": [],
         "extra": {}
       },
