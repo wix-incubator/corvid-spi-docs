@@ -1,4 +1,4 @@
-SortOrder: 6
+SortOrder: 3
 # Sample Data
 
 The examples in the following sections are based on a MySQL database with the following tables and data:
