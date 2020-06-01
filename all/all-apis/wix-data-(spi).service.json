@@ -316,7 +316,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_GetResponse"
           ]
         },
-        "doc": " > **Status/Error Codes:**\n > **404** - Item not found.\n"
+        "doc": " > **Status/Error Codes:**  \n > **404** - Item not found.\n"
       },
       "locations": [],
       "docs": {
@@ -349,10 +349,10 @@
       }
     },
     {
-      "name": "Insert",
+      "name": "Insert Item",
       "methodName": "Insert",
       "serviceName": "ExternalDatabaseDriver",
-      "tag": "Schema",
+      "tag": "Data",
       "permissions": [],
       "events": [],
       "labels": [],
@@ -388,7 +388,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_InsertResponse"
           ]
         },
-        "doc": " > **400** - Invalid item, Constraint violation.\n > **409** - Item already exists.\n"
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **409** - Item already exists.\n"
       },
       "locations": [],
       "docs": {
@@ -504,7 +504,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionResponse"
           ]
         },
-        "doc": " > **Status/Error Codes:**  \n > **401** - Not authorized.\n > **400** - Request not valid.  \n"
+        "doc": " > **Status/Error Codes:**  \n > **401** - Not authorized.  \n > **400** - Request not valid.  \n"
       },
       "locations": [],
       "docs": {
@@ -537,10 +537,10 @@
       }
     },
     {
-      "name": "Remove",
+      "name": "Remove Item",
       "methodName": "Remove",
       "serviceName": "ExternalDatabaseDriver",
-      "tag": "Schema",
+      "tag": "Data",
       "permissions": [],
       "events": [],
       "labels": [],
@@ -609,10 +609,10 @@
       }
     },
     {
-      "name": "Update",
+      "name": "Update Item",
       "methodName": "Update",
       "serviceName": "ExternalDatabaseDriver",
-      "tag": "Schema",
+      "tag": "Data",
       "permissions": [],
       "events": [],
       "labels": [],
@@ -648,7 +648,7 @@
             "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_UpdateResponse"
           ]
         },
-        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.\n > **404** - Item not found\n"
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **404** - Item not found\n"
       },
       "locations": [],
       "docs": {
@@ -734,7 +734,7 @@
       "displayName": "Provision Response Object",
       "locations": [],
       "docs": {
-        "summary": " > **Status/Error Codes:**  \n > **401** - Not authorized.\n > **400** - Request not valid.  \n",
+        "summary": " > **Status/Error Codes:**  \n > **401** - Not authorized.  \n > **400** - Request not valid.  \n",
         "links": [],
         "examples": []
       },
@@ -828,7 +828,7 @@
       "displayName": "Get Response Object",
       "locations": [],
       "docs": {
-        "summary": " > **Status/Error Codes:**\n > **404** - Item not found.\n",
+        "summary": " > **Status/Error Codes:**  \n > **404** - Item not found.\n",
         "links": [],
         "examples": []
       },
@@ -963,7 +963,7 @@
       "displayName": "Insert Response Object",
       "locations": [],
       "docs": {
-        "summary": " > **400** - Invalid item, Constraint violation.\n > **409** - Item already exists.\n",
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **409** - Item already exists.\n",
         "links": [],
         "examples": []
       },
@@ -983,7 +983,7 @@
       "displayName": "Update Response Object",
       "locations": [],
       "docs": {
-        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.\n > **404** - Item not found\n",
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **404** - Item not found\n",
         "links": [],
         "examples": []
       },
