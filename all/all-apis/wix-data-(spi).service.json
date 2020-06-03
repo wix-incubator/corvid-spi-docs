@@ -99,7 +99,21 @@
         "request": "POST",
         "url": "https://example.com/data/count",
         "links": [],
-        "examples": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/count' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"87e22d7a-9fbd-40d1-8e42-ed194c55b0d8\",\n        \"installationId\": \"458510ce-2b75-4def-8a10-c2e11e6bc464\",\n        \"memberId\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"filter\": {\n        \"operator\": \"$contains\",\n        \"fieldName\": \"make\",\n        \"value\": \"Hyundai\"\n    }\n}'"
+            ],
+            "response": [
+              "\n{\"totalCount\": 2}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Count items in a collection that match a filter."
+            }
+          }
+        ],
         "extra": {}
       },
       "extra": {
