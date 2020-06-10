@@ -1,5 +1,5 @@
 {
-  "name": "Wix Data (SPI)",
+  "name": "Wix Data SPI",
   "memberOf": "All APIs",
   "category": "business-service",
   "mixes": [],
@@ -25,28 +25,28 @@
   ],
   "relatedGuides": [
     {
-      "path": "../guides/wix-data-(spi)/Provisioning/Provisioning Overview.md",
+      "path": "../guides/wix-data-spi/Provisioning/Provisioning Overview.md",
       "tag": "Provisioning"
     },
     {
-      "path": "../guides/wix-data-(spi)/Schema/Schema Overview.md",
+      "path": "../guides/wix-data-spi/Schema/Schema Overview.md",
       "tag": "Schema"
     },
     {
-      "path": "../guides/wix-data-(spi)/Sample Data.md"
+      "path": "../guides/wix-data-spi/Sample Data.md"
     },
     {
-      "path": "../guides/wix-data-(spi)/Errors.md"
+      "path": "../guides/wix-data-spi/Errors.md"
     },
     {
-      "path": "../guides/wix-data-(spi)/Data/Data Overview.md",
+      "path": "../guides/wix-data-spi/Data/Data Overview.md",
       "tag": "Data"
     },
     {
-      "path": "../guides/wix-data-(spi)/Authentication.md"
+      "path": "../guides/wix-data-spi/Authentication.md"
     },
     {
-      "path": "../guides/wix-data-(spi)/Introduction.md"
+      "path": "../guides/wix-data-spi/Introduction.md"
     }
   ],
   "operations": [
@@ -77,7 +77,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -87,7 +87,7 @@
           "name": "Count",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_CountResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_CountResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **400** - Invalid query.  \n"
@@ -156,7 +156,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         },
@@ -166,7 +166,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_OrderSpec"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_OrderSpec"
             ]
           },
           "doc": "",
@@ -185,7 +185,7 @@
           "name": "Find",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FindResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_FindResponse"
           ]
         },
         "doc": ""
@@ -245,7 +245,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -255,7 +255,7 @@
           "name": "FindSchemas",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FindSchemasResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_FindSchemasResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **404** - No schemas found  \n"
@@ -317,7 +317,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -327,7 +327,7 @@
           "name": "Get",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_GetResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_GetResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **404** - Item not found.\n"
@@ -389,7 +389,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -399,7 +399,7 @@
           "name": "Insert",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_InsertResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_InsertResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **409** - Item already exists.\n"
@@ -447,7 +447,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -457,7 +457,7 @@
           "name": "ListSchemas",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ListSchemasResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_ListSchemasResponse"
           ]
         },
         "doc": ""
@@ -505,7 +505,7 @@
         {
           "in": "BODY",
           "name": "provisionContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
           "doc": "",
           "required": false
         }
@@ -515,7 +515,7 @@
           "name": "Provision",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_ProvisionResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **401** - Not authorized.  \n > **400** - Request not valid.  \n"
@@ -577,7 +577,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -587,7 +587,7 @@
           "name": "Remove",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RemoveResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RemoveResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **404** - Item not found  \n"
@@ -649,7 +649,7 @@
         {
           "in": "BODY",
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": "",
           "required": false
         }
@@ -659,7 +659,7 @@
           "name": "Update",
           "statusCode": "200",
           "typeParams": [
-            "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_UpdateResponse"
+            "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_UpdateResponse"
           ]
         },
         "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **404** - Item not found\n"
@@ -710,7 +710,7 @@
       "members": [
         {
           "name": "provisionContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
           "doc": ""
         }
       ],
@@ -779,7 +779,7 @@
         },
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         }
       ],
@@ -829,7 +829,7 @@
         },
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         }
       ],
@@ -852,7 +852,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_CollectionItem"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_CollectionItem"
             ]
           },
           "doc": ""
@@ -889,7 +889,7 @@
         },
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         },
         {
@@ -897,7 +897,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_OrderSpec"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_OrderSpec"
             ]
           },
           "doc": ""
@@ -964,7 +964,7 @@
         },
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         }
       ],
@@ -1034,7 +1034,7 @@
         },
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         }
       ],
@@ -1084,7 +1084,7 @@
         },
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         }
       ],
@@ -1107,7 +1107,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Schema"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_Schema"
             ]
           },
           "doc": ""
@@ -1129,7 +1129,7 @@
       "members": [
         {
           "name": "requestContext",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_RequestContext",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_RequestContext",
           "doc": ""
         }
       ],
@@ -1152,7 +1152,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Schema"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_Schema"
             ]
           },
           "doc": ""
@@ -1174,7 +1174,7 @@
       "members": [
         {
           "name": "key:value",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FieldSpec",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_FieldSpec",
           "doc": "`key` of type string, `value` of type ref"
         }
       ],
@@ -1213,7 +1213,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_AllowedOperation"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_AllowedOperation"
             ]
           },
           "doc": ""
@@ -1225,7 +1225,7 @@
         },
         {
           "name": "fields",
-          "type": "All APIs.Wix Data (SPI).fieldsMapEntry",
+          "type": "All APIs.Wix Data SPI.fieldsMapEntry",
           "doc": "Set of key-value pairs."
         },
         {
@@ -1235,7 +1235,7 @@
         },
         {
           "name": "defaultSort",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_OrderSpec",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_OrderSpec",
           "doc": ""
         }
       ],
@@ -1260,7 +1260,7 @@
         },
         {
           "name": "direction",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Direction",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_Direction",
           "doc": ""
         }
       ],
@@ -1285,7 +1285,7 @@
         },
         {
           "name": "type",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_FieldType",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_FieldType",
           "doc": ""
         },
         {
@@ -1293,7 +1293,7 @@
           "type": {
             "name": "array",
             "typeParams": [
-              "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_AllowedFilterOperator"
+              "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_AllowedFilterOperator"
             ]
           },
           "doc": ""
@@ -1325,7 +1325,7 @@
         },
         {
           "name": "memberRole",
-          "type": "All APIs.Wix Data (SPI)._com_wixpress_cloud_externaldb_api_Role",
+          "type": "All APIs.Wix Data SPI._com_wixpress_cloud_externaldb_api_Role",
           "doc": ""
         },
         {
