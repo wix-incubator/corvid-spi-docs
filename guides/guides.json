@@ -7,6 +7,16 @@
           "name": "Overview",
           "url": "./Overview.md",
           "isMdFile": true
+        },
+        {
+          "name": "Site Monitoring",
+          "url": "./overvire-site-monitoring.md",
+          "isMdFile": true
+        },
+        {
+          "name": "External Database Collections",
+          "url": "./overview-external-DB.md",
+          "isMdFile": true
         }
       ]
     }
