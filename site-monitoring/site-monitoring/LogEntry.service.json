@@ -424,7 +424,7 @@
               "doc": "[`baseUrl`](https://www.wix.com/velo/reference/wix-location.html#baseUrl) of the site with which the log entry is associated." },
             { "name": "namespace",
               "type": "string",
-              "doc": "Name of Wix application with which the log entry is associated, such as Stores or Bookings. The generic namespace `c` represents site code not associated with a specific Wix application. Currently only the `Velo` namespace is supported." },
+              "doc": "Name of Wix application with which the log entry is associated, such as Stores or Bookings. The generic namespace `Velo` represents site code not associated with a specific Wix application. Currently only the `Velo` namespace is supported." },
             { "name": "tenantId",
               "type": "string",
               "doc": "Unique identifier for the site. Does not change even if the site name or other site attributes change." },
