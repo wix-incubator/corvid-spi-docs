@@ -1,6 +1,6 @@
 {
   "name": "External Database Collections",
-  "memberOf": "All APIs",
+  "menuSections": "SPIs",
   "category": "corvid-spis",
   "mixes": [],
   "labels": [],
