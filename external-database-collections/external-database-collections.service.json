@@ -1,0 +1,1445 @@
+{
+  "name": "external-database-collections",
+  "category": "corvid-spis",
+  "mixes": [],
+  "labels": [],
+  "docs": {
+    "summary": "Integrate your external databases into your Wix sites.",
+    "description": []
+  },
+  "properties": [],
+  "tags": [
+    { "name": "Schema", "entity": "_com_wixpress_cloud_externaldb_api_Schema" },
+    {
+      "name": "Request Context",
+      "entity": "_com_wixpress_cloud_externaldb_api_RequestContext"
+    },
+    { "name": "Data", "entity": "" },
+    { "name": "Provisioning", "entity": "" }
+  ],
+  "relatedGuides": [
+    {
+      "path": "./guides/external-database-collections/Provisioning/Provisioning Overview.md",
+      "tag": "Provisioning"
+    },
+    {
+      "path": "./guides/external-database-collections/Schema/Schema Overview.md",
+      "tag": "Schema"
+    },
+    { "path": "./guides/external-database-collections/Example Data.md" },
+    { "path": "./guides/external-database-collections/Errors.md" },
+    {
+      "path": "./guides/external-database-collections/Data/Data Overview.md",
+      "tag": "Data"
+    },
+    { "path": "./guides/external-database-collections/Authentication.md" },
+    { "path": "./guides/external-database-collections/Introduction.md" }
+  ],
+  "operations": [
+    {
+      "name": "Count",
+      "methodName": "Count",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to be queried.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "filter",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Filter",
+          "doc": " A query filter.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Count",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_CountResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid query.  \n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " Count the number of items that match a filter.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/count",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/count' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"filter\": {\n        \"operator\": \"$contains\",\n        \"fieldName\": \"make\",\n        \"value\": \"Hyundai\"\n    }\n}'"
+            ],
+            "response": ["\n{\"totalCount\": 2}"],
+            "type": "curl",
+            "extra": {
+              "description": "Count items in a collection that match a filter."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "CountRequest",
+        "rpcResponseName": "CountResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Find Items",
+      "methodName": "Find",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "skip",
+          "type": "integer",
+          "doc": " The number of items to skip from the first item. \n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "filter",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Filter",
+          "doc": " A query filter.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to be queried.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "sort",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_OrderSpec"
+            ]
+          },
+          "doc": " Sort order.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "limit",
+          "type": "integer",
+          "doc": " The maximum number of items to retrieve.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Find",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_FindResponse"
+          ]
+        },
+        "doc": ""
+      },
+      "locations": [],
+      "docs": {
+        "summary": "Get a list of items based on a filter.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/find",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/find'  \\\n--header 'Content-Type: application/json'  \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n   \"collectionName\": \"car\",\n    \"filter\": {\n        \"operator\": \"$and\",\n        \"value\": [\n            {\n                \"operator\": \"$contains\",\n                \"fieldName\": \"make\",\n                \"value\": \"a\"\n            },\n            {\n                \"operator\": \"$gt\",\n                \"fieldName\": \"year\",\n                \"value\": 2018\n            }\n        ]\n    },\n    \"sort\": [\n        {\n            \"fieldName\": \"year\",\n            \"direction\": \"asc\"\n        }\n    ],\n    \"skip\": 0,\n    \"limit\": 10000\n}'"
+            ],
+            "response": [
+              "\n{\n  \"items\":   [\n        {\n      \"_id\": \"95953ca3-5fe5-4ce7-9cca-9bcc1ba64ba6\",\n      \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"year\": 2019,\n      \"date_added\": {\"$date\": \"2020-09-30T21:30:00.000Z\"}\n    },\n        {\n      \"_id\": \"20cd8f8d-1a0f-4530-91df-6d31fe9e83a5\",\n      \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n      \"make\": \"Ferrari\",\n      \"model\": \"812GTS\",\n      \"year\": 2020,\n      \"date_added\": {\"$date\": \"2020-03-31T21:00:00.000Z\"}\n    }\n  ],\n  \"totalCount\": 2\n}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Get data matching a filter from a collection."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "FindRequest",
+        "rpcResponseName": "FindResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Find Schemas",
+      "methodName": "FindSchemas",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "schemaIds",
+          "type": { "name": "array", "typeParams": ["string"] },
+          "doc": " A list of schemas to find.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "FindSchemas",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_FindSchemasResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **404** - No schemas found  \n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " Get a list of schema objects base on a list of schema IDs.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/schemas/find",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST \\\n'https://mysql-adapter.com/schemas/find'  \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n    \"schemaIds\": [\n        \"car\",\n        \"manufacturer\"\n    ]\n}'"
+            ],
+            "response": [
+              "\n{\"schemas\": [\n    {\n    \"displayName\": \"car\",\n    \"id\": \"car\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"make\":       {\n        \"displayName\": \"make\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"model\":       {\n        \"displayName\": \"model\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"year\":       {\n        \"displayName\": \"year\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"date_added\":       {\n        \"displayName\": \"date_added\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  },\n    {\n    \"displayName\": \"manufacturer\",\n    \"id\": \"manufacturer\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"name\":       {\n        \"displayName\": \"name\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"country\":       {\n        \"displayName\": \"country\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"established\":       {\n        \"displayName\": \"established\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"share_price\":       {\n        \"displayName\": \"share_price\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  }\n]}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Get a list of schema objects in the list [\"car\",\"manufacturer\"]."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "FindSchemasRequest",
+        "rpcResponseName": "FindSchemasResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Get Item",
+      "methodName": "Get",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to be queried.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "itemId",
+          "type": "string",
+          "doc": " The `_id` of the item to be retrieved.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Get",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_GetResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **404** - Item not found.\n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": "Get an item based on its `itemId`.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/get",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/get' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"itemId\": \"86cbf595-d369-48bb-8649-c6c082c003ca\"\n}'"
+            ],
+            "response": [
+              "\n{\"item\": {\n  \"_id\": \"86cbf595-d369-48bb-8649-c6c082c003ca\",\n  \"_owner\": \"81c9168e-95b8-47fd-8e6a-ad9fdf71b38e\",\n  \"make\": \"Ford\",\n  \"model\": \"Mustang\",\n  \"year\": 2001,\n  \"date_added\": {\"$date\": \"2001-06-07T21:00:00.000Z\"}\n}}"
+            ],
+            "type": "curl",
+            "extra": {
+              "description": "Get an item from a collection based on the `_id` field."
+            }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "GetRequest",
+        "rpcResponseName": "GetResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Insert Item",
+      "methodName": "Insert",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to insert into.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "item",
+          "type": "struct",
+          "doc": " An object containing the item to be inserted.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Insert",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_InsertResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **409** - Item already exists.\n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " Insert a new item into a collection.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/insert",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/insert' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"item\": {\n        \"_id\": \"12345678-abcd-9876-fedc-a9876543210\",\n        \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"make\": \"BMW\",\n        \"model\": \"i8\",\n        \"year\": 2020,\n        \"date_added\": {\n            \"$date\": \"2020-01-01T21:00:00.000Z\"\n        }\n    }\n}'"
+            ],
+            "response": [
+              "\n{\"item\": {\n  \"_id\": \"12345678-abcd-9876-fedc-a9876543210\",\n  \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n  \"make\": \"BMW\",\n  \"model\": \"i8\",\n  \"year\": 2020,\n  \"date_added\": {\"$date\": \"2020-01-01T21:00:00.000Z\"}\n}}"
+            ],
+            "type": "curl",
+            "extra": { "description": "Insert an item into a collection." }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "InsertRequest",
+        "rpcResponseName": "InsertResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "List Available Schemas",
+      "methodName": "ListSchemas",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Schema",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "ListSchemas",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_ListSchemasResponse"
+          ]
+        },
+        "doc": ""
+      },
+      "locations": [],
+      "docs": {
+        "summary": "Get a list of all schema objects.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/schemas/list",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/schemas/list' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    }\n}'"
+            ],
+            "response": [
+              "\n{\"schemas\": [\n    {\n    \"displayName\": \"car\",\n    \"id\": \"car\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"make\":       {\n        \"displayName\": \"make\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"model\":       {\n        \"displayName\": \"model\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"year\":       {\n        \"displayName\": \"year\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"date_added\":       {\n        \"displayName\": \"date_added\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  },\n    {\n    \"displayName\": \"manufacturer\",\n    \"id\": \"manufacturer\",\n    \"allowedOperations\":     [\n      \"get\",\n      \"find\",\n      \"count\",\n      \"update\",\n      \"insert\",\n      \"remove\"\n    ],\n    \"maxPageSize\": 50,\n    \"ttl\": 3600,\n    \"fields\":     {\n      \"name\":       {\n        \"displayName\": \"name\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"country\":       {\n        \"displayName\": \"country\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"established\":       {\n        \"displayName\": \"established\",\n        \"type\": \"datetime\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_id\":       {\n        \"displayName\": \"_id\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"_owner\":       {\n        \"displayName\": \"_owner\",\n        \"type\": \"text\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      },\n      \"share_price\":       {\n        \"displayName\": \"share_price\",\n        \"type\": \"number\",\n        \"queryOperators\":         [\n          \"eq\",\n          \"lt\",\n          \"gt\",\n          \"hasSome\",\n          \"and\",\n          \"lte\",\n          \"gte\",\n          \"or\",\n          \"not\",\n          \"ne\",\n          \"startsWith\",\n          \"endsWith\"\n        ]\n      }\n    }\n  }\n]}"
+            ],
+            "type": "curl",
+            "extra": { "description": "Get a list of all available schemas." }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "ListSchemasRequest",
+        "rpcResponseName": "ListSchemasResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Provision",
+      "methodName": "Provision",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Provisioning",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "provisionContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+          "doc": " The Provisioning context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Provision",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_ProvisionResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **401** - Not authorized.  \n > **400** - Request not valid.  \n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " Setup initial connectivity between your adapter and the wix-data backend.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/provision",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adaptor.com/provision' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"myBigSecret\"\n        },\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n    }\n}'"
+            ],
+            "response": ["\n{}"],
+            "type": "curl",
+            "extra": { "description": "Provisioning request." }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "ProvisionRequest",
+        "rpcResponseName": "ProvisionResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Remove Item",
+      "methodName": "Remove",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to delete from.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "itemId",
+          "type": "string",
+          "doc": " The `_id` of the item to be deleted.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Remove",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RemoveResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **404** - Item not found  \n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " Remove an item from a collection.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/remove",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl --X POST 'https://mysql-adapter.com/data/remove' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    \"collectionName\": \"car\",\n    \"itemId\": \"12345678-abcd-9876-fedc-a9876543210\"\n}'"
+            ],
+            "response": [
+              "\n{\"item\": {\n  \"_id\": \"12345678-abcd-9876-fedc-a9876543210\",\n  \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n  \"make\": \"BMW\",\n  \"model\": \"i8\",\n  \"year\": 2020,\n  \"date_added\": {\"$date\": \"2020-01-01T21:00:00.000Z\"}\n}}"
+            ],
+            "type": "curl",
+            "extra": { "description": "Delete an item from a collection." }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "RemoveRequest",
+        "rpcResponseName": "RemoveResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    },
+    {
+      "name": "Update Item",
+      "methodName": "Update",
+      "serviceName": "ExternalDatabaseDriver",
+      "tag": "Data",
+      "permissions": [],
+      "events": [],
+      "labels": [],
+      "nameParams": [],
+      "params": [
+        {
+          "in": "BODY",
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to insert into.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "item",
+          "type": "struct",
+          "doc": " An object containing the item to be inserted.\n",
+          "required": false
+        },
+        {
+          "in": "BODY",
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n",
+          "required": false
+        }
+      ],
+      "ret": {
+        "type": {
+          "name": "Update",
+          "statusCode": "200",
+          "typeParams": [
+            "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_UpdateResponse"
+          ]
+        },
+        "doc": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **404** - Item not found\n"
+      },
+      "locations": [],
+      "docs": {
+        "summary": " Update an item in a collection.\n \n",
+        "description": [],
+        "request": "POST",
+        "url": "https://example.com/data/update",
+        "links": [],
+        "examples": [
+          {
+            "title": "",
+            "body": [
+              "curl -X POST 'https://mysql-adapter.com/data/update' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"requestContext\": {\n        \"settings\": {\n            \"secretKey\": \"mySecureSecret\"\n        },\n        \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n        \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n        \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"role\": \"OWNER\"\n    },\n    \"collectionName\": \"car\",\n    \"item\": {\n        \"_id\": \"86cbf595-d369-48bb-8649-c6c082c003ca\",\n        \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n        \"model\": \"Mustang GTR\"\n    }\n}'"
+            ],
+            "response": [
+              "\n{\"item\": {\n  \"_id\": \"86cbf595-d369-48bb-8649-c6c082c003ca\",\n  \"_owner\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n  \"model\": \"Mustang GTR\"\n}}"
+            ],
+            "type": "curl",
+            "extra": { "description": "Update an item in a collection." }
+          }
+        ],
+        "extra": {}
+      },
+      "extra": {
+        "hasRest": true,
+        "rpcRequestName": "InsertRequest",
+        "rpcResponseName": "UpdateResponse"
+      },
+      "customLabels": [{ "id": "maturity-alpha" }]
+    }
+  ],
+  "events": [],
+  "callbacks": [],
+  "messages": [
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ProvisionRequest",
+      "displayName": "Provision Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "provisionContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+          "doc": " The Provisioning context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ProvisionRequestContext",
+      "displayName": "Provision Request Context Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "settings",
+          "type": "struct",
+          "doc": " The JSON defined in the `Configuration` section of the [External Database Collections](https://support.wix.com/en/article/corvid-adding-and-deleting-an-external-database-collection) setup.\n"
+        },
+        {
+          "name": "installationId",
+          "type": "string",
+          "doc": " The external collection making the request.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ProvisionResponse",
+      "displayName": "Provision Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **401** - Not authorized.  \n > **400** - Request not valid.  \n",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_CountRequest",
+      "displayName": "Count Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to be queried.\n"
+        },
+        {
+          "name": "filter",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Filter",
+          "doc": " A query filter.\n"
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "The request context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_CountResponse",
+      "displayName": "Count Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid query.  \n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "totalCount",
+          "type": "integer",
+          "doc": " The number of items in the collection that match the query filter.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_GetRequest",
+      "displayName": "Get Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to be queried.\n"
+        },
+        {
+          "name": "itemId",
+          "type": "string",
+          "doc": " The `_id` of the item to be retrieved.\n"
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": "The request context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_GetResponse",
+      "displayName": "Get Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **404** - Item not found.\n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": " An object containing the retrieved item.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindRequest",
+      "displayName": "Find Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "skip",
+          "type": "integer",
+          "doc": " The number of items to skip from the first item. \n"
+        },
+        {
+          "name": "filter",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Filter",
+          "doc": " A query filter.\n"
+        },
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to be queried.\n"
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n"
+        },
+        {
+          "name": "sort",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_OrderSpec"
+            ]
+          },
+          "doc": " Sort order.\n"
+        },
+        {
+          "name": "limit",
+          "type": "integer",
+          "doc": " The maximum number of items to retrieve.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindResponse",
+      "displayName": "Find Response Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "items",
+          "type": { "name": "array", "typeParams": ["struct"] },
+          "doc": " A list of objects containing the retrieved items. \n"
+        },
+        {
+          "name": "totalCount",
+          "type": "integer",
+          "doc": " The total number of items matching the query filter.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_InsertRequest",
+      "displayName": "Insert Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to insert into.\n"
+        },
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": " An object containing the item to be inserted.\n"
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_InsertResponse",
+      "displayName": "Insert Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **409** - Item already exists.\n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": "An object containing the inserted object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_UpdateResponse",
+      "displayName": "Update Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **400** - Invalid item, Constraint violation.  \n > **404** - Item not found\n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": " An object containing the updated item.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_RemoveRequest",
+      "displayName": "Remove Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "collectionName",
+          "type": "string",
+          "doc": " The collection or table to delete from.\n"
+        },
+        {
+          "name": "itemId",
+          "type": "string",
+          "doc": " The `_id` of the item to be deleted.\n"
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_RemoveResponse",
+      "displayName": "Remove Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **404** - Item not found  \n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "item",
+          "type": "struct",
+          "doc": " An object containing the deleted item.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindSchemasRequest",
+      "displayName": "Find Schemas Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "schemaIds",
+          "type": { "name": "array", "typeParams": ["string"] },
+          "doc": " A list of schemas to find.\n"
+        },
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FindSchemasResponse",
+      "displayName": "Find Schemas Response Object",
+      "locations": [],
+      "docs": {
+        "summary": " > **Status/Error Codes:**  \n > **404** - No schemas found  \n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "schemas",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Schema"
+            ]
+          },
+          "doc": " A list of schema objects\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ListSchemasRequest",
+      "displayName": "List Schemas Request Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "requestContext",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_RequestContext",
+          "doc": " The request context object.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_ListSchemasResponse",
+      "displayName": "List Schemas Response Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "schemas",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Schema"
+            ]
+          },
+          "doc": " A list of schema objects.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "fieldsMapEntry",
+      "displayName": "fields Map Entry Object",
+      "locations": [],
+      "docs": {
+        "summary": "Set of key-value pairs. A list of field specification objects.\n",
+        "links": [],
+        "examples": []
+      },
+      "members": [
+        {
+          "name": "key:value",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_FieldSpec",
+          "doc": "`key` of type string, `value` of type ref"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Schema",
+      "displayName": "Schema Object",
+      "locations": [],
+      "docs": {
+        "summary": " Metadata describing collection or table.\n",
+        "links": [],
+        "examples": [
+          {
+            "title": "Schema",
+            "body": [
+              "\n{\"schema\": {\n  \"displayName\": \"manufacturer\",\n  \"id\": \"manufacturer\",\n  \"allowedOperations\":   [\n    \"get\",\n    \"find\",\n    \"count\",\n    \"update\",\n    \"insert\",\n    \"remove\"\n  ],\n  \"maxPageSize\": 50,\n  \"ttl\": 3600,\n  \"fields\":   {\n    \"name\":     {\n      \"displayName\": \"name\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"country\":     {\n      \"displayName\": \"country\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"established\":     {\n      \"displayName\": \"established\",\n      \"type\": \"datetime\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"_id\":     {\n      \"displayName\": \"_id\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"_owner\":     {\n      \"displayName\": \"_owner\",\n      \"type\": \"text\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    },\n    \"share_price\":     {\n      \"displayName\": \"share_price\",\n      \"type\": \"number\",\n      \"queryOperators\":       [\n        \"eq\",\n        \"lt\",\n        \"gt\",\n        \"hasSome\",\n        \"and\",\n        \"lte\",\n        \"gte\",\n        \"or\",\n        \"not\",\n        \"ne\",\n        \"startsWith\",\n        \"endsWith\"\n      ]\n    }\n  }\n}}"
+            ],
+            "type": "json",
+            "extra": { "description": "Example schema object." }
+          }
+        ]
+      },
+      "members": [
+        {
+          "name": "maxPageSize",
+          "type": "integer",
+          "doc": " The maximum number of items per query.\n"
+        },
+        {
+          "name": "allowedOperations",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_AllowedOperation"
+            ]
+          },
+          "doc": " A list of allowed data manipulation operations.\n"
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "doc": " The table or collection name.\n"
+        },
+        {
+          "name": "fields",
+          "type": "All APIs.External Database Collections.fieldsMapEntry",
+          "doc": "Set of key-value pairs. A list of field specification objects.\n"
+        },
+        {
+          "name": "ttl",
+          "type": "integer",
+          "doc": " The number of seconds for which the schema can be cached.\n"
+        },
+        {
+          "name": "defaultSort",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_OrderSpec",
+          "doc": " An object defining the default sort order.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Filter",
+      "displayName": "Filter Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "optionalF",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Filter_OptionalF",
+          "doc": ""
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Filter_OptionalF",
+      "displayName": "Optional F Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "combinedFilter",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_CombinedFilter",
+          "doc": " An object containing combination of filters.\n"
+        },
+        {
+          "name": "filter",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_FilterSpec",
+          "doc": " An object containing a query filter.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": [],
+      "oneOf": true
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_CombinedFilter",
+      "displayName": "Combined Filter Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "operator",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_LogicalFunction",
+          "doc": " A logical operator.\n"
+        },
+        {
+          "name": "value",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_FilterSpec"
+            ]
+          },
+          "doc": " A list of filter definitions.     \n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FilterSpec",
+      "displayName": "Filter Spec Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "operator",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_AllowedFilterOperator",
+          "doc": " A list of allowed query operations.\n"
+        },
+        { "name": "fieldName", "type": "string", "doc": " Field name.\n" },
+        { "name": "value", "type": "struct", "doc": "Value to filter.\n" }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_OrderSpec",
+      "displayName": "Order Spec Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        {
+          "name": "fieldName",
+          "type": "string",
+          "doc": " The sort field name.\n"
+        },
+        {
+          "name": "direction",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Direction",
+          "doc": " The sort direction, ascending or descending.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FieldSpec",
+      "displayName": "Field Spec Object",
+      "locations": [],
+      "docs": { "summary": "", "links": [], "examples": [] },
+      "members": [
+        { "name": "displayName", "type": "string", "doc": " Field name.\n" },
+        {
+          "name": "type",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_FieldType",
+          "doc": "Field data type.\n"
+        },
+        {
+          "name": "queryOperators",
+          "type": {
+            "name": "array",
+            "typeParams": [
+              "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_AllowedFilterOperator"
+            ]
+          },
+          "doc": " A list of allowed query operations.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_RequestContext",
+      "displayName": "Request Context Object",
+      "locations": [],
+      "docs": {
+        "summary": " The Request Context object is sent with every request. It contains information about who made the request, and which site and which external collection configuration made the request. Use the `member_id` in the request context object to implement permissions in your adapter. \n ### Settings \n The contents of the `settings` object are static and set in the Configuration section when [setting up the external collection](https://support.wix.com/en/article/corvid-adding-and-deleting-an-external-database-collection). Use the settings object to carry any static data you want to send to the adapter from your site.\n The prototype adaptor uses the settings object to receive the `secretKey` for authentication. Add attributes to the settings object to support any functionality you want to implement in your adapter.\n ### instance_id \n The `instance_id` is a UUID that uniquely identifies the Wix site that is making the request. You can create an external database collection in more than one Wix site that points to the same adaptor and external database. Use the instance_id to control access to your date on a per-site basis.\n ### installation_id\n The `installation_id` is a UUID that uniquely identifies the external collection configuration within your site. You can create more than one external collection in the same site that points to the same adaptor and external database. Each of these external collections will be identified by its own UUID, allowing you to implement different functionality and permissions for each one.  \n ### member_id\n The `member_id` identifies the site visitor making the request. When creating new items, the Wix data backend populates the `_owner` attribute with the member_id. If the visitor is not a logged-in member, the member_id is based on a browser cookie and therefore consistent between sessions. \n The member_id will be null if the code that made the request was triggered by a backend process. Use member_id to filter data by user and to implement permissions in your adapter.\n\n ### member_role\n The `member_role` describes the role of the site visitor making the request. If the request is made by backend code and the [`find()`](https://www.wix.com/corvid/reference/wix-data/wixdataquery/eq) function uses the `suppressAuth` option, the `member_role` will be set to `BACKEND_CODE` and the `member_id` will be `null`. In all other cases where backend code makes the request, the `member_role` will be set to `VISITOR` and the `member_id` will be `null`.\n\n",
+        "links": [],
+        "examples": [
+          {
+            "title": "Request Context",
+            "body": [
+              "\n{\"requestContext\": {\n  \"settings\": {\"secretKey\": \"mySecureSecret\"},\n  \"instanceId\": \"12a345b6-7890-98d7-65e4-f321abc1de23\",\n  \"installationId\": \"987fe654-3d21-4def-ab5c-6d78e90f123a\",\n  \"memberId\": \"77aa88bb-2c2c-d3d3-4e4e-ff55aa66bb77\",\n  \"role\": \"OWNER\"\n}}"
+            ],
+            "type": "json",
+            "extra": { "description": "Example request context object." }
+          }
+        ]
+      },
+      "members": [
+        {
+          "name": "instanceId",
+          "type": "string",
+          "doc": " The ID of the Wix site making the request.\n"
+        },
+        {
+          "name": "memberRole",
+          "type": "All APIs.External Database Collections._com_wixpress_cloud_externaldb_api_Role",
+          "doc": " The role of the user or process making the request. \n"
+        },
+        {
+          "name": "installationId",
+          "type": "string",
+          "doc": " The ID of the external collection making the request.\n"
+        },
+        {
+          "name": "memberId",
+          "type": "string",
+          "doc": " The ID of the site visitor making the request.\n"
+        },
+        {
+          "name": "settings",
+          "type": "struct",
+          "doc": " The JSON defined in the `Configuration` section of the [External Database Collections](https://support.wix.com/en/article/corvid-adding-and-deleting-an-external-database-collection) setup.\n"
+        }
+      ],
+      "enum": null,
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_LogicalFunction",
+      "displayName": "Logical Function Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> AND </code></li><li><code> OR </code></li><li><code> NOT </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": ["AND", "OR", "NOT"],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_AllowedOperation",
+      "displayName": "Allowed Operation Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> INSERT </code></li><li><code> UPDATE </code></li><li><code> GET </code></li><li><code> REMOVE </code></li><li><code> FIND </code></li><li><code> COUNT </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": ["INSERT", "UPDATE", "GET", "REMOVE", "FIND", "COUNT"],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Direction",
+      "displayName": "Direction Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> ASC </code></li><li><code> DESC </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": ["ASC", "DESC"],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_AllowedFilterOperator",
+      "displayName": "Allowed Filter Operator Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> EQ </code></li><li><code> NE </code></li><li><code> LT </code></li><li><code> GT </code></li><li><code> GTE </code></li><li><code> HAS_SOME </code></li><li><code> HAS_ALL </code></li><li><code> CONTAINS </code></li><li><code> ENDS_WITH </code></li><li><code> URLIZED </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "EQ",
+        "NE",
+        "LT",
+        "GT",
+        "GTE",
+        "HAS_SOME",
+        "HAS_ALL",
+        "CONTAINS",
+        "ENDS_WITH",
+        "URLIZED"
+      ],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_FieldType",
+      "displayName": "Field Type Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> NUMBER </code></li><li><code> TEXT </code></li><li><code> BOOLEAN </code></li><li><code> URL </code></li><li><code> DATETIME </code></li><li><code> IMAGE </code></li><li><code> OBJECT </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": [
+        "NUMBER",
+        "TEXT",
+        "BOOLEAN",
+        "URL",
+        "DATETIME",
+        "IMAGE",
+        "OBJECT"
+      ],
+      "extra": {},
+      "labels": []
+    },
+    {
+      "name": "_com_wixpress_cloud_externaldb_api_Role",
+      "displayName": "Role Object",
+      "locations": [],
+      "docs": {
+        "summary": " \n Possible values are: <li><code> VISITOR </code></li><li><code> MEMBER </code></li><li><code> OWNER </code></li><li><code> BACKEND_CODE </code></li>",
+        "links": [],
+        "examples": []
+      },
+      "members": [],
+      "enum": ["VISITOR", "MEMBER", "OWNER", "BACKEND_CODE"],
+      "extra": {},
+      "labels": []
+    }
+  ],
+  "extra": { "artifactId": "com.wixpress.cloud.cloud-data-spi" }
+}
