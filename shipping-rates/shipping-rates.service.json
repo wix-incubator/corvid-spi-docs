@@ -1,4 +1,5 @@
 { "name": "shipping-rates",
+ "layoutType": "JS",
   "mixes": [],
   "labels":
     [ "changed" ],
