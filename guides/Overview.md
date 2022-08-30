@@ -6,7 +6,7 @@ Velo’s SPIs enable you to extend Velo’s functionality so that you can:
 
    With Velo SPIs, you don't have to code a new flow from beginning to end if you want to customize and extend just one part of an existing business app's flow. You can implement the code just for the customized part.
    
-   For example, the standard, out-of-the-box Ecommerce checkout flow calculates the total charge based on the order's line items. With Velo's [Additional Fees](https://www.wix.com/velo/reference/spis/ecom-additional-fees) SPI, you can inject the ability to add additional fees that apply to the entire order. Examples of additional fees include fees for fragile handling or surcharges for deliveries outside your regular delivery area.
+   For example, the standard, out-of-the-box eCommerce checkout flow calculates the total charge based on the order's line items. With Velo's [Additional Fees](https://www.wix.com/velo/reference/spis/ecom-additional-fees) SPI, you can inject the ability to add additional fees that apply to the entire order. Examples of additional fees include fees for fragile handling or surcharges for deliveries outside your regular delivery area.
 
 + **Integrate external services with your Wix site**
 
