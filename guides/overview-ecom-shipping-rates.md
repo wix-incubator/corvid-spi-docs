@@ -1,7 +1,8 @@
-# eCommerce Shipping Rates
+# eCommerce Shipping Rates (Beta)
 
-With Velo's eCommerce Shipping Rates SPIs, you can provide custom or external shipping rates that do not come out-of-the-box with the Wix eCommerce purchase flow. This means you're not limited to the existing way business apps, such as Wix Stores and Wix Bookings, define their list of available shipping rates that buyers can choose from. 
+Provide custom or external shipping rate business logic that does not come natively with Wix into your eCommerce purchase flows. For example, you're not limited to how Wix business apps, such as Wix Stores and Wix Bookings, define the number of payments and shipping providers to choose from, and/or how payments and shipping rates are displayed on your site. 
 
-For example, you can avoid limitations, such as the number of payments and shipping providers to choose from or how payments and shipping rates are displayed on your site. 
-
-You can describe your product in a way that is not currently supported natively, such as by using a provider not currently on the list, or by displaying product options in other ways.
+To learn more: 
++ [Velo: Custom Business App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta) article
++ [Velo Tutorial: eCommerce Shipping Rates Custom Extension with SPIs](https://support.wix.com/en/article/velo-shipping-rates-spi) tutorial 
++ [eCommerce Catalog](https://www.wix.com/velo/reference/spis/ecom-shipping-rates) SPI reference
