@@ -19,17 +19,17 @@
           "isMdFile": true
         },
         {
-          "name": "eCommerce Shipping Rates",
+          "name": "eCommerce Shipping Rates (Beta)",
           "url": "./overview-ecom-shipping-rates.md",
           "isMdFile": true
         },
         {
-          "name": "eCommerce Catalog",
+          "name": "eCommerce Catalog (Beta)",
           "url": "./overview-ecom-catalog.md",
           "isMdFile": true
         },
         {
-          "name": "eCommerce Additional Fees",
+          "name": "eCommerce Additional Fees (Beta)",
           "url": "./overview-ecom-additional-fees.md",
           "isMdFile": true
         }
