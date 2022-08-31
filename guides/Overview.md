@@ -16,4 +16,5 @@ Velo’s SPIs enable you to extend Velo’s functionality so that you can:
 
 To use the Velo SPIs, you’ll need a working knowledge of JavaScript. When integrating with an external service, you'll also need familiarity with the external service’s APIs.
 
-For more details about extending Velo functionality using SPIs, see [Custom Business App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta).
+To learn more: 
++ [Velo: Custom Business App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta) article
