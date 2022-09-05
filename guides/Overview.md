@@ -14,7 +14,7 @@ Velo’s SPIs enable you to extend Velo’s functionality so that you can:
   
   For example, Velo's [Shipping Rates](https://www.wix.com/velo/reference/spis/ecom-shipping-rates) SPI lets you display shipping rates from different external service providers during checkout. Customers can then choose the shipping provider best for them. 
 
->**Note**: The Custom Extensions feature is currently a Beta release. Some custom extensions are not yet available to all users.
+>**Note**: The Custom Extensions feature is currently in Beta. Some custom extensions aren't yet available to all users, and are subject to change.
 
 To use the Velo SPIs, you’ll need a working knowledge of JavaScript. When integrating with an external service, you'll also need familiarity with the external service’s APIs.
 
