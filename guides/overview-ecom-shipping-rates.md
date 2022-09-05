@@ -1,4 +1,4 @@
-# eCommerce Shipping Rates (Beta)
+# eCommerce Shipping Rates
 
 Provide custom or external shipping rate options that don't come natively with Wix in your eCommerce purchase flows. For example, you're not limited to how Wix apps, such as Wix Stores and Wix Bookings, define the number of payments and shipping providers to choose from. 
 
