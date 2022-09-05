@@ -4,5 +4,5 @@ Add additional fee calculations that don't come natively with Wix into your eCom
 
 To learn more: 
 + [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)
-+ [Velo Tutorial: eCommerce Additional Fees Custom Extension](https://www.wix.com/velo/reference/spis/ecom-additional-fees)
++ [Velo Tutorial: eCommerce Additional Fees Custom Extension](https://support.wix.com/en/article/velo-ecommerce-additional-fees-custom-extension)
 + [eCommerce Additional Fees SPI reference](https://www.wix.com/velo/reference/spis/ecom-additional-fees)
