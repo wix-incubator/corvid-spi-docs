@@ -10,11 +10,11 @@ Velo’s SPIs enable you to extend Velo’s functionality so that you can:
 
 + **Integrate external services with your Wix site**
 
-  Use the SPIs to integrate with 3rd-party services so that your Wix site and the external services can communicate seamlessly. 
+  Use the SPIs to integrate with 3rd-party services so that your Wix site and the external services can communicate seamlessly. Some SPIs are available with the Custom Extensions feature. Other SPIs, such as [Site Monitoring](https://www.wix.com/velo/reference/spis/getting-started/site-monitoring) and [External Database Collections](https://www.wix.com/velo/reference/spis/getting-started/external-database-collections), are available without using the Custom Extensions feature.
   
-  For example, Velo's [Shipping Rates](https://www.wix.com/velo/reference/spis/ecom-shipping-rates) SPI lets you display shipping rates from different external service providers during checkout. Customers can then choose the shipping provider best for them. 
+  For example, Velo's [Shipping Rates](https://www.wix.com/velo/reference/spis/ecom-shipping-rates) custom extension SPI lets you display shipping rates from different external service providers during checkout. Customers can then choose the shipping provider best for them. 
 
->**Note**: The Custom Extensions feature is currently in Beta. Some custom extensions aren't yet available to all users, and are subject to change.
+>**Note**: The Custom Extensions feature is currently in beta and is subject to change. Some custom extensions aren't yet available to all users.
 
 To use the Velo SPIs, you’ll need a working knowledge of JavaScript. When integrating with an external service, you'll also need familiarity with the external service’s APIs.
 
