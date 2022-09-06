@@ -1,6 +1,6 @@
 # eCommerce Shipping Rates
   
->**Note**: This SPI is in beta and is subject to change. Some SPIs currently aren't available to all users.
+>This SPI is in beta and is subject to change. Some SPIs currently aren't available to all users.
 
 Provide custom or external shipping rate options that don't come natively with Wix in your eCommerce purchase flows. For example, you're not limited to how Wix apps, such as Wix Stores and Wix Bookings, define the number of shipping providers to choose from. 
 
