@@ -7,4 +7,4 @@ Define your own custom catalog and how it interacts with the eCommerce purchase 
 To learn more: 
 + [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)
 + [Velo Tutorial: eCommerce Catalog Custom Extension](https://support.wix.com/en/article/velo-ecommerce-custom-catalog-integration)
-+ [eCommerce Catalog SPI reference](https://www.wix.com/velo/reference/spis/ecom-catalog)
++ [eCommerce Catalog SPI reference](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-catalog)

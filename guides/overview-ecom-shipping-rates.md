@@ -7,4 +7,4 @@ Provide custom or external shipping rate options that don't come natively with W
 To learn more: 
 + [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)
 + [Velo Tutorial: eCommerce Shipping Rates Custom Extension](https://support.wix.com/en/article/velo-shipping-rates-spi) 
-+ [eCommerce Catalog SPI reference](https://www.wix.com/velo/reference/spis/ecom-shipping-rates)
++ [eCommerce Shipping Rates SPI reference](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-shipping-rates)
