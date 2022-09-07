@@ -16,12 +16,12 @@
       "to their site. These additional fees are calculated and seen in all eCommerce platform pages, ",
       "including cart, checkout, orders, and payments.",
       "",
-      "Wix eCommerce calls the SPI endpoint [`calculateAdditionalFees()`](https://www.wix.com/velo/reference/spis/ecom/ecom-additional-fees/calculateadditionalfees) ",
+      "Wix eCommerce calls the SPI endpoint [`calculateAdditionalFees()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-additional-fees/calculateadditionalfees) ",
       "to retrieve the relevant data for a site collaborator to add additional fees. ",
       "Collaborators can then implement their own logic to calculate additional fees, and return the calculated fee ",
       "data in the structure provided by Wix eCommerce. ",
       "",
-      "Note that `currency` in the [`calculateAdditionalFees`](https://www.wix.com/velo/reference/spis/ecom/ecom-additional-fees/calculateadditionalfees) response must match ",
+      "Note that `currency` in the [`calculateAdditionalFees`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-additional-fees/calculateadditionalfees) response must match ",
       "your site's currency. You can find the currency of your site using the [`getPaymentCurrency()`](https://www.wix.com/velo/reference/wix-site-backend/generalinfo-obj/getpaymentcurrency)",
       "function. ",
       "",
@@ -40,14 +40,14 @@
       "params": [
         {
           "name": "options",
-          "type": "ecom.ecom-additional-fees.Options",
+          "type": "wix-ecom.ecom-additional-fees.Options",
           "doc": "Options for line items and shipping options."
         }
       ],
       "ret": {
         "type": {
           "name": "Promise",
-          "typeParams": ["ecom.ecom-additional-fees.CalculateAdditionalFeesResponse"]
+          "typeParams": ["wix-ecom.ecom-additional-fees.CalculateAdditionalFeesResponse"]
         },
         "doc": "Fulfilled - Additional fees and currency info."
       },
@@ -158,7 +158,7 @@
         },
         {
           "name": "taxDetails",
-          "type": "ecom.ecom-additional-fees.TaxDetails",
+          "type": "wix-ecom.ecom-additional-fees.TaxDetails",
           "doc": "Tax details."
         }
       ],
@@ -187,7 +187,7 @@
         },
         {
           "name": "streetAddress",
-          "type": "ecom.ecom-additional-fees.AddressInfo",
+          "type": "wix-ecom.ecom-additional-fees.AddressInfo",
           "doc": "Street address object, with number and name in separate fields.",
           "optional": true
         },
@@ -284,19 +284,19 @@
         },
         {
           "name": "coupon",
-          "type": "ecom.ecom-additional-fees.Coupon",
+          "type": "wix-ecom.ecom-additional-fees.Coupon",
           "doc": "Coupon details.",
           "optional": true
         },
         {
           "name": "merchantDiscount",
-          "type": "ecom.ecom-additional-fees.MerchantDiscount",
+          "type": "wix-ecom.ecom-additional-fees.MerchantDiscount",
           "doc": "Merchant discount.",
           "optional": true
         },
         {
           "name": "discountRule",
-          "type": "ecom.ecom-additional-fees.DiscountRule",
+          "type": "wix-ecom.ecom-additional-fees.DiscountRule",
           "doc": "Discount rule.",
           "optional": true
         }
@@ -329,7 +329,7 @@
           "name": "additionalFees",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-additional-fees.AdditionalFee"]
+            "typeParams": ["wix-ecom.ecom-additional-fees.AdditionalFee"]
           },
           "doc": "List of additional fees."
         },
@@ -365,7 +365,7 @@
           "name": "shippingOptions",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-additional-fees.ShippingOption"]
+            "typeParams": ["wix-ecom.ecom-additional-fees.ShippingOption"]
           },
           "doc": "Shipping options offered by the carrier."
         }
@@ -432,7 +432,7 @@
         },
         {
           "name": "amount",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Coupon value."
         },
         {
@@ -470,7 +470,7 @@
         },
         {
           "name": "pickupDetails",
-          "type": "ecom.ecom-additional-fees.PickupDetails",
+          "type": "wix-ecom.ecom-additional-fees.PickupDetails",
           "doc": "Pickup details."
         }
       ],
@@ -498,12 +498,12 @@
         },
         {
           "name": "name",
-          "type": "ecom.ecom-additional-fees.DiscountRuleName",
+          "type": "wix-ecom.ecom-additional-fees.DiscountRuleName",
           "doc": "Discount rule name."
         },
         {
           "name": "amount",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Discount value."
         }
       ],
@@ -554,7 +554,7 @@
       "members": [
         {
           "name": "taxableAmount",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Taxable amount."
         },
         {
@@ -569,14 +569,14 @@
         },
         {
           "name": "totalTax",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Calculated tax based on `taxableAmount` and `taxRate`."
         },
         {
           "name": "rateBreakdown",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-additional-fees.TaxRateBreakdown"]
+            "typeParams": ["wix-ecom.ecom-additional-fees.TaxRateBreakdown"]
           },
           "doc": "Tax breakdown."
         }
@@ -610,7 +610,7 @@
         },
         {
           "name": "catalogReference",
-          "type": "ecom.ecom-additional-fees.CatalogReference",
+          "type": "wix-ecom.ecom-additional-fees.CatalogReference",
           "doc": "Catalog and items reference info."
         },
         {
@@ -625,7 +625,7 @@
         },
         {
           "name": "physicalProperties",
-          "type": "ecom.ecom-additional-fees.PhysicalProperties",
+          "type": "wix-ecom.ecom-additional-fees.PhysicalProperties",
           "doc": "Properties of a physical item in cart and/or checkout."
         },
         {
@@ -636,7 +636,7 @@
         },
         {
           "name": "serviceProperties",
-          "type": "ecom.ecom-additional-fees.ServiceProperties",
+          "type": "wix-ecom.ecom-additional-fees.ServiceProperties",
           "doc": "Service properties.  When relevant, contains information such as service date and number of participants. Used, for example, when checking for valid memberships."
         },
         {
@@ -669,7 +669,7 @@
       "members": [
         {
           "name": "amount",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Discount value."
         }
       ],
@@ -732,13 +732,13 @@
           "name": "lineItems",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-additional-fees.LineItem"]
+            "typeParams": ["wix-ecom.ecom-additional-fees.LineItem"]
           },
           "doc": "Line items.\n\nMax: 300 line items"
         },
         {
           "name": "shippingInfo",
-          "type": "ecom.ecom-additional-fees.ShippingInfo",
+          "type": "wix-ecom.ecom-additional-fees.ShippingInfo",
           "doc": "Shipping information."
         }
       ],
@@ -766,7 +766,7 @@
         },
         {
           "name": "price",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Price of added charge."
         }
       ],
@@ -822,7 +822,7 @@
       "members": [
         {
           "name": "address",
-          "type": "ecom.ecom-additional-fees.Address",
+          "type": "wix-ecom.ecom-additional-fees.Address",
           "doc": "Pickup address."
         },
         {
@@ -855,22 +855,22 @@
       "members": [
         {
           "name": "totalPriceAfterTax",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Total shipping price after discount and tax."
         },
         {
           "name": "taxDetails",
-          "type": "ecom.ecom-additional-fees.ItemTaxFullDetails",
+          "type": "wix-ecom.ecom-additional-fees.ItemTaxFullDetails",
           "doc": "Tax details."
         },
         {
           "name": "totalDiscount",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Shipping discount before tax."
         },
         {
           "name": "price",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Shipping price before discount and tax."
         }
       ],
@@ -903,7 +903,7 @@
         },
         {
           "name": "logistics",
-          "type": "ecom.ecom-additional-fees.DeliveryLogistics",
+          "type": "wix-ecom.ecom-additional-fees.DeliveryLogistics",
           "doc": "Delivery logistics."
         },
         {
@@ -946,7 +946,7 @@
         },
         {
           "name": "price",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Price of added charge."
         }
       ],
@@ -997,14 +997,14 @@
       "members": [
         {
           "name": "selectedCarrierServiceOption",
-          "type": "ecom.ecom-additional-fees.SelectedCarrierServiceOption",
+          "type": "wix-ecom.ecom-additional-fees.SelectedCarrierServiceOption",
           "doc": "Selected shipping option."
         },
         {
           "name": "carrierServiceOptions",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-additional-fees.CarrierServiceOption"]
+            "typeParams": ["wix-ecom.ecom-additional-fees.CarrierServiceOption"]
           },
           "doc": "List of all shipping options."
         }
@@ -1038,7 +1038,7 @@
         },
         {
           "name": "logistics",
-          "type": "ecom.ecom-additional-fees.DeliveryLogistics",
+          "type": "wix-ecom.ecom-additional-fees.DeliveryLogistics",
           "doc": "Delivery logistics."
         }
       ],
@@ -1061,14 +1061,14 @@
       "members": [
         {
           "name": "price",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Shipping price."
         },
         {
           "name": "otherCharges",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-additional-fees.OtherCharge"]
+            "typeParams": ["wix-ecom.ecom-additional-fees.OtherCharge"]
           },
           "doc": "Other costs. For example, insurance or handling and packaging fees."
         }
@@ -1176,7 +1176,7 @@
         },
         {
           "name": "tax",
-          "type": "ecom.ecom-additional-fees.MultiCurrencyPrice",
+          "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
           "doc": "Tax amount."
         }
       ],

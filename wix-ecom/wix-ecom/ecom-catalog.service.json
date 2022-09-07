@@ -14,7 +14,7 @@
       "",
       "The eCommerce Catalog SPI is a service provider interface provides functionality for implementing your own custom catalog of items and/or services to be sold on your site. This custom catalog can be used instead of, or alongside a Wix Stores catalog.",
       "",
-      "Wix eCommerce calls the SPI endpoint [`getCatalogItems()`](https://www.wix.com/velo/reference/spis/ecom/ecom-catalog/getcatalogitems) to retrieve the custom catalog's items. These items can then be displayed in dynamic product pages, as well as the cart, checkout, and order.",
+      "Wix eCommerce calls the SPI endpoint [`getCatalogItems()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-catalog/getcatalogitems) to retrieve the custom catalog's items. These items can then be displayed in dynamic product pages, as well as the cart, checkout, and order.",
       "",
       "Learn more about the [Custom Catalog Extension](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-catalog-extension-beta)."
     ],
@@ -31,7 +31,7 @@
       "params": [
         {
           "name": "options",
-          "type": "ecom.ecom-catalog.Options",
+          "type": "wix-ecom.ecom-catalog.Options",
           "doc": "Catalog and item references (IDs and additional info), weight unit, and quantities requested by Wix eCommerce."
         }
       ],
@@ -41,7 +41,7 @@
           "typeParams": [
             {
               "name": "Array",
-              "typeParams": ["ecom.ecom-catalog.CatalogItems"]
+              "typeParams": ["wix-ecom.ecom-catalog.CatalogItems"]
             }
           ]
         },
@@ -270,12 +270,12 @@
         },
         {
           "name": "allItemsDiscount",
-          "type": "ecom.ecom-catalog.DiscountConfig",
+          "type": "wix-ecom.ecom-catalog.DiscountConfig",
           "doc": "Configuration for discount of all items in the catalog."
         },
         {
           "name": "specificItemsDiscount",
-          "type": "ecom.ecom-catalog.DiscountConfig",
+          "type": "wix-ecom.ecom-catalog.DiscountConfig",
           "doc": "Configuration for discount of specific items in the catalog."
         }
       ],
@@ -298,12 +298,12 @@
       "members": [
         {
           "name": "catalogReferences",
-          "type": "ecom.ecom-catalog.CatalogReference",
+          "type": "wix-ecom.ecom-catalog.CatalogReference",
           "doc": "Catalog and item reference."
         },
         {
           "name": "data",
-          "type": "ecom.ecom-catalog.ItemData",
+          "type": "wix-ecom.ecom-catalog.ItemData",
           "doc": "Item data."
         }
       ],
@@ -360,7 +360,7 @@
       "members": [
         {
           "name": "catalogReference",
-          "type": "ecom.ecom-catalog.CatalogReference",
+          "type": "wix-ecom.ecom-catalog.CatalogReference",
           "doc": "Catalog and items reference info."
         },
         {
@@ -424,18 +424,18 @@
       "members": [
         {
           "name": "name",
-          "type": "ecom.ecom-catalog.OriginalAndTranslatedText",
+          "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
           "doc": "Description line name."
         },
         {
           "name": "plainText",
-          "type": "ecom.ecom-catalog.OriginalAndTranslatedText",
+          "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
           "doc": "Description line plain text value.",
           "optional": true
         },
         {
           "name": "colorInfo",
-          "type": "ecom.ecom-catalog.ColorInfo",
+          "type": "wix-ecom.ecom-catalog.ColorInfo",
           "doc": "Description line color value.",
           "optional": true
         }
@@ -494,12 +494,12 @@
       "members": [
         {
           "name": "productName",
-          "type": "ecom.ecom-catalog.Name",
+          "type": "wix-ecom.ecom-catalog.Name",
           "doc": "**Required** - Item name."
         },
         {
           "name": "itemType",
-          "type": "ecom.ecom-catalog.ItemType",
+          "type": "wix-ecom.ecom-catalog.ItemType",
           "doc": "**Required** - Item type."
         },
         {
@@ -515,7 +515,7 @@
         },
         {
           "name": "url",
-          "type": "ecom.ecom-catalog.URL",
+          "type": "wix-ecom.ecom-catalog.URL",
           "doc": "URL to the item's page on the site.\nWhen not provided, the link back from the cart page to the relevant item page will not work.",
           "optional": true
         },
@@ -523,7 +523,7 @@
           "name": "descriptionLines",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-catalog.DescriptionLine"]
+            "typeParams": ["wix-ecom.ecom-catalog.DescriptionLine"]
           },
           "doc": "Line item description lines.\nUsed for displaying the cart, checkout, and order.\nFor example, if you want `Size: Large` to appear under the item name, create a description line with `{\"name\": {\"original\": \"Size\"}}` and  `{\"plainText\": {\"original\": \"Large\"}}`.",
           "optional": true
@@ -542,7 +542,7 @@
         },
         {
           "name": "physicalProperties",
-          "type": "ecom.ecom-catalog.PhysicalProperties",
+          "type": "wix-ecom.ecom-catalog.PhysicalProperties",
           "doc": "Physical properties of the item. When relevant, contains information such as SKU and item weight.",
           "optional": true
         },
@@ -560,7 +560,7 @@
         },
         {
           "name": "serviceProperties",
-          "type": "ecom.ecom-catalog.ServiceProperties",
+          "type": "wix-ecom.ecom-catalog.ServiceProperties",
           "doc": "Service properties.\nWhen relevant, contains information such as service date and number of participants. Used, for example, when checking for valid memberships.",
           "optional": true
         },
@@ -572,7 +572,7 @@
         },
         {
           "name": "priceDescription",
-          "type": "ecom.ecom-catalog.OriginalAndTranslatedText",
+          "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
           "doc": "Additional price description.\nFor example, \"Starts at $67\".",
           "optional": true
         }
@@ -688,7 +688,7 @@
           "name": "catalogReferences",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-catalog.CatalogReferenceQuantity"]
+            "typeParams": ["wix-ecom.ecom-catalog.CatalogReferenceQuantity"]
           },
           "doc": "Catalog and items reference info and quantities."
         },
@@ -810,13 +810,13 @@
           "name": "catalogItems",
           "type": {
             "name": "Array",
-            "typeParams": ["ecom.ecom-catalog.BasicCatalogItem"]
+            "typeParams": ["wix-ecom.ecom-catalog.BasicCatalogItem"]
           },
           "doc": "Catalog item info."
         },
         {
           "name": "metadata",
-          "type": "ecom.ecom-catalog.Metadata",
+          "type": "wix-ecom.ecom-catalog.Metadata",
           "doc": "Details on the paged set of results returned."
         }
       ],
