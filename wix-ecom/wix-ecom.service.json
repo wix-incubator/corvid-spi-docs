@@ -1,5 +1,6 @@
 {
   "name": "wix-ecom",
+  "layoutType": "JS",
   "mixes": [],
   "labels": [],
   "docs": {
