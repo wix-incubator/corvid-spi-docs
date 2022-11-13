@@ -2,7 +2,9 @@
   "name": "ecom-shipping-rates",
   "layoutType": "JS",
   "mixes": [],
-  "labels": ["changed"],
+  "labels": [
+    "new"
+  ],
   "location": {
     "lineno": 1,
     "filename": "shipping-rates-spi-index.js"
@@ -14,7 +16,7 @@
       "",
       "The Shipping Rates SPI provides functionality for connecting your site to shipping rates providers not currently supported by Wix. You can also implement custom shipping rates and options using code. These rates are displayed on your store's Cart and Checkout pages.",
       "",
-      "Wix eCommerce calls the SPI endpoint [`getShippingRates()`](#getshippingrates) to retrieve the relevant shipping rates.",
+      "Wix eCommerce calls the SPI endpoint [`getShippingRates()`](https://www.wix.com/velo/reference/spis/ecom-shipping-rates/getshippingrates) to retrieve the relevant shipping rates.",
       "",
       "Learn more about the [Shipping Rates custom extension](https://support.wix.com/en/article/velo-tutorial-shipping-rates-custom-extension-beta)."
     ],
@@ -31,14 +33,16 @@
       "params": [
         {
           "name": "options",
-          "type": "wix-ecom.ecom-shipping-rates.Options",
+          "type": "ecom-shipping-rates.Options",
           "doc": "Shipping origin, shipping destination, and general configurations."
         }
       ],
       "ret": {
         "type": {
           "name": "Promise",
-          "typeParams": ["wix-ecom.ecom-shipping-rates.ShippingRates"]
+          "typeParams": [
+            "ecom-shipping-rates.ShippingRates"
+          ]
         },
         "doc": "Fulfilled - Available shipping rates."
       },
@@ -216,7 +220,7 @@
         },
         {
           "name": "streetAddress",
-          "type": "wix-ecom.ecom-shipping-rates.StreetAddressInfo",
+          "type": "ecom-shipping-rates.StreetAddressInfo",
           "doc": "Street address object, with street number and name in separate properties.",
           "optional": true
         },
@@ -282,7 +286,7 @@
         },
         {
           "name": "vatId",
-          "type": "wix-ecom.ecom-shipping-rates.VatId",
+          "type": "ecom-shipping-rates.VatId",
           "doc": "Tax information (for Brazil only). If `vatId.id` is provided, `vatId.type` must also be set.",
           "optional": true
         }
@@ -349,7 +353,7 @@
         },
         {
           "name": "additionalCharges",
-          "type": "wix-ecom.ecom-shipping-rates.AdditionalCharges",
+          "type": "ecom-shipping-rates.AdditionalCharges",
           "doc": "Additional costs such as a handling fee for packaging fragile items."
         }
       ],
@@ -382,12 +386,12 @@
         },
         {
           "name": "catalogReference",
-          "type": "wix-ecom.ecom-shipping-rates.CatalogReference",
+          "type": "ecom-shipping-rates.CatalogReference",
           "doc": "Reference to the item's origin catalog."
         },
         {
           "name": "physicalProperties",
-          "type": "wix-ecom.ecom-shipping-rates.PhysicalProperties",
+          "type": "ecom-shipping-rates.PhysicalProperties",
           "doc": "Physical properties of the item."
         },
         {
@@ -440,7 +444,7 @@
         },
         {
           "name": "pickupDetails",
-          "type": "wix-ecom.ecom-shipping-rates.PickupDetails",
+          "type": "ecom-shipping-rates.PickupDetails",
           "doc": "Additional details for a pickup."
         }
       ],
@@ -465,23 +469,25 @@
           "name": "lineItems",
           "type": {
             "name": "Array",
-            "typeParams": ["wix-ecom.ecom-shipping-rates.LineItem"]
+            "typeParams": [
+              "ecom-shipping-rates.LineItem"
+            ]
           },
           "doc": "The line items to be shipped."
         },
         {
           "name": "shippingDestination",
-          "type": "wix-ecom.ecom-shipping-rates.AddressDetails",
+          "type": "ecom-shipping-rates.AddressDetails",
           "doc": "Address to ship to."
         },
         {
           "name": "shippingOrigin",
-          "type": "wix-ecom.ecom-shipping-rates.AddressDetails",
+          "type": "ecom-shipping-rates.AddressDetails",
           "doc": "Address to ship from."
         },
         {
           "name": "buyerContactDetails",
-          "type": "wix-ecom.ecom-shipping-rates.BuyerContactDetails",
+          "type": "ecom-shipping-rates.BuyerContactDetails",
           "doc": "Buyer's contact details."
         },
         {
@@ -597,7 +603,7 @@
       "members": [
         {
           "name": "address",
-          "type": "wix-ecom.ecom-shipping-rates.PickupAddressDetails",
+          "type": "ecom-shipping-rates.PickupAddressDetails",
           "doc": "Pickup address."
         },
         {
@@ -630,17 +636,17 @@
         },
         {
           "name": "title",
-          "type": "number",
+          "type": "string",
           "doc": "Shipping rate title. For example, `'USPS Standard Overnight Delivery'`, `'Standard'`, or `'First-Class Package International'`."
         },
         {
           "name": "logistics",
-          "type": "wix-ecom.ecom-shipping-rates.Logistics",
+          "type": "ecom-shipping-rates.Logistics",
           "doc": "Shipping logistics."
         },
         {
           "name": "cost",
-          "type": "wix-ecom.ecom-shipping-rates.Cost",
+          "type": "ecom-shipping-rates.Cost",
           "doc": "Shipping cost."
         }
       ],
@@ -665,7 +671,9 @@
           "name": "shippingRates",
           "type": {
             "name": "Array",
-            "typeParams": ["wix-ecom.ecom-shipping-rates.ShippingRate"]
+            "typeParams": [
+              "ecom-shipping-rates.ShippingRate"
+            ]
           },
           "doc": "Available shipping rates. These define the shipping rate options that are displayed to site visitors on the Cart and Checkout pages."
         }
