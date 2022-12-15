@@ -1,5 +1,6 @@
 {
    "name":"ecom-additional-fees",
+   "layoutType": "JS",
    "mixes":[
       
    ],
