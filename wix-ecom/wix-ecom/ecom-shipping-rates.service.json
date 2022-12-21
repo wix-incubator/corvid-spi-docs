@@ -2,7 +2,7 @@
   "name": "ecom-shipping-rates",
   "layoutType": "JS",
   "mixes": [],
-  "labels": ["changed"],
+  "labels": ["new"],
   "location": {
     "lineno": 1,
     "filename": "shipping-rates-spi-index.js"
@@ -10,8 +10,6 @@
   "docs": {
     "summary": "The eCommerce Shipping Rates SPI.",
     "description": [
-      "> **Note:** This SPI is currently in beta and is subject to change. Some SPIs are currently not available to all users.",
-      "",
       "The Shipping Rates SPI provides functionality for connecting your site to shipping rates providers not currently supported by Wix. You can also implement custom shipping rates and options using code. These rates are displayed on your store's Cart and Checkout pages.",
       "",
       "Wix eCommerce calls the SPI endpoint [`getShippingRates()`](https://www.wix.com/velo/reference/spis/ecom-shipping-rates/getshippingrates) to retrieve the relevant shipping rates.",
@@ -26,7 +24,7 @@
   "operations": [
     {
       "name": "getShippingRates",
-      "labels": ["changed"],
+      "labels": [],
       "nameParams": [],
       "params": [
         {
