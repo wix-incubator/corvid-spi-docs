@@ -10,8 +10,6 @@
   "docs": {
     "summary": "The eCommerce Additional Fees SPI.",
     "description": [
-      ">**Note:** This SPI is currently in beta and is subject to change. Some SPIs are currently not available to all users. ",
-      "",
       "The Additional Fees SPI is a service provider interface that allows site owners and collaborators to add additional fees ",
       "to their site. These additional fees are calculated and seen in all eCommerce platform pages, ",
       "including cart, checkout, orders, and payments.",
@@ -25,7 +23,7 @@
       "your site's currency. You can find the currency of your site using the [`getPaymentCurrency()`](https://www.wix.com/velo/reference/wix-site-backend/generalinfo-obj/getpaymentcurrency)",
       "function. ",
       "",
-      "Learn more about the [Additional Fees SPI custom extension](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-additional-fees-extension-beta)."
+      "Learn more about the [Additional Fees SPI custom extension](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-additional-fees-extension)."
     ],
     "links": [],
     "examples": [],
@@ -168,68 +166,6 @@
       "labels": []
     },
     {
-      "name": "Address",
-      "locations": [
-        {
-          "lineno": 203,
-          "filename": "additional-fees.js"
-        }
-      ],
-      "docs": {
-        "links": [],
-        "examples": [],
-        "extra": {}
-      },
-      "members": [
-        {
-          "name": "addressLine1",
-          "type": "string",
-          "doc": "Main address line, usually street and number, as free text.",
-          "optional": true
-        },
-        {
-          "name": "streetAddress",
-          "type": "wix-ecom.ecom-additional-fees.AddressInfo",
-          "doc": "Street address object, with number and name in separate fields.",
-          "optional": true
-        },
-        {
-          "name": "addressLine2",
-          "type": "string",
-          "doc": "Free text providing more detailed address information, such as apartment, suite, or floor."
-        },
-        {
-          "name": "city",
-          "type": "string",
-          "doc": "City name."
-        },
-        {
-          "name": "subdivision",
-          "type": "string",
-          "doc": "Code for a subdivision (such as state, prefecture, or province) in an [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2) format."
-        },
-        {
-          "name": "country",
-          "type": "string",
-          "doc": "2-letter country code in an [ISO-3166 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format."
-        },
-        {
-          "name": "postalCode",
-          "type": "string",
-          "doc": "Postal or zip code."
-        }
-      ],
-      "extra": {
-        "oneOfGroups": [
-          {
-            "name": "street",
-            "members": ["addressLine1", "streetAddress"]
-          }
-        ]
-      },
-      "labels": ["removed"]
-    },
-    {
       "name": "AddressDetails",
       "locations": [
         {
@@ -251,7 +187,7 @@
         {
           "name": "addressLine2",
           "type": "string",
-          "doc": "Free text providing more detailed address information, such as apartment, suite, or floor.",
+          "doc": "Detailed address information, such as apartment, suite, or floor in free text.",
           "optional": true
         },
         {
@@ -272,56 +208,28 @@
           "optional": true
         },
         {
-          "name": "country",
-          "type": "string",
-          "doc": "2-letter country code in [ISO-3166 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format."
-        },
-        {
-          "name": "postalCode",
-          "type": "string",
-          "doc": "Postal or zip code."
-        },
-        {
           "name": "subdivisionFullname",
           "type": "string",
           "doc": "Subdivision's full name."
         },
         {
+          "name": "country",
+          "type": "string",
+          "doc": "2-letter country code in [ISO-3166 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format."
+        },
+        {
           "name": "countryFullname",
           "type": "string",
           "doc": "Country's full name."
+        },
+        {
+          "name": "postalCode",
+          "type": "string",
+          "doc": "Postal or zip code."
         }
       ],
       "extra": {},
       "labels": []
-    },
-    {
-      "name": "AddressInfo",
-      "locations": [
-        {
-          "lineno": 216,
-          "filename": "additional-fees.js"
-        }
-      ],
-      "docs": {
-        "links": [],
-        "examples": [],
-        "extra": {}
-      },
-      "members": [
-        {
-          "name": "number",
-          "type": "string",
-          "doc": "Street number."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "doc": "Street name."
-        }
-      ],
-      "extra": {},
-      "labels": ["removed"]
     },
     {
       "name": "AppliedDiscount",
@@ -432,37 +340,6 @@
       ],
       "extra": {},
       "labels": []
-    },
-    {
-      "name": "CarrierServiceOption",
-      "locations": [
-        {
-          "lineno": 271,
-          "filename": "additional-fees.js"
-        }
-      ],
-      "docs": {
-        "links": [],
-        "examples": [],
-        "extra": {}
-      },
-      "members": [
-        {
-          "name": "carrierId",
-          "type": "string",
-          "doc": "Carrier ID."
-        },
-        {
-          "name": "shippingOptions",
-          "type": {
-            "name": "Array",
-            "typeParams": ["wix-ecom.ecom-additional-fees.ShippingOption"]
-          },
-          "doc": "Shipping options offered by the carrier."
-        }
-      ],
-      "extra": {},
-      "labels": ["removed"]
     },
     {
       "name": "CatalogReference",
@@ -608,7 +485,7 @@
         {
           "name": "instructions",
           "type": "string",
-          "doc": "Instructions for carrier. For example, `'Please deliver package during opening hours'`.\n\nMax: 1000 characters"
+          "doc": "Instructions for carrier. For example, `'Please deliver package during business hours'`.\n\nMax: 1000 characters"
         },
         {
           "name": "pickupDetails",
@@ -931,7 +808,7 @@
         {
           "name": "details",
           "type": "string",
-          "doc": "Details of the charge. For example, \"Full Coverage Insurance of up to 80% of value of shipment\"."
+          "doc": "Details of the charge. For example, \"Full coverage insurance of up to 80% of value of shipment\"."
         },
         {
           "name": "cost",
@@ -940,7 +817,7 @@
         }
       ],
       "extra": {},
-      "labels": ["changed"]
+      "labels": []
     },
     {
       "name": "PhysicalProperties",
