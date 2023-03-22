@@ -8,13 +8,13 @@ Velo SPIs (Service Provider Interfaces) provide you with a powerful way to exten
 
    With the Velo Custom Extension feature and its SPIs, you don't have to code a new flow from beginning to end if you want to customize and extend just one part of an existing app's flow. You can implement the code just for the customized part.
 
-   For example, the out-of-the-box eCommerce checkout flow calculates the total charge for an order based on its line items. With Velo's [Additional Fees](/spis/wix-ecom/ecom-additional-fees) SPI, you can inject the ability to add additional fees that apply to the entire order. Examples of additional fees include fees for fragile items or surcharges for deliveries outside your regular delivery area.
+   For example, the out-of-the-box eCommerce checkout flow calculates the total charge for an order based on its line items. With Velo's [Additional Fees](/wix-ecom/ecom-additional-fees) SPI, you can inject the ability to add additional fees that apply to the entire order. Examples of additional fees include fees for fragile items or surcharges for deliveries outside your regular delivery area.
 
 + **Integrate external services with your Wix site**
 
   Use the SPIs to integrate with 3rd-party services so that your Wix site and the external services can communicate seamlessly. 
-  Some SPIs both facilitate integration and allow flow customization/extension using the Custom Extensions feature, such as [Additional Fees](/spis/wix-ecom/ecom-additional-fees) mentioned above.
-  Others simply facilitate integration, such as [Site Monitoring](/spis/getting-started/site-monitoring) and [External Database Collections](/spis/getting-started/external-database-collections).
+  Some SPIs both facilitate integration and allow flow customization/extension using the Custom Extensions feature, such as [Additional Fees](/wix-ecom/ecom-additional-fees) mentioned above.
+  Others simply facilitate integration, such as [Site Monitoring](/getting-started/site-monitoring) and [External Database Collections](/getting-started/external-database-collections).
 
 ## Before you begin
 It’s important to note the following points before starting to code:
