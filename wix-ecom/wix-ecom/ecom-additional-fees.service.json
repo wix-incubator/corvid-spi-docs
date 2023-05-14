@@ -159,7 +159,7 @@
         {
           "name": "taxDetails",
           "type": "wix-ecom.ecom-additional-fees.TaxDetails",
-          "doc": "Tax details."
+          "doc": "Tax details.\n\n>**Note:** Tax is not calculated in the returned `price` even when `taxDetails.taxable` is `true`."
         }
       ],
       "extra": {},
@@ -753,7 +753,12 @@
           "name": "buyerDetails",
           "type": "wix-ecom.ecom-additional-fees.BuyerDetails",
           "doc": "Buyer details."
-        }
+        },
+        {
+          "name": "ecomId",
+          "type": "string",
+          "doc": "Wix eCommerce ID.\n\n`eComId` stays consistent with an eCommerce element as it flows through cart, checkout, and order."
+        }        
       ],
       "extra": {},
       "labels": []
