@@ -757,7 +757,7 @@
         {
           "name": "ecomId",
           "type": "string",
-          "doc": "Wix eCommerce ID.\n\n`eComId` stays consistent with an eCommerce element as it flows through cart, checkout, and order."
+          "doc": "Wix eCommerce ID.\n\n`eComId` stays consistent for an eCommerce element as it flows through cart, checkout, and order."
         }        
       ],
       "extra": {},
