@@ -1,4 +1,5 @@
 { "name": "bookings-custom-pricing",
+  "memberOf": "wix-bookings",
   "mixes": [],
   "labels":
     [ "changed" ],
