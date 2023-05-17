@@ -32,6 +32,11 @@
           "name": "eCommerce Additional Fees",
           "url": "./overview-ecom-additional-fees.md",
           "isMdFile": true
+        },
+        {
+          "name": "Bookings Custom Pricing",
+          "url": "./overview-bookings-custom-pricing.md",
+          "isMdFile": true
         }
       ]
     }
