@@ -327,7 +327,7 @@
         {
           "name": "catalogItemId",
           "type": "string",
-          "doc": "ID of the item within the custom catalog."
+          "doc": "Catalog item ID. For example, `productId` for Wix Stores or `eventId` for Wix Events."
         },
         {
           "name": "appId",
