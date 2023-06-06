@@ -60,7 +60,7 @@
           " + **Connect to Google Operations:** You can easily connect your Wix site events",
           "   to Google's external monitoring tool. Google Operations performs log analysis and ",
           "   generates visual depictions of site event data, allowing you to extract meaningful ",
-          "   insights from your site events. [Learn more](https://support.wix.com/en/article/velo-connecting-site-events-to-google-stackdriver).",
+          "   insights from your site events. [Learn more](https://support.wix.com/en/article/velo-connecting-site-monitoring-events-to-google-operations-formerly-stackdriver).",
           " + **Connect to an external monitoring tool:** You can connect your Wix site",
           "   events to a monitoring tool of your choice to generate metrics and analyze",
           "   logs. [Learn more](https://support.wix.com/en/article/connecting-site-events-to-a-monitoring-tool).",
