@@ -14,12 +14,12 @@
       "to their site. These additional fees are calculated and seen in all eCommerce platform pages, ",
       "including cart, checkout, orders, and payments.",
       "",
-      "Wix eCommerce calls the SPI endpoint [`calculateAdditionalFees()`](https://www.wix.com/velo/reference/ecom-additional-fees/calculateadditionalfees) ",
+      "Wix eCommerce calls the SPI endpoint [`calculateAdditionalFees()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-additional-fees/calculateadditionalfees) ",
       "to retrieve the relevant data for a site collaborator to add additional fees. ",
       "Collaborators can then implement their own logic to calculate additional fees, and return the calculated fee ",
       "data in the structure provided by Wix eCommerce. ",
       "",
-      "Note that `currency` in the [`calculateAdditionalFees`](https://www.wix.com/velo/reference/ecom-additional-fees/calculateadditionalfees) response must match ",
+      "Note that `currency` in the [`calculateAdditionalFees`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-additional-fees/calculateadditionalfees) response must match ",
       "your site's currency. You can find the currency of your site using the [`getPaymentCurrency()`](https://www.wix.com/velo/reference/wix-site-backend/generalinfo-obj/getpaymentcurrency)",
       "function. ",
       "",
@@ -358,7 +358,7 @@
         {
           "name": "catalogItemId",
           "type": "string",
-          "doc": "ID of the item within the [custom catalog](https://www.wix.com/velo/reference/ecom-catalog/getcatalogitems)."
+          "doc": "Catalog item ID. For example, `productId` for Wix Stores or `eventId` for Wix Events."
         },
         {
           "name": "appId",
