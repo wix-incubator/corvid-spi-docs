@@ -13,6 +13,7 @@
         [ "The Custom Pricing SPI is a service provider interface that allows site owners and collaborators to add custom pricing ",
           "to bookings on their site. The custom pricing is calculated and used as the basis for the price",
           "when checking out the booking, overriding the standard Bookings pricing logic.",
+          "Examples of custom pricing are surcharges for weekend rates or use of special equipment. ",
           "",
           "Wix Bookings calls the SPI endpoint [`calculatePrice()`](#calculateprice) ",
           "to retrieve the relevant data for a site collaborator to customize the price. ",
@@ -22,7 +23,9 @@
           "is your site's currency. You can find the currency of your site using the [`getPaymentCurrency()`](https://www.wix.com/velo/reference/wix-site-backend/generalinfo-obj/getpaymentcurrency)",
           "function. ",
           "",
-          "Learn more about the [Bookings Custom Pricing SPI custom extension](https://support.wix.com/en/article/velo-tutorial-bookings-pricing-custom-extension)." ],
+          "Learn more:",
+          "+ [Bookings Custom Pricing SPI custom extension](https://support.wix.com/en/article/velo-tutorial-bookings-pricing-custom-extension).",
+          "+ [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)" ],
       "links": [],
       "examples": [],
       "extra":
