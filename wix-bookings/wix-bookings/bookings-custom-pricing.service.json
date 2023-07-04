@@ -1,6 +1,4 @@
 { "name": "bookings-custom-pricing",
-  "layoutType": "JS",
-  "memberOf": "wix-bookings",
   "mixes": [],
   "labels":
     [ "changed" ],
@@ -12,17 +10,19 @@
       "description":
         [ "The Custom Pricing SPI is a service provider interface that allows site owners and collaborators to add custom pricing ",
           "to bookings on their site. The custom pricing is calculated and used as the basis for the price",
-          "when checking out the booking, overriding the standard Bookings pricing logic.",
+          "when checking out the booking, overriding the standard Bookings pricing logic. Examples of custom pricing include surcharges for weekend rates or use of special equipment.",
           "",
-          "Wix Bookings calls the SPI endpoint [`calculatePrice()`](#calculateprice) ",
-          "to retrieve the relevant data for a site collaborator to customize the price. ",
+          "Wix Bookings calls the [`calculatePrice()`](https://www.wix.com/velo/reference/spis/bookings-custom-pricing/bookings-custom-pricing/calculateprice) ",
+          "Velo SPI function to retrieve the relevant data for a site collaborator to customize the price. ",
           "Site collaborators can then implement their own logic to calculate and return the price. ",
           "",
           "Note that the `currency` used by `calculatePrice()`",
           "is your site's currency. You can find the currency of your site using the [`getPaymentCurrency()`](https://www.wix.com/velo/reference/wix-site-backend/generalinfo-obj/getpaymentcurrency)",
           "function. ",
           "",
-          "Learn more about the [Bookings Custom Pricing SPI custom extension](https://support.wix.com/en/article/velo-tutorial-bookings-pricing-custom-extension)." ],
+          "Learn more:",
+          "+ [Bookings Custom Pricing SPI custom extension](https://support.wix.com/en/article/velo-tutorial-bookings-pricing-custom-extension)",
+          "+ [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)" ],
       "links": [],
       "examples": [],
       "extra":
@@ -30,18 +30,17 @@
   "properties": [],
   "operations":
     [ { "name": "calculatePrice",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "wix-bookings.bookings-custom-pricing.Options",
+              "type": "bookings-custom-pricing.Options",
               "doc": "Options for calculating the price, including the actual booking." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-bookings.bookings-custom-pricing.CalculatePriceResponse" ] },
+                  [ "bookings-custom-pricing.CalculatePriceResponse" ] },
             "doc": "Fulfilled - The calculated price for the booking." },
         "locations":
           [ { "lineno": 245,
@@ -71,9 +70,9 @@
                       "  const rate = weekendRate == \"true\" ? prices.weekend : prices.weekday;",
                       "",
                       "  const finalPrice = numberOfParticipants * rate +",
-                      "      addon1Value * prices.addon1 +",
-                      "      addon2Value * prices.addon2 +",
-                      "      addon3Value * prices.addon3",
+                      "    addon1Value * prices.addon1 +",
+                      "    addon2Value * prices.addon2 +",
+                      "    addon3Value * prices.addon3",
                       "  ;",
                       "",
                       "    return {calculatedPrice: finalPrice};",
@@ -81,8 +80,8 @@
                       "",
                       "// Retrieve the charge for each given `additionalField` for the booking.",
                       "export function getFieldValue(additionalFields, text) {",
-                      "    const foundFieldArray = additionalFields.filter(additionalField => additionalField.label === text);",
-                      "    return foundFieldArray.length === 0 ? undefined : foundFieldArray[0].value;",
+                      "  const foundFieldArray = additionalFields.filter(additionalField => additionalField.label === text);",
+                      "  return foundFieldArray.length === 0 ? undefined : foundFieldArray[0].value;",
                       "}" ],
                   "extra":
                     { "description": "This example calculates the custom price for booking a massage using cheaper rates for weekdays and with additional options." } } ],
@@ -126,11 +125,11 @@
               {  } },
         "members":
           [ { "name": "slot",
-              "type": "wix-bookings.bookings-custom-pricing.Slot",
+              "type": "bookings-custom-pricing.Slot",
               "doc": "The booked slot, once booked becomes a session, The booking is automatically assigned to the session if it already exists, or creates a session if one doesn't already exist.",
               "optional": true },
             { "name": "schedule",
-              "type": "wix-bookings.bookings-custom-pricing.Schedule",
+              "type": "bookings-custom-pricing.Schedule",
               "doc": "The booked schedule. The booking is automatically assigned to the schedule's sessions.",
               "optional": true },
             { "name": "title",
@@ -174,13 +173,13 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.CustomFormField" ] },
+                    [ "bookings-custom-pricing.CustomFormField" ] },
               "doc": "Additional custom fields submitted with the booking form." },
             { "name": "bookedEntity",
-              "type": "wix-bookings.bookings-custom-pricing.BookedEntity",
+              "type": "bookings-custom-pricing.BookedEntity",
               "doc": "An object describing the slot or schedule that was booked." },
             { "name": "contactDetails",
-              "type": "wix-bookings.bookings-custom-pricing.ContactDetails",
+              "type": "bookings-custom-pricing.ContactDetails",
               "doc": "Contact details of the site visitor or member making the booking." },
             { "name": "startDate",
               "type": "string",
@@ -189,13 +188,13 @@
               "type": "string",
               "doc": "The end date of this booking in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format.  For a slot, this is the end date of the slot. For a schedule, this is the end date of the last session." },
             { "name": "createdBy",
-              "type": "wix-bookings.bookings-custom-pricing.CommonIdentificationData",
+              "type": "bookings-custom-pricing.CommonIdentificationData",
               "doc": "ID of the creator of the booking. If `appId` and another ID are present, the other ID takes precedence." },
             { "name": "doubleBooked",
               "type": "boolean",
               "doc": "Whether this booking overlaps another existing confirmed booking." },
             { "name": "extendedFields",
-              "type": "wix-bookings.bookings-custom-pricing.ExtendedFields",
+              "type": "bookings-custom-pricing.ExtendedFields",
               "doc": "Additional custom fields. This includes fields managed by Wix, by 3rd-party apps, and by the site." },
             { "name": "externalUserId",
               "type": "string",
@@ -217,7 +216,7 @@
               "doc": "Total number of participants. Available only when the booking includes a single service variant.",
               "optional": true },
             { "name": "participantsChoices",
-              "type": "wix-bookings.bookings-custom-pricing.ParticipantsChoices",
+              "type": "bookings-custom-pricing.ParticipantsChoices",
               "doc": "Information about the booked service choices and participants. Available only when the booking includes multiple service variants.",
               "optional": true } ],
         "extra":
@@ -243,32 +242,6 @@
         "extra":
           {  },
         "labels": [] },
-      { "name": "Choice",
-        "locations":
-          [ { "lineno": 167,
-              "filename": "custom-pricing.js" } ],
-        "docs":
-          { "description":
-              [ "Service choices for these participants." ],
-            "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "optionId",
-              "type": "string",
-              "doc": "ID of the corresponding option for the choice. For example, the choice `child` could correspond to the option `ageGroup`. In this case, `optionId` is the ID for the `ageGroup` option." },
-            { "name": "custom",
-              "type": "string",
-              "doc": "Value for one of the choices in the CustomServiceOption.choices list. Choices are specific values for an option the customer can choose to book. For example, the option `ageGroup` may have these choices: `child`, `student`, `adult`, and `senior`. Each choice may have a different price.",
-              "optional": true } ],
-        "extra":
-          { "oneOfGroups":
-              [ { "name": "choiceType",
-                  "members":
-                    [ "custom" ] } ] },
-        "labels":
-          [ "removed" ] },
       { "name": "CommonIdentificationData",
         "locations":
           [ { "lineno": 146,
@@ -327,7 +300,7 @@
               "type": "string",
               "doc": "Contact's phone number." },
             { "name": "fullAddress",
-              "type": "wix-bookings.bookings-custom-pricing.FullAddress",
+              "type": "bookings-custom-pricing.FullAddress",
               "doc": "Contact's full address." },
             { "name": "countryCode",
               "type": "string",
@@ -420,7 +393,7 @@
               "type": "string",
               "doc": "Contact's phone number." },
             { "name": "geocode",
-              "type": "wix-bookings.bookings-custom-pricing.AddressLocation",
+              "type": "bookings-custom-pricing.AddressLocation",
               "doc": "Coordinates of the physical address." },
             { "name": "hint",
               "type": "string",
@@ -435,14 +408,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.Subdivisions" ] },
+                    [ "bookings-custom-pricing.Subdivisions" ] },
               "doc": "Multi-level subdivisions from top to bottom." },
             { "name": "addressLine",
               "type": "string",
               "doc": "Main address line, usually street and number, as free text.",
               "optional": true },
             { "name": "streetAddress",
-              "type": "wix-bookings.bookings-custom-pricing.StreetAddress",
+              "type": "bookings-custom-pricing.StreetAddress",
               "doc": "Street name, number and apartment number.",
               "optional": true } ],
         "extra":
@@ -492,7 +465,7 @@
               {  } },
         "members":
           [ { "name": "booking",
-              "type": "wix-bookings.bookings-custom-pricing.Booking",
+              "type": "bookings-custom-pricing.Booking",
               "doc": "Booking to calculate custom pricing for." } ],
         "extra":
           {  },
@@ -510,7 +483,7 @@
               {  } },
         "members":
           [ { "name": "serviceChoices",
-              "type": "wix-bookings.bookings-custom-pricing.ServiceChoices",
+              "type": "bookings-custom-pricing.ServiceChoices",
               "doc": "Information about the booked service's choices. Includes the number of participants." } ],
         "extra":
           {  },
@@ -564,7 +537,7 @@
               "type": "string",
               "doc": "The end time of the last session in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format." },
             { "name": "location",
-              "type": "wix-bookings.bookings-custom-pricing.Location",
+              "type": "bookings-custom-pricing.Location",
               "doc": "Location where the schedule's sessions take place." },
             { "name": "serviceId",
               "type": "string",
@@ -616,7 +589,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.ServiceChoice" ] },
+                    [ "bookings-custom-pricing.ServiceChoice" ] },
               "doc": "Service choice for participants." },
             { "name": "numberOfParticipants",
               "type": "number",
@@ -658,14 +631,15 @@
               "type": "string",
               "doc": "The date the booking was last updated." },
             { "name": "resource",
-              "type": "wix-bookings.bookings-custom-pricing.Resource",
+              "type": "bookings-custom-pricing.Resource",
               "doc": "The resource assigned to the slot." },
             { "name": "location",
-              "type": "wix-bookings.bookings-custom-pricing.Location",
+              "type": "bookings-custom-pricing.Location",
               "doc": "Location where the slot's session takes place." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "StreetAddress",
         "locations":
           [ { "lineno": 75,
@@ -727,7 +701,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.Subdivision" ] },
+                    [ "bookings-custom-pricing.Subdivision" ] },
               "doc": "Subdivision code. Usually state, region, prefecture or province code, according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)." } ],
         "extra":
           {  },
