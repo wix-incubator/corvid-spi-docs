@@ -1,85 +1,72 @@
 {
-   "name":"ecom-custom-discount-triggers",
+   "name": "ecom-custom-discount-triggers",
    "layoutType": "JS",
-   "mixes":[
-      
+   "mixes": [],
+   "labels": [
+      "new"
    ],
-   "labels":[
-      "changed"
-   ],
-   "location":{
-      "lineno":1,
-      "filename":"ecom-custom-discount-triggers-spi-index.js"
+   "location": {
+      "lineno": 1,
+      "filename": "ecom-custom-discount-triggers-spi-index.js"
    },
-   "docs":{
-      "summary":"The eCommerce Custom Discount Triggers SPI.",
-      "description":[
+   "docs": {
+      "summary": "The eCommerce Custom Discount Triggers SPI.",
+      "description": [
+         "> **Note:** This SPI is currently in beta and is subject to change.",
+         "",
          "The eCommerce Custom Discount Triggers SPI allows you to provide custom triggers that specify when an item can be discounted.",
          "",
          "Custom triggers play a part in the definition of discount rules - sets of triggers and scopes that together define the necessary conditions for a discount to apply to items in the cart/checkout.",
          "",
-         "Wix eCommerce calls the SPI endpoint [`getEligibleTriggers()`](https://www.wix.com/velo/reference/spis/ecom-custom-discount-triggers/geteligibletriggers) when items are added to the cart or checkout to check whether those items qualify for a discount.",
-         "",
          "## Before you begin",
-         "To use a custom trigger, first create an [automatic discount using the dashboard](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts), or by using the [Discount Rules API](https://www.wix.com/velo/reference/wix-ecom-backend/discountrules/creatediscountrule)."
+         "To use a custom trigger:",
+         "+ Provide your custom triggers by implementing the [`listTriggers()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/listtriggers) function.",
+         "+ Implement the [`getEligibleTriggers()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/geteligibletriggers) and provide the logic needed for applying the relevant custom triggers.",
+         "+ [Create an automatic discount using the dashboard](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts), or by using the [Discount Rules API](https://www.wix.com/velo/reference/wix-ecom-backend/discountrules/creatediscountrule)."
       ],
-      "links":[
-         
-      ],
-      "examples":[
-         
-      ],
-      "extra":{
-         
-      }
+      "links": [],
+      "examples": [],
+      "extra": {}
    },
-   "properties":[
-      
-   ],
-   "operations":[
+   "properties": [],
+   "operations": [
       {
-         "name":"getEligibleTriggers",
-         "labels":[
-            
-         ],
-         "nameParams":[
-            
-         ],
-         "params":[
+         "name": "getEligibleTriggers",
+         "labels": [],
+         "nameParams": [],
+         "params": [
             {
-               "name":"options",
-               "type":"ecom-custom-discount-triggers.Options",
-               "doc":"Line items and triggers."
+               "name": "options",
+               "type": "ecom-custom-discount-triggers.Options",
+               "doc": "Line items and triggers."
             }
          ],
-         "ret":{
-            "type":{
-               "name":"Promise",
-               "typeParams":[
+         "ret": {
+            "type": {
+               "name": "Promise",
+               "typeParams": [
                   "ecom-custom-discount-triggers.EligibleTriggers"
                ]
             },
-            "doc":"Fulfilled - List of eligible triggers."
+            "doc": "Fulfilled - List of eligible triggers."
          },
-         "locations":[
+         "locations": [
             {
-               "lineno":1,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 1,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "summary":"Retrieves eligible custom discount triggers based on the provided items. The retrieved custom triggers are based on your own business logic.",
-            "description":[
+         "docs": {
+            "summary": "Retrieves eligible custom discount triggers based on the provided items. The retrieved custom triggers are based on your own business logic.",
+            "description": [
                "The `getEligibleTriggers()` function determines whether a cart or checkout's items meet the conditions for a discount to apply to an item.",
                "The function is automatically called by Wix eCommerce when actions are performed on the cart or checkout entities/pages. For example, when adding an item to the cart."
             ],
-            "links":[
-               
-            ],
-            "examples":[
+            "links": [],
+            "examples": [
                {
-                  "title":"Return trigger based on the color of an item",
-                  "body":[
+                  "title": "Return trigger based on the color of an item",
+                  "body": [
                      "export const getEligibleTriggers = (options) => {",
                      "",
                      "  const colors = options.lineItems.map(item => item.catalogReference.options.options.Color);",
@@ -100,333 +87,359 @@
                      "    }",
                      "  }",
                      "  return result",
-                     "};",
-                     "",
-                     "const customTriggers = [",
-                     "  {",
-                     "    _id: \"1\",",
-                     "    name: \"Grey item custom trigger\"",
-                     "  },",
-                     "  {",
-                     "    _id: \"2\",",
-                     "    name: \"Red item custom trigger\"",
-                     "  },",
-                     "  {",
-                     "    _id: \"3\",",
-                     "    name: \"Blue item custom trigger\"",
-                     "  }",
-                     "];"
+                     "};"
                   ],
-                  "extra":{
-                     
-                  }
+                  "extra": {}
                }
             ],
-            "extra":{
-               
-            }
+            "extra": {}
          },
-         "extra":{
-            "customLabels":[
+         "extra": {
+            "customLabels": [
                {
-                  "id":"maturity-beta"
+                  "id": "maturity-beta"
+               }
+            ]
+         }
+      },
+      {
+         "name": "listTriggers",
+         "labels": [],
+         "nameParams": [],
+         "params": [],
+         "ret": {
+            "type": {
+               "name": "Promise",
+               "typeParams": [
+                  "ecom-custom-discount-triggers.ListCustomTriggers"
+               ]
+            },
+            "doc": "Fulfilled - List of eligible triggers."
+         },
+         "locations": [
+            {
+               "lineno": 15,
+               "filename": "ecom-custom-discount-triggers-spi.js"
+            }
+         ],
+         "docs": {
+            "summary": "Retrieves all available custom triggers.",
+            "description": [
+               "The `listTriggers()` function lists all custom triggers provided by your business logic.",
+               "The function is automatically called by Wix eCommerce to populate the custom [minimum requirements section of an automatic discount](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts#:~:text=Create%20minimum%20requirements)."
+            ],
+            "links": [],
+            "examples": [
+               {
+                  "title": "List custom triggers",
+                  "body": [
+                     "export const listTriggers = async () => {",
+                     "  return {",
+                     "    customTriggers: [",
+                     "      {",
+                     "        _id: \"1\",",
+                     "        name: \"Grey Item Custom Trigger\"",
+                     "      },",
+                     "      {",
+                     "        _id: \"2\",",
+                     "        name: \"Blue Item Custom Trigger\"",
+                     "      },",
+                     "      {",
+                     "        _id: \"3\",",
+                     "        name: \"Red Item Custom Trigger\"",
+                     "      }",
+                     "    ]",
+                     "  }",
+                     "};"
+                  ],
+                  "extra": {}
+               }
+            ],
+            "extra": {}
+         },
+         "extra": {
+            "customLabels": [
+               {
+                  "id": "maturity-beta"
                }
             ]
          }
       }
    ],
-   "callbacks":[
-      
-   ],
-   "messages":[
+   "callbacks": [],
+   "messages": [
       {
-         "name":"CatalogReference",
-         "locations":[
+         "name": "CatalogReference",
+         "locations": [
             {
-               "lineno":46,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 60,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"catalogItemId",
-               "type":"string",
-               "doc":"ID of the item in its Wix or 3rd-party catalog. For example, `productId` for Wix Stores or `bookingId` for Wix Bookings."
+               "name": "catalogItemId",
+               "type": "string",
+               "doc": "ID of the item in its Wix or 3rd-party catalog. For example, `productId` for Wix Stores or `bookingId` for Wix Bookings."
             },
             {
-               "name":"appId",
-               "type":"string",
-               "doc":"ID of the catalog app. For items from Wix apps, the following values always apply:\n+ Wix Stores: \"215238eb-22a5-4c36-9e7b-e7c08025e04e\"\n+ Wix Bookings: \"13d21c63-b5ec-5912-8397-c3a5ddb27a97\""
+               "name": "appId",
+               "type": "string",
+               "doc": "ID of the catalog app. For items from Wix apps, the following values always apply:\n+ Wix Stores: \"215238eb-22a5-4c36-9e7b-e7c08025e04e\"\n+ Wix Bookings: \"13d21c63-b5ec-5912-8397-c3a5ddb27a97\""
             },
             {
-               "name":"options",
-               "type":"Object",
-               "doc":"Additional info in key:value pair form. For example, `{\"options\": {\"options\": {\"Size\": \"M\", \"Color\": \"Red\"}}}` or `{\"options\": {\"variantId\": \"<VARIANT_ID>\"}}`."
+               "name": "options",
+               "type": "Object",
+               "doc": "Additional info in key:value pair form. For example, `{\"options\": {\"options\": {\"Size\": \"M\", \"Color\": \"Red\"}}}` or `{\"options\": {\"variantId\": \"<VARIANT_ID>\"}}`."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       },
       {
-         "name":"CustomTrigger",
-         "locations":[
+         "name": "CustomTrigger",
+         "locations": [
             {
-               "lineno":37,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 50,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"id",
-               "type":"string",
-               "doc":"Custom trigger ID."
+               "name": "id",
+               "type": "string",
+               "doc": "Custom trigger ID."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       },
       {
-         "name":"EligibleTrigger",
-         "locations":[
+         "name": "EligibleTrigger",
+         "locations": [
             {
-               "lineno":62,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 76,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"customTriggerId",
-               "type":"string",
-               "doc":"Custom trigger ID. Must be passed with relevant `identifier`."
+               "name": "customTriggerId",
+               "type": "string",
+               "doc": "Custom trigger ID. Must be passed with relevant `identifier`."
             },
             {
-               "name":"identifier",
-               "type":"string",
-               "doc":"Unique trigger identifier. The value must be the same as its equivalent in `triggers[i].identifier` in the request payload."
+               "name": "identifier",
+               "type": "string",
+               "doc": "Unique trigger identifier. The value must be the same as its equivalent in `triggers[i].identifier` in the request payload."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       },
       {
-         "name":"EligibleTriggers",
-         "locations":[
+         "name": "EligibleTriggers",
+         "locations": [
             {
-               "lineno":57,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 71,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"eligibleTriggers",
-               "type":{
-                  "name":"Array",
-                  "typeParams":[
+               "name": "eligibleTriggers",
+               "type": {
+                  "name": "Array",
+                  "typeParams": [
                      "ecom-custom-discount-triggers.EligibleTrigger"
                   ]
                },
-               "doc":"List of eligible triggers. These are used by the Discount Rules API and Wix eCommerce to apply the relevant discount."
+               "doc": "List of eligible triggers. These are used by the Discount Rules API and Wix eCommerce to apply the relevant discount."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       },
       {
-         "name":"LineItem",
-         "locations":[
+         "name": "LineItem",
+         "locations": [
             {
-               "lineno":23,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 36,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"id",
-               "type":"string",
-               "doc":"Line item ID."
+               "name": "id",
+               "type": "string",
+               "doc": "Line item ID."
             },
             {
-               "name":"quantity",
-               "type":"number",
-               "doc":"Item quantity in this line item."
+               "name": "quantity",
+               "type": "number",
+               "doc": "Item quantity in this line item."
             },
             {
-               "name":"price",
-               "type":"string",
-               "doc":"Price of a single item."
+               "name": "catalogReference",
+               "type": "ecom-custom-discount-triggers.CatalogReference",
+               "doc": "Catalog and item reference. Holds IDs for the item and the catalog it came from, as well as further optional info."
             },
             {
-               "name":"catalogReference",
-               "type":"ecom-custom-discount-triggers.CatalogReference",
-               "doc":"Catalog and item reference. Holds IDs for the item and the catalog it came from, as well as further optional info."
+               "name": "price",
+               "type": "string",
+               "doc": "Price of a single item."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       },
       {
-         "name":"Options",
-         "locations":[
+         "name": "ListCustomTrigger",
+         "locations": [
             {
-               "lineno":17,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 87,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"lineItems",
-               "type":{
-                  "name":"Array",
-                  "typeParams":[
+               "name": "id",
+               "type": "string",
+               "doc": "Custom trigger ID."
+            },
+            {
+               "name": "name",
+               "type": "string",
+               "doc": "Custom trigger name for display in the dashboard."
+            }
+         ],
+         "extra": {},
+         "labels": []
+      },
+      {
+         "name": "ListCustomTriggers",
+         "locations": [
+            {
+               "lineno": 82,
+               "filename": "ecom-custom-discount-triggers-spi.js"
+            }
+         ],
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
+         },
+         "members": [
+            {
+               "name": "customTriggers",
+               "type": {
+                  "name": "Array",
+                  "typeParams": [
+                     "ecom-custom-discount-triggers.ListCustomTrigger"
+                  ]
+               },
+               "doc": "List of custom triggers."
+            }
+         ],
+         "extra": {},
+         "labels": []
+      },
+      {
+         "name": "Options",
+         "locations": [
+            {
+               "lineno": 30,
+               "filename": "ecom-custom-discount-triggers-spi.js"
+            }
+         ],
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
+         },
+         "members": [
+            {
+               "name": "lineItems",
+               "type": {
+                  "name": "Array",
+                  "typeParams": [
                      "ecom-custom-discount-triggers.LineItem"
                   ]
                },
-               "doc":"List of line items in the cart/checkout."
+               "doc": "List of line items in the cart/checkout."
             },
             {
-               "name":"triggers",
-               "type":{
-                  "name":"Array",
-                  "typeParams":[
+               "name": "triggers",
+               "type": {
+                  "name": "Array",
+                  "typeParams": [
                      "ecom-custom-discount-triggers.Trigger"
                   ]
                },
-               "doc":"List of triggers to be checked for discount eligibility."
+               "doc": "List of triggers to be checked for discount eligibility."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       },
       {
-         "name":"Trigger",
-         "locations":[
+         "name": "Trigger",
+         "locations": [
             {
-               "lineno":31,
-               "filename":"ecom-custom-discount-triggers-spi.js"
+               "lineno": 44,
+               "filename": "ecom-custom-discount-triggers-spi.js"
             }
          ],
-         "docs":{
-            "links":[
-               
-            ],
-            "examples":[
-               
-            ],
-            "extra":{
-               
-            }
+         "docs": {
+            "links": [],
+            "examples": [],
+            "extra": {}
          },
-         "members":[
+         "members": [
             {
-               "name":"customTrigger",
-               "type":"ecom-custom-discount-triggers.CustomTrigger",
-               "doc":"Custom trigger info."
+               "name": "customTrigger",
+               "type": "ecom-custom-discount-triggers.CustomTrigger",
+               "doc": "Custom trigger info."
             },
             {
-               "name":"identifier",
-               "type":"string",
-               "doc":"Unique trigger identifier. The same value must be returned in `eligibleTriggers[i].identifier`."
+               "name": "identifier",
+               "type": "string",
+               "doc": "Unique trigger identifier. The same value must be returned in `eligibleTriggers[i].identifier`."
             }
          ],
-         "extra":{
-            
-         },
-         "labels":[
-            
-         ]
+         "extra": {},
+         "labels": []
       }
    ],
-   "extra":{
-      
-   }
+   "extra": {}
 }
