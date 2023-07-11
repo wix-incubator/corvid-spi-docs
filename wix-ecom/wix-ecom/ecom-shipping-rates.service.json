@@ -16,7 +16,7 @@
       "or external shipping rate options that don't come natively with Wix in your eCommerce purchase flows. These rates are displayed on your store's cart and checkout pages.",
       "For example, you're not limited to how Wix apps, such as Wix Stores and Wix Bookings, define the number of shipping providers to choose from.",
       "",
-      "Wix eCommerce calls the SPI endpoint [`getShippingRates()`](https://www.wix.com/velo/reference/spis/ecom-shipping-rates/getshippingrates) to retrieve the relevant shipping rates.",
+      "Wix eCommerce calls the SPI endpoint [`getShippingRates()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-shipping-rates/getshippingrates) to retrieve the relevant shipping rates.",
       "",
       "Learn more:",
       "   + [Shipping Rates custom extension](https://support.wix.com/en/article/velo-tutorial-shipping-rates-custom-extension-beta)",
