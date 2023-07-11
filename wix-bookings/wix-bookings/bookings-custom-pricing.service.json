@@ -16,7 +16,7 @@
       "to bookings on their site. The custom pricing is calculated and used as the basis for the price",
       "when checking out the booking, overriding the standard Bookings pricing logic. Examples of custom pricing include surcharges for weekend rates or use of special equipment.",
       "",
-      "Wix Bookings calls the [`calculatePrice()`](https://www.wix.com/velo/reference/spis/wix-bookings/bookings-custom-pricing/bookings-custom-pricing/calculateprice) ",
+      "Wix Bookings calls the [`calculatePrice()`](https://www.wix.com/velo/reference/spis/wix-bookings/bookings-custom-pricing/calculateprice) ",
       "Velo SPI function to retrieve the relevant data for a site collaborator to customize the price. ",
       "Site collaborators can then implement their own logic to calculate and return the price. ",
       "",
