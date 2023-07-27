@@ -1,5 +1,6 @@
 {
   "name": "ecom-validations",
+  "layoutType": "JS",
   "mixes": [],
   "labels": [
     "changed"
@@ -73,7 +74,7 @@
       "params": [
         {
           "name": "options",
-          "type": "ecom-validations.Options",
+          "type": "wix-ecom.ecom-validations.Options",
           "doc": "Validation options."
         }
       ],
@@ -81,7 +82,7 @@
         "type": {
           "name": "Promise",
           "typeParams": [
-            "ecom-validations.GetValidationViolationsResponse"
+            "wix-ecom.ecom-validations.GetValidationViolationsResponse"
           ]
         },
         "doc": "Fulfilled - Validation violations."
@@ -240,7 +241,7 @@
         },
         {
           "name": "streetAddress",
-          "type": "ecom-validations.StreetAddressInfo",
+          "type": "wix-ecom.ecom-validations.StreetAddressInfo",
           "doc": "Street address object, with street number and name in separate properties.",
           "optional": true
         },
@@ -359,19 +360,19 @@
         },
         {
           "name": "coupon",
-          "type": "ecom-validations.Coupon",
+          "type": "wix-ecom.ecom-validations.Coupon",
           "doc": "Coupon details.",
           "optional": true
         },
         {
           "name": "merchantDiscount",
-          "type": "ecom-validations.MerchantDiscount",
+          "type": "wix-ecom.ecom-validations.MerchantDiscount",
           "doc": "Merchant discount.",
           "optional": true
         },
         {
           "name": "discountRule",
-          "type": "ecom-validations.DiscountRule",
+          "type": "wix-ecom.ecom-validations.DiscountRule",
           "doc": "Discount rule.",
           "optional": true
         }
@@ -406,12 +407,12 @@
       "members": [
         {
           "name": "address",
-          "type": "ecom-validations.AddressDetails",
+          "type": "wix-ecom.ecom-validations.AddressDetails",
           "doc": "Address."
         },
         {
           "name": "contactDetails",
-          "type": "ecom-validations.ContactDetails",
+          "type": "wix-ecom.ecom-validations.ContactDetails",
           "doc": "Contact details."
         }
       ],
@@ -516,7 +517,7 @@
         },
         {
           "name": "vatId",
-          "type": "ecom-validations.VatId",
+          "type": "wix-ecom.ecom-validations.VatId",
           "doc": "Tax information (for Brazil only). If `vatId.id` is provided, `vatId.type` must also be set.",
           "optional": true
         }
@@ -550,7 +551,7 @@
         },
         {
           "name": "amount",
-          "type": "ecom-validations.Amount",
+          "type": "wix-ecom.ecom-validations.Amount",
           "doc": "Coupon value."
         },
         {
@@ -581,7 +582,7 @@
           "type": {
             "name": "Array",
             "typeParams": [
-              "ecom-validations.Field"
+              "wix-ecom.ecom-validations.Field"
             ]
           },
           "doc": "List of custom fields."
@@ -662,12 +663,12 @@
         },
         {
           "name": "name",
-          "type": "ecom-validations.NameRule",
+          "type": "wix-ecom.ecom-validations.NameRule",
           "doc": "Discount rule name."
         },
         {
           "name": "amount",
-          "type": "ecom-validations.AmountRule",
+          "type": "wix-ecom.ecom-validations.AmountRule",
           "doc": "Discount value."
         }
       ],
@@ -690,7 +691,7 @@
       "members": [
         {
           "name": "value",
-          "type": "ecom-validations.Value",
+          "type": "wix-ecom.ecom-validations.Value",
           "doc": "Custom field value."
         },
         {
@@ -726,7 +727,7 @@
           "type": {
             "name": "Array",
             "typeParams": [
-              "ecom-validations.Violation"
+              "wix-ecom.ecom-validations.Violation"
             ]
           },
           "doc": "List of validation violations."
@@ -801,32 +802,32 @@
         },
         {
           "name": "catalogReference",
-          "type": "ecom-validations.CatalogReference",
+          "type": "wix-ecom.ecom-validations.CatalogReference",
           "doc": "Catalog and item reference. Includes IDs for the item and the catalog it came from, as well as further optional info."
         },
         {
           "name": "productName",
-          "type": "ecom-validations.ProductName",
+          "type": "wix-ecom.ecom-validations.ProductName",
           "doc": "Product name.\nFor example, \n+ Stores: `product.name` \n+ Bookings: `service.info.name` \n+ Events: `ticket.name`"
         },
         {
           "name": "price",
-          "type": "ecom-validations.Price",
+          "type": "wix-ecom.ecom-validations.Price",
           "doc": "Price of the item **after** catalog-defined discount and line item discounts."
         },
         {
           "name": "physicalProperties",
-          "type": "ecom-validations.PhysicalProperties",
+          "type": "wix-ecom.ecom-validations.PhysicalProperties",
           "doc": "Physical properties of the item. When relevant, contains information such as SKU, item weight, and shippability."
         },
         {
           "name": "itemType",
-          "type": "ecom-validations.ItemType",
+          "type": "wix-ecom.ecom-validations.ItemType",
           "doc": "Item type."
         },
         {
           "name": "subscriptionOptionInfo",
-          "type": "ecom-validations.SubscriptionOptionInfo",
+          "type": "wix-ecom.ecom-validations.SubscriptionOptionInfo",
           "doc": "[Subscription option](https://support.wix.com/en/article/wix-stores-selling-product-subscriptions) information. A subscription is a product that is sold on a recurring basis."
         }
       ],
@@ -877,7 +878,7 @@
       "members": [
         {
           "name": "amount",
-          "type": "ecom-validations.AmountMerchant",
+          "type": "wix-ecom.ecom-validations.AmountMerchant",
           "doc": "Discount value."
         }
       ],
@@ -928,12 +929,12 @@
       "members": [
         {
           "name": "sourceInfo",
-          "type": "ecom-validations.SourceInfo",
+          "type": "wix-ecom.ecom-validations.SourceInfo",
           "doc": "Information about the source of the request."
         },
         {
           "name": "validationInfo",
-          "type": "ecom-validations.ValidationInfo",
+          "type": "wix-ecom.ecom-validations.ValidationInfo",
           "doc": "Information to validate."
         }
       ],
@@ -1035,32 +1036,32 @@
       "members": [
         {
           "name": "subtotal",
-          "type": "ecom-validations.Subtotal",
+          "type": "wix-ecom.ecom-validations.Subtotal",
           "doc": "Subtotal of all line items, before discounts and before tax."
         },
         {
           "name": "shipping",
-          "type": "ecom-validations.Shipping",
+          "type": "wix-ecom.ecom-validations.Shipping",
           "doc": "Total shipping price, before discounts and before tax."
         },
         {
           "name": "tax",
-          "type": "ecom-validations.Tax",
+          "type": "wix-ecom.ecom-validations.Tax",
           "doc": "Total tax."
         },
         {
           "name": "discount",
-          "type": "ecom-validations.Discount",
+          "type": "wix-ecom.ecom-validations.Discount",
           "doc": "Total calculated discount value."
         },
         {
           "name": "total",
-          "type": "ecom-validations.Total",
+          "type": "wix-ecom.ecom-validations.Total",
           "doc": "Total price **after** discounts, gift cards, and tax."
         },
         {
           "name": "additionalFees",
-          "type": "ecom-validations.AdditionalFees",
+          "type": "wix-ecom.ecom-validations.AdditionalFees",
           "doc": "Total additional fees price **before** tax."
         }
       ],
@@ -1157,12 +1158,12 @@
       "members": [
         {
           "name": "address",
-          "type": "ecom-validations.AddressDetails",
+          "type": "wix-ecom.ecom-validations.AddressDetails",
           "doc": "Address."
         },
         {
           "name": "contactDetails",
-          "type": "ecom-validations.ContactDetails",
+          "type": "wix-ecom.ecom-validations.ContactDetails",
           "doc": "Contact details."
         }
       ],
@@ -1185,7 +1186,7 @@
       "members": [
         {
           "name": "selectedCarrierServiceOption",
-          "type": "ecom-validations.SelectedCarrierServiceOption",
+          "type": "wix-ecom.ecom-validations.SelectedCarrierServiceOption",
           "doc": "Selected shipping option out of the options allowed for the `region`."
         }
       ],
@@ -1264,17 +1265,17 @@
       "members": [
         {
           "name": "subscriptionSettings",
-          "type": "ecom-validations.SubscriptionSettings",
+          "type": "wix-ecom.ecom-validations.SubscriptionSettings",
           "doc": "Subscription option settings."
         },
         {
           "name": "title",
-          "type": "ecom-validations.Title",
+          "type": "wix-ecom.ecom-validations.Title",
           "doc": "Subscription option title."
         },
         {
           "name": "description",
-          "type": "ecom-validations.Description",
+          "type": "wix-ecom.ecom-validations.Description",
           "doc": "Subscription option description."
         }
       ],
@@ -1353,13 +1354,13 @@
       "members": [
         {
           "name": "other",
-          "type": "ecom-validations.Other",
+          "type": "wix-ecom.ecom-validations.Other",
           "doc": "General (other) violation.",
           "optional": true
         },
         {
           "name": "lineItem",
-          "type": "ecom-validations.LineItemViolation",
+          "type": "wix-ecom.ecom-validations.LineItemViolation",
           "doc": "Specific line item violation.",
           "optional": true
         }
@@ -1467,7 +1468,7 @@
       "members": [
         {
           "name": "buyerDetails",
-          "type": "ecom-validations.BuyerDetails",
+          "type": "wix-ecom.ecom-validations.BuyerDetails",
           "doc": "Buyer details."
         },
         {
@@ -1475,14 +1476,14 @@
           "type": {
             "name": "Array",
             "typeParams": [
-              "ecom-validations.LineItem"
+              "wix-ecom.ecom-validations.LineItem"
             ]
           },
           "doc": "Line items. Max: 300 line items"
         },
         {
           "name": "giftCard",
-          "type": "ecom-validations.giftCard",
+          "type": "wix-ecom.ecom-validations.giftCard",
           "doc": "Applied gift card details."
         },
         {
@@ -1492,32 +1493,32 @@
         },
         {
           "name": "priceSummary",
-          "type": "ecom-validations.PriceSummary",
+          "type": "wix-ecom.ecom-validations.PriceSummary",
           "doc": "Price summary."
         },
         {
           "name": "billingInfo",
-          "type": "ecom-validations.BillingInfo",
+          "type": "wix-ecom.ecom-validations.BillingInfo",
           "doc": "Billing information."
         },
         {
           "name": "shippingAddress",
-          "type": "ecom-validations.ShippingAddress",
+          "type": "wix-ecom.ecom-validations.ShippingAddress",
           "doc": "Shipping address and contact details."
         },
         {
           "name": "shippingInfo",
-          "type": "ecom-validations.ShippingInfo",
+          "type": "wix-ecom.ecom-validations.ShippingInfo",
           "doc": "Shipping information."
         },
         {
           "name": "customFields",
-          "type": "ecom-validations.CustomFields",
+          "type": "wix-ecom.ecom-validations.CustomFields",
           "doc": "Custom fields."
         },
         {
           "name": "appliedDiscounts",
-          "type": "ecom-validations.AppliedDiscounts",
+          "type": "wix-ecom.ecom-validations.AppliedDiscounts",
           "doc": "Applied discounts."
         }
       ],
@@ -1564,7 +1565,7 @@
         },
         {
           "name": "structValue",
-          "type": "ecom-validations.StructValue",
+          "type": "wix-ecom.ecom-validations.StructValue",
           "doc": "A structured value.",
           "optional": true
         },
@@ -1573,7 +1574,7 @@
           "type": {
             "name": "Array",
             "typeParams": [
-              "ecom-validations.Value"
+              "wix-ecom.ecom-validations.Value"
             ]
           },
           "doc": "A repeated `value`.",
@@ -1646,7 +1647,7 @@
         },
         {
           "name": "target",
-          "type": "ecom-validations.Target",
+          "type": "wix-ecom.ecom-validations.Target",
           "doc": "Target location on a checkout or cart page where the violation will be displayed."
         },
         {
@@ -1712,7 +1713,7 @@
         },
         {
           "name": "amount",
-          "type": "ecom-validations.giftAmount",
+          "type": "wix-ecom.ecom-validations.giftAmount",
           "doc": "Gift card value."
         }
       ],
