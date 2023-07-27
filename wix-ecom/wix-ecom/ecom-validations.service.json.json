@@ -21,7 +21,7 @@
       "",
       "The image below shows a cart page with both a general validation violation warning and a line item validation violation warning.",
       "",
-      "![Cart page warning](..media/ecom-validations-img1.png \"Cart page warnings\")",
+      "![Cart page warnings](..media/ecom-validations-img1.png \"Cart page warnings\")",
       "",
       "The image below shows a checkout page with both a general validation violation error and a line item validation violation error.",
       "",
