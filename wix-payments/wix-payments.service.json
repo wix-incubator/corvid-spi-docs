@@ -1,0 +1,15 @@
+{
+  "name": "wix-payments",
+  "layoutType": "JS",
+  "mixes": [],
+  "labels": [],
+  "docs": {
+    "summary": "",
+    "description": []
+  },
+  "properties": [],
+  "operations": [],
+  "callbacks": [],
+  "messages": [],
+  "extra": {}
+}
