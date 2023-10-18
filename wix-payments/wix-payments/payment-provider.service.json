@@ -12,8 +12,6 @@
   "docs": {
     "summary": "The Payment Provider SPI.",
     "description": [
-      "> **Note:** This SPI is currently in beta and is subject to change. Some SPIs are currently not available to all users.",
-      "",
       "The Payment Provider SPI provides functionality for integrating your site with payment providers not currently supported by Wix.",
       "",
       "With this SPI, you can:",
@@ -21,7 +19,7 @@
       "* Handle transactions processed by a payment provider.",
       "* Handle refunds processed by a payment provider.",
       "",
-      "Learn more about using the [Payment Provider Custom Extension](https://support.wix.com/en/article/velo-tutorial-payment-provider-custom-extension-beta)."
+      "Learn more about using the [Payment Provider Custom Extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/other-apps/wix-pay/payment-provider-custom-extension)."
     ],
     "links": [],
     "examples": [],
@@ -51,7 +49,7 @@
       },
       "locations": [
         {
-          "lineno": 19,
+          "lineno": 17,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -157,7 +155,7 @@
       },
       "locations": [
         {
-          "lineno": 65,
+          "lineno": 63,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -270,7 +268,7 @@
       },
       "locations": [
         {
-          "lineno": 189,
+          "lineno": 187,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -334,7 +332,7 @@
       "name": "Address",
       "locations": [
         {
-          "lineno": 128,
+          "lineno": 126,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -422,7 +420,7 @@
       "name": "BuyerInfo",
       "locations": [
         {
-          "lineno": 164,
+          "lineno": 162,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -450,7 +448,7 @@
       "name": "Charges",
       "locations": [
         {
-          "lineno": 156,
+          "lineno": 154,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -483,7 +481,7 @@
       "name": "ConnectAccountOptions",
       "locations": [
         {
-          "lineno": 40,
+          "lineno": 38,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -521,7 +519,7 @@
       "name": "ConnectAccountResponse",
       "locations": [
         {
-          "lineno": 51,
+          "lineno": 49,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -568,7 +566,7 @@
       "name": "CreateTransactionOptions",
       "locations": [
         {
-          "lineno": 86,
+          "lineno": 84,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -616,7 +614,7 @@
       "name": "CreateTransactionResponse",
       "locations": [
         {
-          "lineno": 176,
+          "lineno": 174,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -659,7 +657,7 @@
       "name": "FraudInfo",
       "locations": [
         {
-          "lineno": 103,
+          "lineno": 101,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -682,7 +680,7 @@
       "name": "OrderData",
       "locations": [
         {
-          "lineno": 96,
+          "lineno": 94,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -715,7 +713,7 @@
       "name": "OrderDetails",
       "locations": [
         {
-          "lineno": 108,
+          "lineno": 106,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -773,7 +771,7 @@
       "name": "OrderItem",
       "locations": [
         {
-          "lineno": 147,
+          "lineno": 145,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -811,7 +809,7 @@
       "name": "RefundOptions",
       "locations": [
         {
-          "lineno": 209,
+          "lineno": 207,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -859,7 +857,7 @@
       "name": "RefundResponse",
       "locations": [
         {
-          "lineno": 219,
+          "lineno": 217,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -897,7 +895,7 @@
       "name": "ReturnUrls",
       "locations": [
         {
-          "lineno": 119,
+          "lineno": 117,
           "filename": "payment-provider-spi.js"
         }
       ],
@@ -935,7 +933,7 @@
       "name": "TaxIdentifier",
       "locations": [
         {
-          "lineno": 170,
+          "lineno": 168,
           "filename": "payment-provider-spi.js"
         }
       ],
