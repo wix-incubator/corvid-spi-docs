@@ -1,7 +1,7 @@
 SortOrder: 3
 # Example Data
 
-The examples in this reference are based on the [Adapter for MySQL databases](https://github.com/wix/corvid-external-db-mysql-adapter) prototype deployed to Google AppEngine. 
+The examples in this reference are based on the [Adaptor for MySQL databases](https://github.com/wix/corvid-external-db-mysql-adapter) prototype deployed to Google AppEngine. 
 
 The prototype is connected to a database with the following tables and data:
 

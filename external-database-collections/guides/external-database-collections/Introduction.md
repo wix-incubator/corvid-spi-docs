@@ -1,13 +1,13 @@
 SortOrder: 0
 # Introduction
-Integrate your external database into your Wix site using external collections and building an external database collection adapter.
+Integrate your external database into your Wix site using external collections and building an external database collection adaptor.
 
-The External Database Collections SPI describes the API requests your adapter needs to expect from your Wix site, and the responses your Wix site expects in return. The SPI takes the request from your Wix site and converts it into a request that your external database can receive. It also takes the response from the external database and converts it into a JSON response that your Wix site can receive.
+The External Database Collections SPI describes the API requests your adaptor needs to expect from your Wix site, and the responses your Wix site expects in return. The SPI takes the request from your Wix site and converts it into a request that your external database can receive. It also takes the response from the external database and converts it into a JSON response that your Wix site can receive.
 
 You can learn more about working with External Databases on your Wix site [here](https://support.wix.com/en/article/working-with-external-database-collections).
 
 ### Mandatory Endpoints
-The following endpoints are mandatory and must be implemented in your adapter. All other endpoints are optional.
+The following endpoints are mandatory and must be implemented in your adaptor. All other endpoints are optional.
 
 
 |Endpoint| Function|
@@ -17,7 +17,7 @@ The following endpoints are mandatory and must be implemented in your adapter. A
 |Get Item |  Get a specific database row or item based on the item's `_id` field.|
 |Find Items| Get a list of items based on a filter.|
 |Count|  Get the number of rows or items in a table or collection based on a filter.|
-|Provision|  Establish the connection between your site and your adapter. |
+|Provision|  Establish the connection between your site and your adaptor. |
 
 The implemented endpoints must be exposed via the [schema object](https://www.wix.com/corvid/new-reference/spis/external-database-collections/external-database-collections/schema/schema-object) in the  `allowedOperations` list.
 
