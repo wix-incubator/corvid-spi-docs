@@ -29,7 +29,7 @@
           "Currently, the only payment setting available to customize is whether to apply 3DS to an order. If 3DS is required, the customer will have to pass an additional ",
           "layer of security before completing their payment. For example:",
           "",
-          "![3DS popup](https://github-production-user-asset-6210df.s3.amazonaws.com/95754543/299235100-e9d7ee79-3e33-4e66-9b64-bd119835c9a1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240124%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240124T075651Z&X-Amz-Expires=300&X-Amz-Signature=e35602d1318d7e78f19172fca7ee815849d5b98ae4e5a14bc56f204e503a5fb3&X-Amz-SignedHeaders=host&actor_id=95754543&key_id=0&repo_id=116243202 \"3DS popup\")",
+          "![3DS popup](https://static.wixstatic.com/media/ea3d74_75c58a56a847471197484b0a6cbffa97~mv2.png \"3DS popup\")",
           "",
           "## Configuration",
           "Adding a custom extension to your site has 3 steps:",
