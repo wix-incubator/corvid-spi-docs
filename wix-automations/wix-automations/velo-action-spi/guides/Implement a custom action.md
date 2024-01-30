@@ -26,7 +26,7 @@ To use a custom action as part of an automation, start by creating a new automat
 2. Click **New Automation**, then **Start from Scratch**.
 3. Select and configure a [trigger](https://support.wix.com/en/article/wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
 
-   **Important:**
+   __Important:__
    The code file you create for your custom action is associated with the original trigger you selected. If you change the trigger,
    a new code file will be created and you'll have to write new code. The initial file you create is still saved, and if you restore
    the trigger it is associated with, you'll be able to access it again in the automation.
