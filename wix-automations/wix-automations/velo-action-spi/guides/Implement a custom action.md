@@ -37,7 +37,6 @@ To use a custom action as part of an automation, start by creating a new automat
 
 4. Under **Choose an Action**, select **Run Velo code**. Then click **Start Coding** to add your code.
 
-    ![Run velo code action](./images/run-velo-code0.png)
 
     You'll be prompted to create a new code file.
 
@@ -50,7 +49,7 @@ To use a custom action as part of an automation, start by creating a new automat
 
     You should now see something like this:
 
-    ![Write velo action code](./images/write-velo-code0.png)
+
 
     The **Write Velo Code** modal contains two tabs. The first is the .js file where you write your code. This is a backend file
     that contains a single function, [`invoke()`](velo-action-spi/invoke).
