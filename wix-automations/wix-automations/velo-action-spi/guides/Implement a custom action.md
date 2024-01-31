@@ -32,8 +32,7 @@ To use a custom action as part of an automation, start by creating a new automat
    the trigger it is associated with, you'll be able to access it again in the automation.
 
 4. Under **Choose an Action**, select **Run Velo code**. Then click **Start Coding** to add your code.
-
-   ![Run velo code action](./images/run-velo-code0.png)
+![Run velo code action](./images/run-velo-code.png)
 
    You'll be prompted to create a new code file.
 
@@ -45,8 +44,7 @@ To use a custom action as part of an automation, start by creating a new automat
    > automation. This allows you to verify you're working with the correct trigger, as well as take advantage of features like testing and payload viewer.
 
    You should now see something like this:
-
-   ![Write velo action code](./images/write-velo-code0.png)
+![Write velo action code](./images/write-velo-code.png)
 
    The **Write Velo Code** modal contains two tabs. The first is the .js file where you write your code. This is a backend file
    that contains a single function, [`invoke()`](velo-action-spi/invoke).
