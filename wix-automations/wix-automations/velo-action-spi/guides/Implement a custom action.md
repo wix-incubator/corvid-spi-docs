@@ -26,14 +26,18 @@ To use a custom action as part of an automation, start by creating a new automat
 2. Click **New Automation**, then **Start from Scratch**.
 3. Select and configure a [trigger](https://support.wix.com/en/article/wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
 
-   **Important:**
+   <blockquote class="important">
+
+   __Important:__
    The code file you create for your custom action is associated with the original trigger you selected. If you change the trigger,
    a new code file will be created and you'll have to write new code. The initial file you create is still saved, and if you restore
    the trigger it is associated with, you'll be able to access it again in the automation.
 
+   </blockquote>
+
 4. Under **Choose an Action**, select **Run Velo code**. Then click **Start Coding** to add your code.
 
-   ![Run velo code action](./images/run-velo-code0.png)
+   ![Run velo code action](https://static.wixstatic.com/media/d4dde1_4f04a603b8714f13b80d6e0dc5a34011~mv2.png)
 
    You'll be prompted to create a new code file.
 
@@ -46,7 +50,7 @@ To use a custom action as part of an automation, start by creating a new automat
 
    You should now see something like this:
 
-   ![Write velo action code](./images/write-velo-code0.png)
+   ![Write velo action code](https://static.wixstatic.com/media/d4dde1_ffc80e9caa5d4de3b89c54382de838ac~mv2.png)
 
    The **Write Velo Code** modal contains two tabs. The first is the .js file where you write your code. This is a backend file
    that contains a single function, [`invoke()`](velo-action-spi/invoke).
