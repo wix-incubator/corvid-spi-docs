@@ -13,40 +13,32 @@
       "filename": "payment-settings-spi-index.js" },
   "docs":
     { "summary": "The eCommerce Payment Settings SPI.",
-      "description":
+      "description":      
         [ "The Payment Settings SPI allows you to apply custom payment settings during the payment process of an order. ",
-          "For example, you can use the SPI to require an additional layer of security to certain orders.",
-          "",
-          "## Before you begin",
-          "To collect payments, a Wix site must [connect a payment provider](https://support.wix.com/en/article/connecting-a-payment-provider). ",
-          "Once a payment provider is connected you may use the Payment Settings SPI to enforce additional payment settings to your site's transactions. ",
-          "For example, you may require additional [3d secure payments](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS)",
-          "for certain payment methods. Note that each payment provider may have specific payment settings they accept with their Wix integration. ",
-          "For example, [Tranzila](https://support.wix.com/en/article/connecting-tranzila-as-a-payment-provider) is a payment provider that ",
-          "supports 3DS payments, but not all payment providers offer this feature. We recommend [contacting payment providers directly](https://support.wix.com/en/article/receiving-payouts-from-third-party-payment-providers) ",
-          "to confirm which payment settings they have implemented as part of their Wix integration.",
-          "",
-          "Currently, the only payment setting available to customize is whether to apply 3DS to an order. If 3DS is required, the customer will have to pass an additional ",
-          "layer of security before completing their payment. For example:",
-          "",
-          "![3DS popup](https://static.wixstatic.com/media/ea3d74_108ab82955c646e8af7b6fa0f67263de~mv2.jpg \"3DS popup\")",
-          "",
-          "## Configuration",
-          "Adding a custom extension to your site has 3 steps:",
-          "1. [Add the extension to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
-          "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getconfig) function in the **-config.js** file that is added to your site with step 1.",
-          "3. Update the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getpaymentsettings) function in the **.js** file that is added to your site with step 1.",
-          "",
-          "## Resources",
-          "+ Step-by-step example implementing this SPI: [Tutorial: Payment Settings Custom Extension](https://support.wix.com/en/article/tutorial-payment-settings-custom-extension)",
-          "+ Learn more about SPIs and Velo: [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
-          "",
-          "## Terminology",
-          "",
-          "| Term | Definition |",
-          "| --- | --- |",
-          "| 3 Domain Security (3DS) |An additional layer of security for online credit and debit card transactions. The name refers to the \"three domains\" which interact using the protocol: the card issuer, the acquiring bank, and the payment gateway that facilitates the transaction. Learn more [about 3DS payments with third-party payment providers](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers). | ",
-          "| Payment Providers |Different payment options available to your Wix site. Learn more about [accepting payments](https://support.wix.com/en/article/accepting-payments-an-overview). |" ],
+        "",
+        "Currently, the only payment setting available to customize is whether to apply 3DS to an order. ",
+        "If 3DS is required, the customer will have to pass an additional layer of security before completing their payment. For example:",
+        "",
+        "![3DS popup](https://static.wixstatic.com/media/ea3d74_108ab82955c646e8af7b6fa0f67263de~mv2.jpg \"3DS popup\")",
+        "",
+        "Learn more:",
+        "+ [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
+        "+ [Tutorial: Payment Settings Custom Extension](https://support.wix.com/en/article/tutorial-payment-settings-custom-extension)",
+        "",
+        "### Before you begin",
+        "It's important to note the following points before starting to code:",
+        "+ To collect payments, a Wix site must [connect a payment provider](https://support.wix.com/en/article/connecting-a-payment-provider). ",
+        "+ We recommend [contacting payment providers directly](https://support.wix.com/en/article/receiving-payouts-from-third-party-payment-providers) to confirm which payment settings they have implemented as part of their Wix integration.",
+        "",
+        "### To add a custom extension",
+        "1. [Add the extension to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
+        "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/ecom-payment-settings/getconfig) function in the **-config.js** file that is added to your site during step 1.",
+        "3. Update the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/ecom-payment-settings/getpaymentsettings) function in the **.js** file that is added to your site during step 1.",
+        "",
+        "### Terminology",
+        "",
+        "+ **3 Domain Security (3DS):** An additional layer of security for online credit and debit card transactions. The name refers to the three domains which interact using the protocol: the card issuer, the acquiring bank, and the payment gateway that facilitates the transaction. Learn more [about 3DS payments with third-party payment providers](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers).",
+        "+ **Payment Providers:** Different payment methods available to your Wix site. Learn more about [accepting payments](https://support.wix.com/en/article/accepting-payments-an-overview)." ],
       "links": [],
       "examples": [],
       "extra":
@@ -55,120 +47,126 @@
   "properties": [],
   "operations":
   [ { "name": "getConfig",
-      "labels": [],
-      "nameParams": [],
-      "params": [],
-      "ret":
-        { "type":
-            { "name": "Promise",
-              "typeParams":
-                [ "wix-ecom.ecom-payment-settings.PaymentSettingsConfigResponse" ] },
-          "doc": "Fulfilled - The configuration settings." },
-      "locations":
-        [ { "lineno": 1,
-            "filename": "payment-settings-spi.js" } ],
-      "docs":
-        { "summary": "Use this function to set the custom default values for your \n[`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getpaymentsettings) function.",
-          "description":
-            [ "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
-              "it automatically adds a folder to your site. This file contains 2 files, **<your-extension-name>-config.js** and ",
-              "**<your-extension-name>.js**. Use the first of these files, **<your-extension-name>-config.js**, to set any default configurations for your implementation of the custom extension.",
-              "",
-              "For the payment settings extension, the available default is to set a fallback value for whether to require ",
-              "3DS to an order payment if the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getpaymentsettings) ",
-              "function fails. ",
-              "",
-              "When `fallbackValueForRequires3dSecure` is set to `true`, then in a case where the SPI call fails it will, by default, ",
-              "return `paymentSettings.requires3dSecure` set to `true` which tells the payment provider to require 3DS for the order.",
-              "",
-              "See [Tutorial: Payment Settings Custom Extension](https://support.wix.com/en/article/tutorial-payment-settings-custom-extension) ",
-              "for a step-by-step tutorial." ],
-          "links": [],
-          "examples":
-            [ { "title": "Example of an `spi-config.js` file",
-                "body":
-                  [ "export function getConfig() {",
-                    "  return {",
-                    "    fallbackValueForRequires3dSecure: true",
-                    "  };",
-                    "};" ],
-                "extra":
-                  {  } } ],
-          "extra":
-            {  } },
+  "labels": [],
+  "nameParams": [],
+  "params": [],
+  "ret":
+    { "type":
+        { "name": "Promise",
+          "typeParams":
+            [ "wix-ecom.ecom-payment-settings.PaymentSettingsConfigResponse" ] },
+      "doc": "Fulfilled - The configuration settings." },
+  "locations":
+    [ { "lineno": 1,
+        "filename": "payment-settings-spi.js" } ],
+  "docs":
+    { "summary": "Retrieves the configuration of your payment settings extension.",
+      "description":
+        [ "Set your payment settings configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
+          "Changes to the configuration don't take effect until you publish your site.",
+          "",
+          "The only default currently available is to set a fallback value for whether to require ",
+          "[3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) ",
+          "to an order payment if the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getpaymentsettings) ",
+          "function fails.",
+          "",
+          "### Where to find `getConfig()`",
+          "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
+          "a folder is automatically added to your site. Use the `<my-extension-name>-config.js` file in the folder to set the default configuration for your ",
+          "implementation of the custom extension.",
+          "",
+          "For more information on setting your configuration, see [Tutorial: Payment Settings Custom Extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#require-3ds-50-configjs)." ],
+      "links": [],
+      "examples":
+        [ { "title": "Example of a configuration file",
+            "body":
+              [ "// Place this code in the <my-extension-name>-config.js file",
+                "// in the 'ecom-payment-settings' folder of the",
+                "// Custom Extensions section on your site.",
+                "",
+                "export function getConfig() {",
+                "  return {",
+                "    fallbackValueForRequires3dSecure: true",
+                "  };",
+                "};" ],
+            "extra":
+              {  } } ],
       "extra":
-        { "customLabels":
-            [ { "id": "maturity-beta" } ] } },
-    { "name": "getPaymentSettings",
-      "labels": [],
-      "nameParams": [],
-      "params":
-        [ { "name": "options",
-            "type": "wix-ecom.ecom-payment-settings.Options",
-            "doc": "The order information." } ],
-      "ret":
-        { "type":
-            { "name": "Promise",
-              "typeParams":
-                [ "wix-ecom.ecom-payment-settings.PaymentSettingsResponse" ] },
-          "doc": "Fulfilled - Retrieved payment settings." },
-      "locations":
-        [ { "lineno": 33,
-            "filename": "payment-settings-spi.js" } ],
-      "docs":
-        { "summary": "Retrieves the payment settings to apply to an order based on your custom logic. Wix passes on the settings to the payment provider.",
-          "description":
-            [ "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
-              "it automatically adds a folder to your site. This file contains 2 files, **<your-extension-name>-config.js** and ",
-              "**<your-extension-name>.js**. Use the second of these files, **<your-extension-name>.js**, to write the code to determine which payment settings to apply to an order. ",
-              "",
-              "Currently, the only payment setting available to customize is whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS) ",
-              "to an order. Note that if the code fails then `requires3dSecure` sets to the value for `fallbackValueForRequires3dSecure` set in ",
-              "[`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getconfig).",
-              "",
-              "See [Tutorial: Payment Settings Custom Extension](https://support.wix.com/en/article/tutorial-payment-settings-custom-extension) ",
-              "for a step-by-step tutorial." ],
-          "links": [],
-          "examples":
-            [ { "title": "Example of a `paymentSettings` return value",
-                "body":
-                  [ "export const getPaymentSettings = (options) => {",
-                    "",
-                    "  return {",
-                    "    \"paymentSettings\": {",
-                    "      \"requires3dSecure\": true",
-                    "    }",
-                    "  };",
-                    "};" ],
-                "extra":
-                  {  } },
-              { "title": "Require 3DS if the order is greater than $50",
-                "body":
-                  [ "export const getPaymentSettings = async (options) => {",
-                    "  return {",
-                    "    paymentSettings: {",
-                    "      // Extract the subtotal price from the order, convert it to a number ",
-                    "      // and check if the price is equal or greater than $50.",
-                    "      requires3dSecure: parseFloat(options.order.priceSummary.subtotal.amount) >= 50",
-                    "    }",
-                    "  };",
-                    "};",
-                    "",
-                    "/* If the subtotal price is less than 50, the following payment settings are returned:",
-                    " *",
-                    " * {",
-                    " *   \"paymentSettings\": {",
-                    " *     \"requires3dSecure\": \"false\"",
-                    " *   }",
-                    " * }",
-                    " */" ],
-                "extra":
-                  {  } } ],
-          "extra":
-            {  } },
+        {  } },
+  "extra":
+    { "customLabels":
+        [ { "id": "maturity-beta" } ] } },
+  { "name": "getPaymentSettings",
+  "labels": [],
+  "nameParams": [],
+  "params":
+    [ { "name": "options",
+        "type": "wix-ecom.ecom-payment-settings.Options",
+        "doc": "The order information." } ],
+  "ret":
+    { "type":
+        { "name": "Promise",
+          "typeParams":
+            [ "wix-ecom.ecom-payment-settings.PaymentSettingsResponse" ] },
+      "doc": "Fulfilled - Retrieved payment settings." },
+  "locations":
+    [ { "lineno": 33,
+        "filename": "payment-settings-spi.js" } ],
+  "docs":
+    { "summary": "Retrieves the payment settings to apply to an order based on your custom logic. Wix passes these settings to the payment provider.",
+      "description":
+        [ "Add the custom logic to apply to an order in the `return` of the `getPaymentSettings()` function. Wix calls this function when an order is placed from the checkout page of your site.",
+          "",
+          "Currently, the only payment setting available to customize is whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS) ",
+          "to an order. Note that if the code fails then `requires3dSecure` sets to the value for `fallbackValueForRequires3dSecure` set in ",
+          "[`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getconfig).",
+          "",
+          "### Where to find `getPaymentSettings()`",
+          "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
+          "a folder is automatically added to your site. Use the `<my-extension-name>.js` file in the folder to write the code to determine which payment settings to apply to an order. ",
+          "",
+          "For more information on customizing your payment settings, see [Tutorial: Payment Settings Custom Extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#require-3ds-50js)." ],
+      "links": [],
+      "examples":
+        [ { "title": "Example of a `paymentSettings` return value",
+            "body":
+              [ "export const getPaymentSettings = (options) => {",
+                "",
+                "  return {",
+                "    \"paymentSettings\": {",
+                "      \"requires3dSecure\": true",
+                "    }",
+                "  };",
+                "};" ],
+            "extra":
+              {  } },
+          { "title": "Require 3DS if the order is greater than $50",
+            "body":
+              [ "export const getPaymentSettings = async (options) => {",
+                "  return {",
+                "    paymentSettings: {",
+                "      // Extract the subtotal price from the order, convert it to a number ",
+                "      // and check if the price is equal or greater than $50.",
+                "      requires3dSecure: parseFloat(options.order.priceSummary.subtotal.amount) >= 50",
+                "    }",
+                "  };",
+                "};",
+                "",
+                "/* If the subtotal price is less than 50, the following payment settings are returned:",
+                " *",
+                " * {",
+                " *   \"paymentSettings\": {",
+                " *     \"requires3dSecure\": \"false\"",
+                " *   }",
+                " * }",
+                " */" ],
+            "extra":
+              {  } } ],
       "extra":
-        { "customLabels":
-            [ { "id": "maturity-beta" } ] } } ],
+        {  } },
+  "extra":
+    { "customLabels":
+        [ { "id": "maturity-beta" } ] } } ],
 "messages":
   [ { "name": "Activities",
       "locations":
@@ -1431,7 +1429,7 @@
       "members":
         [ { "name": "requires3dSecure",
             "type": "boolean",
-            "doc": "Whether to apply [3D Secure](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) during the payment process." } ],
+            "doc": "Whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) during the payment process." } ],
       "extra":
         {  },
       "labels": [] },
