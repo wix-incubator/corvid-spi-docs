@@ -1,9 +1,9 @@
 {
-  "name": "velo-action-spi",
+  "name": "automations-actions",
   "layoutType": "JS",
   "mixes": [],
   "labels": [
-    "changed"
+    "new"
   ],
   "location": {
     "lineno": 1,
@@ -33,7 +33,7 @@
       "params": [
         {
           "name": "options",
-          "type": "wix-automations.velo-action-spi.Options",
+          "type": "wix-automations.automations-actions.Options",
           "doc": "The payload received from the trigger."
         }
       ],
@@ -122,7 +122,7 @@
       "members": [
         {
           "name": "payload",
-          "type": "wix-automations.velo-action-spi.Object",
+          "type": "wix-automations.automations-actions.Object",
           "doc": "The payload object. Fields vary depending on the selected trigger."
         }
       ],
