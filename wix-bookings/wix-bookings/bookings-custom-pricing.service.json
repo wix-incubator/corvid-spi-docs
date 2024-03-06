@@ -1,14 +1,10 @@
-{
-  "name": "bookings-custom-pricing",
-  "layoutType": "JS",
+{ "name": "bookings-custom-pricing",
   "mixes": [],
-  "labels": [
-    "changed"
-  ],
-  "location": {
-    "lineno": 1,
-    "filename": "custom-pricing-index.js"
-  },
+  "labels":
+    [ "changed" ],
+  "location":
+    { "lineno": 1,
+      "filename": "custom-pricing-index.js" },
   "docs":
     { "summary": "The Bookings Custom Pricing SPI.",
       "description":
@@ -408,7 +404,7 @@
         "members":
           [ { "name": "pricingProviderName",
               "type": "string",
-              "doc": "The name of the main SPI function." } ],
+              "doc": "The SPI function to call for this extension. Use `\"calculatePrice\"`." } ],
         "extra":
           {  },
         "labels": [] },
@@ -784,5 +780,4 @@
           {  },
         "labels": [] } ],
   "extra":
-    {  } 
-}
+    {  } }
