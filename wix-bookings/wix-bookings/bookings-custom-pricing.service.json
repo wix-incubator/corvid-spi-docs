@@ -405,7 +405,7 @@
         "members":
           [ { "name": "pricingProviderName",
               "type": "string",
-              "doc": "The SPI function to call for this extension. Use [`calculatePrice()`](https://www.wix.com/velo/reference/spis/wix-bookings/bookings-custom-pricing/calculateprice)." } ],
+              "doc": "The SPI function to call for this extension. Use [`\"calculatePrice\"`](https://www.wix.com/velo/reference/spis/wix-bookings/bookings-custom-pricing/calculateprice)." } ],
         "extra":
           {  },
         "labels": [] },
