@@ -296,7 +296,7 @@
         "members":
           [ { "name": "calculatedPrice",
               "type": "number",
-              "doc": "The price for the booking according to your custom logic.\n\nThe `calculatedPrice()` function's response is based on your site's currency." } ],
+              "doc": "The price for the booking according to your custom logic.\n\nThe `calculatePrice()` response is based on your site's currency." } ],
         "extra":
           {  },
         "labels": [] },
@@ -405,7 +405,7 @@
         "members":
           [ { "name": "pricingProviderName",
               "type": "string",
-              "doc": "The SPI function to call for this extension. Use `\"calculatePrice\"`." } ],
+              "doc": "The SPI function to call for this extension. Use [`calculatePrice()`](https://www.wix.com/velo/reference/spis/wix-bookings/bookings-custom-pricing/calculateprice)." } ],
         "extra":
           {  },
         "labels": [] },

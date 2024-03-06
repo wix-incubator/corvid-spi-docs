@@ -44,13 +44,13 @@
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "ecom-additional-fees.Options",
+              "type": "wix-ecom.ecom-additional-fees.Options",
               "doc": "Options for line items and shipping options." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
+                  [ "wix-ecom.ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
             "doc": "Fulfilled - Additional fees and currency info." },
         "locations":
           [ { "lineno": 26,
@@ -131,7 +131,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-additional-fees.AdditionalFeesConfigResponse" ] },
+                  [ "wix-ecom.ecom-additional-fees.AdditionalFeesConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -190,7 +190,7 @@
               "type": "string",
               "doc": "Additional fee's price.\n\nNumber of decimal places must correspond to the site's currency according to the currency code in [ISO-4217 alphabetic](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)\nformat. For example, a `USD` currency code can accept up to 2 decimal places." },
             { "name": "taxDetails",
-              "type": "ecom-additional-fees.TaxDetails",
+              "type": "wix-ecom.ecom-additional-fees.TaxDetails",
               "doc": "Tax details.\n\n>**Note:** Tax is not calculated in the returned `price` even when `taxDetails.taxable` is `true`." } ],
         "extra":
           {  },
@@ -226,7 +226,7 @@
               "doc": "Detailed address information, such as apartment, suite, or floor in free text.",
               "optional": true },
             { "name": "streetAddress",
-              "type": "ecom-additional-fees.StreetAddressInfo",
+              "type": "wix-ecom.ecom-additional-fees.StreetAddressInfo",
               "doc": "Street address object, with street number and name in separate properties.",
               "optional": true },
             { "name": "city",
@@ -271,15 +271,15 @@
                     [ "string" ] },
               "doc": "Line item IDs the discount applies to." },
             { "name": "coupon",
-              "type": "ecom-additional-fees.Coupon",
+              "type": "wix-ecom.ecom-additional-fees.Coupon",
               "doc": "Coupon details.",
               "optional": true },
             { "name": "merchantDiscount",
-              "type": "ecom-additional-fees.MerchantDiscount",
+              "type": "wix-ecom.ecom-additional-fees.MerchantDiscount",
               "doc": "Merchant discount.",
               "optional": true },
             { "name": "discountRule",
-              "type": "ecom-additional-fees.DiscountRule",
+              "type": "wix-ecom.ecom-additional-fees.DiscountRule",
               "doc": "Discount rule.",
               "optional": true } ],
         "extra":
@@ -301,7 +301,7 @@
               {  } },
         "members":
           [ { "name": "contactDetails",
-              "type": "ecom-additional-fees.ContactDetails",
+              "type": "wix-ecom.ecom-additional-fees.ContactDetails",
               "doc": "Contact details." } ],
         "extra":
           {  },
@@ -320,7 +320,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.AdditionalFee" ] },
+                    [ "wix-ecom.ecom-additional-fees.AdditionalFee" ] },
               "doc": "List of additional fees." },
             { "name": "currency",
               "type": "string",
@@ -378,7 +378,7 @@
               "doc": "Email.",
               "optional": true },
             { "name": "vatId",
-              "type": "ecom-additional-fees.VatId",
+              "type": "wix-ecom.ecom-additional-fees.VatId",
               "doc": "Tax information (for Brazil only). If `vatId.id` is provided, `vatId.type` must also be set.",
               "optional": true } ],
         "extra":
@@ -401,7 +401,7 @@
               "type": "string",
               "doc": "Coupon code." },
             { "name": "amount",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Coupon value." },
             { "name": "name",
               "type": "string",
@@ -426,7 +426,7 @@
               "type": "string",
               "doc": "Instructions for carrier. For example, `'Please deliver package during business hours'`.\n\nMax: 1000 characters" },
             { "name": "pickupDetails",
-              "type": "ecom-additional-fees.PickupDetails",
+              "type": "wix-ecom.ecom-additional-fees.PickupDetails",
               "doc": "Pickup details." } ],
         "extra":
           {  },
@@ -445,10 +445,10 @@
               "type": "string",
               "doc": "Discount Rule ID." },
             { "name": "name",
-              "type": "ecom-additional-fees.DiscountRuleName",
+              "type": "wix-ecom.ecom-additional-fees.DiscountRuleName",
               "doc": "Discount rule name." },
             { "name": "amount",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Discount value." } ],
         "extra":
           {  },
@@ -483,7 +483,7 @@
               {  } },
         "members":
           [ { "name": "taxableAmount",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Taxable amount." },
             { "name": "taxGroupId",
               "type": "string",
@@ -492,13 +492,13 @@
               "type": "string",
               "doc": "Tax rate as a decimal value between 0 and 1." },
             { "name": "totalTax",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Calculated tax based on `taxableAmount` and `taxRate`." },
             { "name": "rateBreakdown",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.TaxRateBreakdown" ] },
+                    [ "wix-ecom.ecom-additional-fees.TaxRateBreakdown" ] },
               "doc": "Tax breakdown." } ],
         "extra":
           {  },
@@ -520,7 +520,7 @@
               "type": "number",
               "doc": "The quantity of the item." },
             { "name": "catalogReference",
-              "type": "ecom-additional-fees.CatalogReference",
+              "type": "wix-ecom.ecom-additional-fees.CatalogReference",
               "doc": "Catalog and items reference info." },
             { "name": "productName",
               "type": "string",
@@ -529,7 +529,7 @@
               "type": "string",
               "doc": "Price of the item." },
             { "name": "physicalProperties",
-              "type": "ecom-additional-fees.PhysicalProperties",
+              "type": "wix-ecom.ecom-additional-fees.PhysicalProperties",
               "doc": "Properties of a physical item in cart and/or checkout." },
             { "name": "depositAmount",
               "type": "string",
@@ -548,7 +548,7 @@
               {  } },
         "members":
           [ { "name": "amount",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Discount value." } ],
         "extra":
           {  },
@@ -592,16 +592,16 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.LineItem" ] },
+                    [ "wix-ecom.ecom-additional-fees.LineItem" ] },
               "doc": "Line items. Max: 300 line items" },
             { "name": "shippingAddress",
-              "type": "ecom-additional-fees.AddressDetails",
+              "type": "wix-ecom.ecom-additional-fees.AddressDetails",
               "doc": "Shipping address." },
             { "name": "shippingInfo",
-              "type": "ecom-additional-fees.ShippingInfo",
+              "type": "wix-ecom.ecom-additional-fees.ShippingInfo",
               "doc": "Shipping information." },
             { "name": "buyerDetails",
-              "type": "ecom-additional-fees.BuyerDetails",
+              "type": "wix-ecom.ecom-additional-fees.BuyerDetails",
               "doc": "Buyer details." },
             { "name": "ecomId",
               "type": "string",
@@ -623,7 +623,7 @@
               "type": "string",
               "doc": "Type of additional charge.\n\nSupported values:\n - `'HANDLING_FEE'`\n - `'INSURANCE'`" },
             { "name": "price",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Price of added charge." } ],
         "extra":
           {  },
@@ -645,7 +645,7 @@
               "type": "string",
               "doc": "Details of the charge. For example, \"Full coverage insurance of up to 80% of value of shipment\"." },
             { "name": "cost",
-              "type": "ecom-additional-fees.SelectedCarrierServiceOptionCost",
+              "type": "wix-ecom.ecom-additional-fees.SelectedCarrierServiceOptionCost",
               "doc": "Cost of additional charge." } ],
         "extra":
           {  },
@@ -683,7 +683,7 @@
               {  } },
         "members":
           [ { "name": "address",
-              "type": "ecom-additional-fees.AddressDetails",
+              "type": "wix-ecom.ecom-additional-fees.AddressDetails",
               "doc": "Pickup address." },
             { "name": "businessLocation",
               "type": "boolean",
@@ -705,16 +705,16 @@
               {  } },
         "members":
           [ { "name": "totalPriceAfterTax",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Total shipping price after discount and tax." },
             { "name": "taxDetails",
-              "type": "ecom-additional-fees.ItemTaxFullDetails",
+              "type": "wix-ecom.ecom-additional-fees.ItemTaxFullDetails",
               "doc": "Tax details." },
             { "name": "totalDiscount",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Shipping discount before tax." },
             { "name": "price",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Shipping price before discount and tax." } ],
         "extra":
           {  },
@@ -736,16 +736,16 @@
               "type": "string",
               "doc": "Title of the selected carrier service option. For example, `'USPS Standard Overnight Delivery'`, `'Standard'`,\nor `'First-Class Package International'`.\n\nMax: 250 characters" },
             { "name": "logistics",
-              "type": "ecom-additional-fees.DeliveryLogistics",
+              "type": "wix-ecom.ecom-additional-fees.DeliveryLogistics",
               "doc": "Delivery logistics." },
             { "name": "cost",
-              "type": "ecom-additional-fees.SelectedCarrierServiceOptionCost",
+              "type": "wix-ecom.ecom-additional-fees.SelectedCarrierServiceOptionCost",
               "doc": "Shipping cost." },
             { "name": "otherCharges",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.OtherCharges" ] },
+                    [ "wix-ecom.ecom-additional-fees.OtherCharges" ] },
               "doc": "Other charges." } ],
         "extra":
           {  },
@@ -786,7 +786,7 @@
               "type": "string",
               "doc": "Charge details. For example, 'Full coverage insurance up to 80% value of shipment'." },
             { "name": "price",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Price of added charge." } ],
         "extra":
           {  },
@@ -821,7 +821,7 @@
               {  } },
         "members":
           [ { "name": "selectedCarrierServiceOption",
-              "type": "ecom-additional-fees.SelectedCarrierServiceOption",
+              "type": "wix-ecom.ecom-additional-fees.SelectedCarrierServiceOption",
               "doc": "Selected shipping option." } ],
         "extra":
           {  },
@@ -843,7 +843,7 @@
               "type": "string",
               "doc": "Title of the selected carrier service option. For example, `'USPS Standard Overnight Delivery'`, `'Standard'`,\nor `'First-Class Package International'`." },
             { "name": "logistics",
-              "type": "ecom-additional-fees.DeliveryLogistics",
+              "type": "wix-ecom.ecom-additional-fees.DeliveryLogistics",
               "doc": "Delivery logistics." } ],
         "extra":
           {  },
@@ -859,13 +859,13 @@
               {  } },
         "members":
           [ { "name": "price",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Shipping price." },
             { "name": "otherCharges",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.OtherCharge" ] },
+                    [ "wix-ecom.ecom-additional-fees.OtherCharge" ] },
               "doc": "Other costs. For example, insurance or handling and packaging fees." } ],
         "extra":
           {  },
@@ -957,7 +957,7 @@
               "type": "string",
               "doc": "Tax rate." },
             { "name": "tax",
-              "type": "ecom-additional-fees.MultiCurrencyPrice",
+              "type": "wix-ecom.ecom-additional-fees.MultiCurrencyPrice",
               "doc": "Tax amount." } ],
         "extra":
           {  },
