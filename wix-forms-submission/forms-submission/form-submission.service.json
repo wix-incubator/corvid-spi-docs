@@ -57,7 +57,7 @@
         "type": {
           "name": "Promise",
           "typeParams": [
-            "form-submission.form-submission.FormSubmissionConfigResponse"
+            "wix-form-submission.form-submission.FormSubmissionConfigResponse"
           ]
         },
         "doc": "Fulfilled - The configuration settings."
@@ -123,7 +123,7 @@
       "params": [
         {
           "name": "options",
-          "type": "form-submission.form-submission.Options",
+          "type": "wix-form-submission.form-submission.Options",
           "doc": "Submission validation options."
         }
       ],
@@ -131,7 +131,7 @@
         "type": {
           "name": "Promise",
           "typeParams": [
-            "form-submission.form-submission.FormSubmissionResponse"
+            "wix-form-submission.form-submission.FormSubmissionResponse"
           ]
         },
         "doc": "Fulfilled - Form submission validation violations."
@@ -234,17 +234,17 @@
         },
         {
           "name": "extendedFields",
-          "type": "form-submission.form-submission.ExtendedFields",
+          "type": "wix-form-submission.form-submission.ExtendedFields",
           "doc": "Data extension object that holds users' and apps' fields."
         },
         {
           "name": "orderDetails",
-          "type": "form-submission.form-submission.OrderDetails",
+          "type": "wix-form-submission.form-submission.OrderDetails",
           "doc": "Order details.  \n\n**Note:** This object is only applicable when submitting a form in the Wix Payments app."
         },
         {
           "name": "submissions",
-          "type": "form-submission.form-submission.Submissions",
+          "type": "wix-form-submission.form-submission.Submissions",
           "doc": "An object containing information about input fields in a form."
         }
       ],
@@ -267,7 +267,7 @@
       "members": [
         {
           "name": "namespaces",
-          "type": "form-submission.form-submission.Namespaces",
+          "type": "wix-form-submission.form-submission.Namespaces",
           "doc": "An object containing data extension fields in `key:value` pairs."
         }
       ],
@@ -293,7 +293,7 @@
           "type": {
             "name": "Array",
             "typeParams": [
-              "form-submission.form-submission.NamespaceConfigs"
+              "wix-form-submission.form-submission.NamespaceConfigs"
             ]
           },
           "doc": "A collection of Wix apps."
@@ -373,7 +373,7 @@
       "members": [
         {
           "name": "submission",
-          "type": "form-submission.form-submission.Submission",
+          "type": "wix-form-submission.form-submission.Submission",
           "doc": "Submission to validate."
         },
         {
@@ -383,7 +383,7 @@
         },
         {
           "name": "updateOptions",
-          "type": "form-submission.form-submission.UpdateOptions",
+          "type": "wix-form-submission.form-submission.UpdateOptions",
           "doc": "Data for updating an existing submission.",
           "optional": true
         },
@@ -481,12 +481,12 @@
         },
         {
           "name": "orderDetails",
-          "type": "form-submission.form-submission.OrderDetails",
+          "type": "wix-form-submission.form-submission.OrderDetails",
           "doc": "Order details.  \n\n**Note:** This object is only applicable when submitting a form in the Wix Payments app."
         },
         {
           "name": "extendedFields",
-          "type": "form-submission.form-submission.ExtendedFields",
+          "type": "wix-form-submission.form-submission.ExtendedFields",
           "doc": "Data extension object that holds users' and apps' fields."
         },
         {
@@ -501,7 +501,7 @@
         },
         {
           "name": "submissions",
-          "type": "form-submission.form-submission.Submissions",
+          "type": "wix-form-submission.form-submission.Submissions",
           "doc": "An object containing information about input fields in a form."
         }
       ],
@@ -547,7 +547,7 @@
       "members": [
         {
           "name": "currentSubmission",
-          "type": "form-submission.form-submission.CurrentSubmission",
+          "type": "wix-form-submission.form-submission.CurrentSubmission",
           "doc": "Submission to update."
         }
       ],
