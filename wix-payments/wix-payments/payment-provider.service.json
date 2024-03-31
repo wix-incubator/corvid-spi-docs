@@ -1,5 +1,6 @@
 {
   "name": "payment-provider",
+  "memberOf": "wix-payments",
   "layoutType": "JS",
   "mixes": [],
   "labels": [

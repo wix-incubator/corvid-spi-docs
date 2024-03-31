@@ -1,5 +1,6 @@
 {
   "name": "form-submission",
+  "memberOf": "wix-forms",
   "layoutType": "JS",
   "mixes": [],
   "labels": [],
