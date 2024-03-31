@@ -1,5 +1,6 @@
 {
   "name": "automations-actions",
+  "memberOf":"wix-automations",
   "layoutType": "JS",
   "mixes": [],
   "labels": [
