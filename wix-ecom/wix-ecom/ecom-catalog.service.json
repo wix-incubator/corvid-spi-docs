@@ -1,5 +1,6 @@
 {
   "name": "ecom-catalog",
+  "memberOf": "wix-ecom",
   "layoutType": "JS",
   "mixes": [],
   "labels": [],

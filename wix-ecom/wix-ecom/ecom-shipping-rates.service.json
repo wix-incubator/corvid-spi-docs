@@ -1,5 +1,6 @@
 {
   "name": "ecom-shipping-rates",
+  "memberOf": "wix-ecom",
   "layoutType": "JS",
   "mixes": [],
   "labels": [
