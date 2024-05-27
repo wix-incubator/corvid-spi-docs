@@ -11,6 +11,7 @@ A JSON model representing [Velo SPIs](https://wix.com/velo/reference/spis)
    "layoutType": "JS"
    ```
 3. Add the `memberOf` field to the `service.json` with the EDM name (usually the folder name). For example:
+   
    ```json
    "memberOf": "wix-ecom"
    ```
@@ -20,6 +21,7 @@ Here is an example of how it should look:
 ![ecom-additional-fees service.json example](./image.png)
 
 4. Add the module prefix to all type paths. For example:
+   
    ```json
    "type": "ecom-additional-fees.Options"
    ```
@@ -27,6 +29,8 @@ Here is an example of how it should look:
    ```json
    "type": "wix-ecom.ecom-additional-fees.Options"
    ```
+
+Example:
 
 ![alt text](./image-1.png)
 
