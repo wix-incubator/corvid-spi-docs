@@ -1,21 +1,18 @@
-{
-   "name": "ecom-custom-discount-triggers",
-   "memberOf": "wix-ecom",
-   "layoutType": "JS",
-   "mixes": [],
-   "labels": [
-      "new"
-   ],
-   "location": {
-      "lineno": 1,
-      "filename": "ecom-custom-discount-triggers-spi-index.js"
-   },
-   "docs":
-    { "summary": "The eCommerce Custom Discount Triggers SPI.",
+{ "name": "ecom-custom-discount-triggers",
+  "layoutType": "JS",
+  "memberOf": "wix-ecom",
+  "mixes": [],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "ecom-custom-discount-triggers-spi-index.js" },
+  "docs":
+    { "summary": "The eCommerce Custom Discount Triggers Service Plugin.",
       "description":
-        [ "> **Note:** This SPI is currently in beta and is subject to change.",
+        [ "> **Note:** This service plugin is currently in beta and is subject to change.",
           "",
-          "The eCommerce Custom Discount Triggers SPI allows you to provide custom triggers that specify when an item can be discounted.",
+          "The eCommerce Custom Discount Triggers service plugin (formerly SPI) allows you to provide custom triggers that specify when an item can be discounted.",
           "",
           "Custom triggers play a part in the definition of discount rules - sets of triggers and scopes that together define the necessary conditions for a discount to apply to items in the cart/checkout.",
           "",
@@ -25,8 +22,8 @@
           "+ Implement the [`getEligibleTriggers()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/geteligibletriggers) and provide the logic needed for applying the relevant custom triggers.",
           "+ [Create an automatic discount using the dashboard](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts), or by using the [Discount Rules API](https://www.wix.com/velo/reference/wix-ecom-backend/discountrules/creatediscountrule).",
           "",
-          "### To add a custom extension",
-          "1. [Add the extension to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
+          "### To add a service plugin",
+          "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
           "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/getconfig) function in the **-config.js** file that is added to your site during step 1.",
           "3. Update the [`listTriggers()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/listtriggers) and [`getEligibleTriggers()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/geteligibletriggers) functions in the **.js** file that is added to your site during step 1." ],
       "links": [],
@@ -36,33 +33,32 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-custom-discount-triggers.CustomDiscountTriggersConfigResponse" ] },
+                  [ "ecom-custom-discount-triggers.CustomDiscountTriggersConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
-          { "summary": "Retrieves the configuration of your custom discount trigger extension.",
+          { "summary": "Retrieves the configuration of your custom discount trigger plugin.",
             "description":
               [ "Set your custom discount trigger configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "Currently no configurations are available for this extension, so set `getConfig()` to return an empty object.",
+                "Currently no configurations are available for this plugin, so set `getConfig()` to return an empty object.",
                 "",
                 "### Where to find `getConfig()`",
-                "When you [add the Custom Discount Trigger extension](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
-                "a folder is automatically added to your site. Use the `<my-extension-name>-config.js` file in the folder to set the default configuration for your ",
-                "implementation of the custom extension.",
+                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
+                "a folder is automatically added to your site. Use the `<my-plugin-name>-config.js` file in the folder to set the default configuration for your ",
+                "implementation of the service plugin.",
                 "",
-                "For more information on setting your configuration, see [Implement your extension with custom code](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-spis#step-2-implement-your-extension-with-custom-code)." ],
+                "For more information on setting your configuration, see [Implement your plugin with custom code](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-spis#step-2-implement-your-extension-with-custom-code)." ],
             "links": [],
             "examples":
               [ { "title": "Example of a configuration file",
@@ -92,7 +88,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-custom-discount-triggers.EligibleTriggers" ] },
+                  [ "ecom-custom-discount-triggers.EligibleTriggers" ] },
             "doc": "Fulfilled - List of eligible triggers." },
         "locations":
           [ { "lineno": 23,
@@ -104,8 +100,8 @@
                 "The function is automatically called by Wix eCommerce when actions are performed on the cart or checkout entities/pages. For example, when adding an item to the cart.",
                 "",
                 "### Where to find `getEligibleTriggers()`",
-                "When you [add the Custom Discount Trigger extension](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
-                "a folder is automatically added to your site. Use the `<my-extension-name>.js` file in the folder to write the code to retrieve custom triggers." ],
+                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
+                "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to retrieve custom triggers." ],
             "links": [],
             "examples":
               [ { "title": "Return trigger based on the color of an item",
@@ -146,7 +142,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-custom-discount-triggers.ListCustomTriggers" ] },
+                  [ "ecom-custom-discount-triggers.ListCustomTriggers" ] },
             "doc": "Fulfilled - List of eligible triggers." },
         "locations":
           [ { "lineno": 41,
@@ -158,8 +154,8 @@
                 "The function is automatically called by Wix eCommerce to populate the custom [minimum requirements section of an automatic discount](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts#:~:text=Create%20minimum%20requirements).",
                 "",
                 "### Where to find `listTriggers()`",
-                "When you [add the Custom Discount Trigger extension](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
-                "a folder is automatically added to your site. Use the `<my-extension-name>.js` file in the folder to write the code to retrieve all available custom triggers." ],
+                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
+                "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to retrieve all available custom triggers." ],
             "links": [],
             "examples":
               [ { "title": "List custom triggers",
@@ -262,7 +258,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-custom-discount-triggers.EligibleTrigger" ] },
+                    [ "ecom-custom-discount-triggers.EligibleTrigger" ] },
               "doc": "List of eligible triggers. These are used by the Discount Rules API and Wix eCommerce to apply the relevant discount." } ],
         "extra":
           {  },
@@ -325,7 +321,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-custom-discount-triggers.ListCustomTrigger" ] },
+                    [ "ecom-custom-discount-triggers.ListCustomTrigger" ] },
               "doc": "List of custom triggers." } ],
         "extra":
           {  },
@@ -344,13 +340,13 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-custom-discount-triggers.LineItem" ] },
+                    [ "ecom-custom-discount-triggers.LineItem" ] },
               "doc": "List of line items in the cart/checkout." },
             { "name": "triggers",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-custom-discount-triggers.Trigger" ] },
+                    [ "ecom-custom-discount-triggers.Trigger" ] },
               "doc": "List of triggers to be checked for discount eligibility." } ],
         "extra":
           {  },
@@ -375,5 +371,4 @@
           {  },
         "labels": [] } ],
   "extra":
-    {  } 
-}
+    {  } }
