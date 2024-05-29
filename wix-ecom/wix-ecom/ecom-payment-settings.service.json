@@ -120,7 +120,7 @@
                 "When you [add the Payment Settings service plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
                 "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to determine which payment settings to apply to an order. ",
                 "",
-                "For more information on customizing your payment settings, see [Tutorial: Payment Settings Service Plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#require-3ds-50js)." ],
+                "For more information on customizing your payment settings, see [Tutorial: Payment Settings Service Plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension)." ],
             "links": [],
             "examples":
               [ { "title": "Example of a `paymentSettings` return value",
