@@ -3,7 +3,7 @@
   "memberOf": "wix-ecom",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "additional-fees-index.js" },
@@ -64,7 +64,7 @@
                 "When you [add the Additional Fees service plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-additional-fees-custom-extension#step-1-create-a-new-additional-fees-custom-extension), ",
                 "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to calculate any additional fees to add to the cart or checkout.  ",
                 "",
-                "For more information on calculating your additional fees, see [Tutorial: Additional Fees Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-additional-fees-custom-extension#my-extension-namejs)." ],
+                "For more information on calculating your additional fees, see [Velo Tutorial: eCommerce Additional Fees Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-additional-fees-custom-extension#my-extension-namejs)." ],
             "links": [],
             "examples":
               [ { "title": "Calculate additional fees for an order",
