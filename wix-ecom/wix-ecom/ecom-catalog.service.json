@@ -3,7 +3,7 @@
   "memberOf": "wix-ecom",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "ecom-catalog-spi-index.js" },
@@ -21,7 +21,7 @@
           "as well as the cart, checkout, and order.",
           "",
           "Learn more:",
-          " + [Custom Catalog Service Plugin](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-catalog-extension-beta)",
+          " + [Custom Catalog Service Plugin](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-catalog-extension-beta).",
           " + [Velo: Custom App Extensions Using Service Plugins](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
           "",
           "### To add a service plugin",
@@ -35,11 +35,12 @@
   "properties": [],
   "operations":
     [ { "name": "getCatalogItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "wix-ecom.ecom-catalog.Options",
+              "type": "ecom-catalog.Options",
               "doc": "Catalog and item references (IDs and additional info), weight unit, and quantities requested by Wix eCommerce." } ],
         "ret":
           { "type":
@@ -62,7 +63,7 @@
                 "When you [add the Catalog service plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#step-1-create-a-new-catalog-custom-extension), ",
                 "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to determine which catalog items to retrieve. ",
                 "",
-                "For more information on customizing your catalog plugin, see [Tutorial: Catalog Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-namejs)." ],
+                "For more information on customizing your catalog plugin, see [Velo Tutorial: eCommerce Catalog Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-namejs)." ],
             "links": [],
             "examples":
               [ { "title": "Example of received `options` parameter and returned properties for `catalogItems` array",
@@ -205,7 +206,8 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -230,7 +232,7 @@
                 "a folder is automatically added to your site. Use the `<my-plugin-name>-config.js` file in the folder to set the default configuration for your ",
                 "implementation of the service plugin.",
                 "",
-                "For more information on setting your configuration, see [Tutorial: Catalog Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-name-configjs)." ],
+                "For more information on setting your configuration, see [Velo Tutorial: eCommerce Catalog Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-name-configjs)." ],
             "links": [],
             "examples":
               [ { "title": "Example of a configuration file",
@@ -290,10 +292,10 @@
               "type": "string",
               "doc": "The URL of the service plugin implementation." },
             { "name": "allItemsDiscount",
-              "type": "wix-ecom.ecom-catalog.DiscountConfig",
+              "type": "ecom-catalog.DiscountConfig",
               "doc": "Configuration for discount of all items in the catalog." },
             { "name": "specificItemsDiscount",
-              "type": "wix-ecom.ecom-catalog.DiscountConfig",
+              "type": "ecom-catalog.DiscountConfig",
               "doc": "Configuration for discount of specific items in the catalog." } ],
         "extra":
           {  },
@@ -322,10 +324,10 @@
               {  } },
         "members":
           [ { "name": "catalogReferences",
-              "type": "wix-ecom.ecom-catalog.CatalogReference",
+              "type": "ecom-catalog.CatalogReference",
               "doc": "Catalog and item reference." },
             { "name": "data",
-              "type": "wix-ecom.ecom-catalog.ItemData",
+              "type": "ecom-catalog.ItemData",
               "doc": "Item data." } ],
         "extra":
           {  },
@@ -364,7 +366,7 @@
               {  } },
         "members":
           [ { "name": "catalogReference",
-              "type": "wix-ecom.ecom-catalog.CatalogReference",
+              "type": "ecom-catalog.CatalogReference",
               "doc": "Catalog and items reference info." },
             { "name": "quantity",
               "type": "number",
@@ -408,14 +410,14 @@
               {  } },
         "members":
           [ { "name": "name",
-              "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
+              "type": "ecom-catalog.OriginalAndTranslatedText",
               "doc": "Description line name." },
             { "name": "plainText",
-              "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
+              "type": "ecom-catalog.OriginalAndTranslatedText",
               "doc": "Description line plain text value.",
               "optional": true },
             { "name": "colorInfo",
-              "type": "wix-ecom.ecom-catalog.ColorInfo",
+              "type": "ecom-catalog.ColorInfo",
               "doc": "Description line color value.",
               "optional": true } ],
         "extra":
@@ -455,10 +457,10 @@
               {  } },
         "members":
           [ { "name": "productName",
-              "type": "wix-ecom.ecom-catalog.Name",
+              "type": "ecom-catalog.Name",
               "doc": "**Required** - Item name." },
             { "name": "itemType",
-              "type": "wix-ecom.ecom-catalog.ItemType",
+              "type": "ecom-catalog.ItemType",
               "doc": "**Required** - Item type." },
             { "name": "price",
               "type": "string",
@@ -468,7 +470,7 @@
               "doc": "Item price before discounts.\nDefault: `price`.",
               "optional": true },
             { "name": "url",
-              "type": "wix-ecom.ecom-catalog.URL",
+              "type": "ecom-catalog.URL",
               "doc": "URL to the item's page on the site.\nWhen not provided, the link back from the cart page to the relevant item page will not work.",
               "optional": true },
             { "name": "descriptionLines",
@@ -487,7 +489,7 @@
               "doc": "Item quantity available for purchase.\nOnly return this if inventory is managed. Not returning this property means that the buyer can \"infinitely\" increase the number of items in the cart.",
               "optional": true },
             { "name": "physicalProperties",
-              "type": "wix-ecom.ecom-catalog.PhysicalProperties",
+              "type": "ecom-catalog.PhysicalProperties",
               "doc": "Physical properties of the item. When relevant, contains information such as SKU and item weight.",
               "optional": true },
             { "name": "paymentOption",
@@ -499,7 +501,7 @@
               "doc": "Partial payment to be paid upfront during the checkout.\nEligible for items with `paymentOption` type `\"DEPOSIT_ONLINE\"` only. If omitted - the item's price will not be split and is expected to be paid in single installment.",
               "optional": true },
             { "name": "serviceProperties",
-              "type": "wix-ecom.ecom-catalog.ServiceProperties",
+              "type": "ecom-catalog.ServiceProperties",
               "doc": "Service properties.\nWhen relevant, contains information such as service date and number of participants. Used, for example, when checking for valid memberships.",
               "optional": true },
             { "name": "rootCatalogItemId",
@@ -507,7 +509,7 @@
               "doc": "In cases where `catalogReference.catalogItemId` is not the actual catalog item ID, this property returns the item's true ID.\n+ For example, for Wix Bookings, `catalogReference.catalogItemId` is the booking ID. But the true item ID would be the service ID.\n+ In most cases, this property is the same as `catalogReference.catalogItemId`.\n+ Used when validating the membership.",
               "optional": true },
             { "name": "priceDescription",
-              "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
+              "type": "ecom-catalog.OriginalAndTranslatedText",
               "doc": "Additional price description.\nFor example, \"Starts at $67\".",
               "optional": true } ],
         "extra":
@@ -675,7 +677,7 @@
                     [ "ecom-catalog.BasicCatalogItem" ] },
               "doc": "Catalog item info." },
             { "name": "metadata",
-              "type": "wix-ecom.ecom-catalog.Metadata",
+              "type": "ecom-catalog.Metadata",
               "doc": "Details on the paged set of results returned." } ],
         "extra":
           {  },
