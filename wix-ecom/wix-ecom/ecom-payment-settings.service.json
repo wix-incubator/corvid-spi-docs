@@ -49,7 +49,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-payment-settings.PaymentSettingsConfigResponse" ] },
+                  [ "wix-ecom.ecom-payment-settings.PaymentSettingsConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -102,7 +102,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-payment-settings.PaymentSettingsResponse" ] },
+                  [ "wix-ecom.ecom-payment-settings.PaymentSettingsResponse" ] },
             "doc": "Fulfilled - Retrieved payment settings." },
         "locations":
           [ { "lineno": 33,
@@ -1133,21 +1133,21 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-payment-settings.Activities" ] },
+                    [ "wix-ecom.ecom-payment-settings.Activities" ] },
               "doc": "Log of updates related to the order.",
               "optional": true },
             { "name": "additionalFees",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-payment-settings.AdditionalFees" ] },
+                    [ "wix-ecom.ecom-payment-settings.AdditionalFees" ] },
               "doc": "Additional fees applied to the order.",
               "optional": true },
             { "name": "appliedDiscounts",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-payment-settings.AppliedDiscounts" ] },
+                    [ "wix-ecom.ecom-payment-settings.AppliedDiscounts" ] },
               "doc": "Applied discounts.",
               "optional": true },
             { "name": "archived",
@@ -1194,7 +1194,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-payment-settings.CustomFields" ] },
+                    [ "wix-ecom.ecom-payment-settings.CustomFields" ] },
               "doc": "Custom fields.",
               "optional": true },
             { "name": "fulfillmentStatus",
@@ -1205,7 +1205,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-payment-settings.OrderLineItem" ] },
+                    [ "wix-ecom.ecom-payment-settings.OrderLineItem" ] },
               "doc": "Order line items.",
               "optional": true },
             { "name": "number",

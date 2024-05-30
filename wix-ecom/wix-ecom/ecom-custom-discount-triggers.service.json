@@ -40,7 +40,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-custom-discount-triggers.CustomDiscountTriggersConfigResponse" ] },
+                  [ "wix-ecom.ecom-custom-discount-triggers.CustomDiscountTriggersConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -88,7 +88,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-custom-discount-triggers.EligibleTriggers" ] },
+                  [ "wix-ecom.ecom-custom-discount-triggers.EligibleTriggers" ] },
             "doc": "Fulfilled - List of eligible triggers." },
         "locations":
           [ { "lineno": 23,
@@ -142,7 +142,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-custom-discount-triggers.ListCustomTriggers" ] },
+                  [ "wix-ecom.ecom-custom-discount-triggers.ListCustomTriggers" ] },
             "doc": "Fulfilled - List of eligible triggers." },
         "locations":
           [ { "lineno": 41,
@@ -258,7 +258,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-custom-discount-triggers.EligibleTrigger" ] },
+                    [ "wix-ecom.ecom-custom-discount-triggers.EligibleTrigger" ] },
               "doc": "List of eligible triggers. These are used by the Discount Rules API and Wix eCommerce to apply the relevant discount." } ],
         "extra":
           {  },
@@ -321,7 +321,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-custom-discount-triggers.ListCustomTrigger" ] },
+                    [ "wix-ecom.ecom-custom-discount-triggers.ListCustomTrigger" ] },
               "doc": "List of custom triggers." } ],
         "extra":
           {  },
@@ -340,13 +340,13 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-custom-discount-triggers.LineItem" ] },
+                    [ "wix-ecom.ecom-custom-discount-triggers.LineItem" ] },
               "doc": "List of line items in the cart/checkout." },
             { "name": "triggers",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-custom-discount-triggers.Trigger" ] },
+                    [ "wix-ecom.ecom-custom-discount-triggers.Trigger" ] },
               "doc": "List of triggers to be checked for discount eligibility." } ],
         "extra":
           {  },
