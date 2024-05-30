@@ -38,7 +38,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-shipping-rates.ShippingRatesConfigResponse" ] },
+                  [ "wix-ecom.ecom-shipping-rates.ShippingRatesConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -89,7 +89,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-shipping-rates.ShippingRates" ] },
+                  [ "wix-ecom.ecom-shipping-rates.ShippingRates" ] },
             "doc": "Fulfilled - Available shipping rates." },
         "locations":
           [ { "lineno": 29,
@@ -397,7 +397,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-shipping-rates.LineItem" ] },
+                    [ "wix-ecom.ecom-shipping-rates.LineItem" ] },
               "doc": "The line items to be shipped." },
             { "name": "shippingDestination",
               "type": "wix-ecom.ecom-shipping-rates.AddressDetails",
@@ -530,7 +530,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-shipping-rates.ShippingRate" ] },
+                    [ "wix-ecom.ecom-shipping-rates.ShippingRate" ] },
               "doc": "Available shipping rates. These define the shipping rate options that are displayed to site visitors on the Cart and Checkout pages." } ],
         "extra":
           {  },
