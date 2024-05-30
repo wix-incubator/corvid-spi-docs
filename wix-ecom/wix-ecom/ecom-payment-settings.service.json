@@ -15,7 +15,7 @@
           "Currently, the only payment setting available to customize is whether to apply 3DS to an order. ",
           "If 3DS is required, the customer will have to pass an additional layer of security before completing their payment. For example:",
           "",
-          "![3DS popup](..assets/images/3ds.png \"3DS popup\")",
+          "![3DS popup](../../media/wix-ecom/ecom-payment-settings-3ds.png \"3DS popup\")",
           "",
           "Learn more:",
           "+ [Velo: Custom App Extensions Using Service Plugins](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
