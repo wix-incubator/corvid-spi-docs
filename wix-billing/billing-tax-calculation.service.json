@@ -1,6 +1,6 @@
 { 
   "name": "billing-tax-calculation",
-  "memberOf": "wix-billing",
+  "memberOf": "",
   "layoutType": "JS",
   "mixes": [],
   "labels":
@@ -40,13 +40,13 @@
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "wix-billing.billing-tax-calculation.Options",
+              "type": "billing-tax-calculation.Options",
               "doc": "Order information to calculate tax for." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-billing.billing-tax-calculation.TaxCalculationResponse" ] },
+                  [ "billing-tax-calculation.TaxCalculationResponse" ] },
             "doc": "Fulfilled - Retrieved tax calculations." },
         "locations":
           [ { "lineno": 25,
@@ -138,7 +138,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-billing.billing-tax-calculation.TaxCalculationConfigResponse" ] },
+                  [ "billing-tax-calculation.TaxCalculationConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -276,10 +276,10 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-billing.billing-tax-calculation.TaxBreakdown" ] },
+                    [ "billing-tax-calculation.TaxBreakdown" ] },
               "doc": "Array of each tax applied, grouped by `jurisdiction`, `jurisdictionType`, `taxName`, `taxRate`, and `taxType`." },
             { "name": "taxSummary",
-              "type": "wix-billing.billing-tax-calculation.LineItemTaxSummary",
+              "type": "billing-tax-calculation.LineItemTaxSummary",
               "doc": "Summary of this line item's total price and tax." } ],
         "extra":
           {  },
@@ -343,13 +343,13 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-billing.billing-tax-calculation.Address" ] },
+                    [ "billing-tax-calculation.Address" ] },
               "doc": "Array of addresses. Each line item can individually reference the address to apply with `lineItems.addressIndex`." },
             { "name": "lineItems",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-billing.billing-tax-calculation.LineItem" ] },
+                    [ "billing-tax-calculation.LineItem" ] },
               "doc": "Line items to calculate tax for." } ],
         "extra":
           {  },
@@ -427,13 +427,13 @@
               "type": "string",
               "doc": "3-letter currency code in [ISO-4217 alphabetic](https://en.wikipedia.org/wiki/ISO_4217#active_codes) format. If this code doesn't match the `currency` passed in the request, then the response is invalid." },
             { "name": "taxSummary",
-              "type": "wix-billing.billing-tax-calculation.TaxSummary",
+              "type": "billing-tax-calculation.TaxSummary",
               "doc": "Summary of the tax calculated." },
             { "name": "lineItemTaxDetails",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-billing.billing-tax-calculation.LineItemTaxDetails" ] },
+                    [ "billing-tax-calculation.LineItemTaxDetails" ] },
               "doc": "Details of each tax applied to each line item." } ],
         "extra":
           {  },
@@ -479,7 +479,7 @@
               "doc": "Single address to use for a sale location when only one address is required for tax calculations. The index is zero-based.",
               "optional": true },
             { "name": "multipleAddresses",
-              "type": "wix-billing.billing-tax-calculation.MultipleAddresses",
+              "type": "billing-tax-calculation.MultipleAddresses",
               "doc": "Multiple addresses to use for a sale. For example, some tax calculations may require both the address where an item is shipped from, as well as the address the item is shipped to.",
               "optional": true } ],
         "extra":
