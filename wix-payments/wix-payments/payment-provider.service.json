@@ -10,12 +10,12 @@
   "docs":
     { "summary": "The Payment Provider Service Plugin.",
       "description":
-        [ "The Payment Provider service plugin (formerly SPI) provides functionality for integrating your site with payment providers not currently supported by Wix.",
+        [ "The Payment Service Provider service plugin (formerly SPI) provides functionality for integrating your site with payment service providers (PSPs) not currently supported by Wix.",
           "",
           "With this service plugin, you can:",
           "* Control the way your site connects to a payment provider.",
-          "* Handle transactions processed by a payment provider.",
-          "* Handle refunds processed by a payment provider.",
+          "* Handle transactions processed by a PSP.",
+          "* Handle refunds processed by a PSP.",
           "",
           "Learn more about using the [Payment Provider service plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/other-apps/wix-pay/payment-provider-custom-extension).",
           "",

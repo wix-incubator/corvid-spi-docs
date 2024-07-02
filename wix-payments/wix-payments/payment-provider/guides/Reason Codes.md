@@ -3,12 +3,12 @@
 Wix uses codes to represent detailed information about the statuses of different payment related processes. These codes are used to display information about these processes on your site's dashboard.
 
 Reason codes can be divided into 4 groups:
-1. [Account connection failures](#account-connection-failure-codes)
-1. [Pending transactions](#pending-transaction-codes)
-1. [Declined transactions](#declined-transaction-codes)
-1. [Declined refunds](#declined-refund-codes)
+1. Account connection failures
+1. Pending transactions
+1. Declined transactions
+1. Declined refunds
 
-> If you can't find a corresponding reason code for your scenario, use `6000` and provide an appropritate `errorCode` and `errorMessage` with your response.
+> If you can't find a corresponding reason code for your scenario, use `6000` and provide an appropriate `errorCode` and `errorMessage` with your response.
 ## Account connection failure codes
 | Reason Code | Name |
 |------------|------|
