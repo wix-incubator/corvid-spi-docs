@@ -1,7 +1,7 @@
 SortOrder: 4
 # Provisioning Overview
 
-TTThe  Provision SPI describes the endpoint and payload for provisioning API requests to your external database and the payload for their success and failure responses. 
+The  Provision SPI describes the endpoint and payload for provisioning API requests to your external database and the payload for their success and failure responses. 
 
 Provision API requests occur when you initially connect your endpoint to your site or change its settings.
 
