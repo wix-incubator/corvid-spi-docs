@@ -1,11 +1,9 @@
 # Velo-SPI-Docs
 A JSON model representing [Velo SPIs](https://wix.com/velo/reference/spis)
 
-## How to Update Velo SPI
+## Steps to Update Velo SPI
 
-### Steps:
-
-1. Copy the updated `service.json` from [wix-code-docs]() and replace the corresponding `service.json` in the [corvid-spi-docs](https://github.com/wix-incubator/corvid-spi-docs) repository.
+1. Copy the updated `service.json` from [wix-code-docs](https://github.com/wix-incubator/wix-code-docs) and replace the corresponding `service.json` in the [corvid-spi-docs](https://github.com/wix-incubator/corvid-spi-docs) repository.
 2. Add the `layoutType` field to the `service.json`. For example:
    ```json
    "layoutType": "JS"

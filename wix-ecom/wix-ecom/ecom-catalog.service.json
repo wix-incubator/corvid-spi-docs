@@ -1,32 +1,31 @@
-{
-  "name": "ecom-catalog",
-  "memberOf": "wix-ecom",
+{ "name": "ecom-catalog",
   "layoutType": "JS",
+  "memberOf": "wix-ecom",
   "mixes": [],
-  "labels": [],
-  "location": {
-    "lineno": 1,
-    "filename": "ecom-catalog-spi-index.js"
-  },
+  "labels":
+    [ "changed" ],
+  "location":
+    { "lineno": 1,
+      "filename": "ecom-catalog-spi-index.js" },
   "docs":
-    { "summary": "The eCommerce Catalog SPI.",
+    { "summary": "The eCommerce Catalog Service Plugin.",
       "description":
-        [ "> **Note:** This SPI is currently in beta and is subject to change. Some SPIs are currently not available to all users.",
+        [ "> **Note:** This service plugin is currently in beta and is subject to change. Some service plugins are currently not available to all users.",
           "",
-          "The eCommerce Catalog SPI is a service provider interface that provides functionality for implementing your own custom catalog of items and/or services to be sold on your site.",
+          "The eCommerce Catalog service plugin (formerly SPI) is a service provider interface that provides functionality for implementing your own custom catalog of items and/or services to be sold on your site.",
           "Define how your custom catalog interacts with the eCommerce purchase flow in a way that is not currently supported natively by Wix. For example, you can determine the number of ",
           "catalogs to choose from, provide a simplified catalog of products or services, and choose the products or services you wish to sell. The custom catalog can be used instead of, ",
           "or alongside, a Wix Stores catalog.",
           "",
-          "Wix eCommerce calls the SPI endpoint [`getCatalogItems()`](#getcatalogitems) to retrieve the custom catalog's items. These items can then be displayed in dynamic product pages,",
+          "Wix eCommerce calls the service plugin endpoint [`getCatalogItems()`](#getcatalogitems) to retrieve the custom catalog's items. These items can then be displayed in dynamic product pages,",
           "as well as the cart, checkout, and order.",
           "",
           "Learn more:",
-          " + [Custom Catalog Extension](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-catalog-extension-beta).",
-          " + [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
+          " + [Custom Catalog Service Plugin](https://support.wix.com/en/article/velo-tutorial-ecommerce-custom-catalog-extension-beta).",
+          " + [Velo: Custom App Extensions Using Service Plugins](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
           "",
-          "### To add a custom extension",
-          "1. [Add the extension to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
+          "### To add a service plugin",
+          "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
           "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-catalog/getconfig) function in the **-config.js** file that is added to your site during step 1.",
           "3. Update the [`getCatalogItems()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-catalog/getcatalogitems) function in the **.js** file that is added to your site during step 1." ],
       "links": [],
@@ -36,7 +35,8 @@
   "properties": [],
   "operations":
     [ { "name": "getCatalogItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -56,14 +56,14 @@
         "docs":
           { "summary": "Retrieves item data from a custom catalog.",
             "description":
-              [ "This function is automatically called by Wix to retrieve the catalog items provided by your custom catalog extension.",
+              [ "This function is automatically called by Wix to retrieve the catalog items provided by your custom catalog plugin.",
                 " This happens when certain actions are performed on the cart and/or checkout. For example, when an item is added to the cart.",
                 "",
                 "### Where to find `getCatalogItems()`",
-                "When you [add the Catalog custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#step-1-create-a-new-catalog-custom-extension), ",
-                "a folder is automatically added to your site. Use the `<my-extension-name>.js` file in the folder to write the code to determine which catalog items to retrieve. ",
+                "When you [add the Catalog service plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#step-1-create-a-new-catalog-custom-extension), ",
+                "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to determine which catalog items to retrieve. ",
                 "",
-                "For more information on customizing your catalog extension, see [Tutorial: Catalog Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-namejs)." ],
+                "For more information on customizing your catalog plugin, see [Velo Tutorial: eCommerce Catalog Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-namejs)." ],
             "links": [],
             "examples":
               [ { "title": "Example of received `options` parameter and returned properties for `catalogItems` array",
@@ -220,19 +220,19 @@
           [ { "lineno": 1,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
-          { "summary": "Retrieves the configuration of your catalog extension.",
+          { "summary": "Retrieves the configuration of your catalog plugin.",
             "description":
               [ "Set your catalog configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "Currently no configurations are available for this extension, so set `getConfig()` to return an empty object.",
+                "Currently no configurations are available for this plugin, so set `getConfig()` to return an empty object.",
                 "",
                 "### Where to find `getConfig()`",
-                "When you [add the Catalog custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#step-1-create-a-new-catalog-custom-extension), ",
-                "a folder is automatically added to your site. Use the `<my-extension-name>-config.js` file in the folder to set the default configuration for your ",
-                "implementation of the custom extension.",
+                "When you [add the Catalog service plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#step-1-create-a-new-catalog-custom-extension), ",
+                "a folder is automatically added to your site. Use the `<my-plugin-name>-config.js` file in the folder to set the default configuration for your ",
+                "implementation of the service plugin.",
                 "",
-                "For more information on setting your configuration, see [Tutorial: Catalog Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-name-configjs)." ],
+                "For more information on setting your configuration, see [Velo Tutorial: eCommerce Catalog Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#my-extension-name-configjs)." ],
             "links": [],
             "examples":
               [ { "title": "Example of a configuration file",
@@ -290,7 +290,7 @@
         "members":
           [ { "name": "deploymentUri",
               "type": "string",
-              "doc": "The URL of the SPI implementation." },
+              "doc": "The URL of the service plugin implementation." },
             { "name": "allItemsDiscount",
               "type": "wix-ecom.ecom-catalog.DiscountConfig",
               "doc": "Configuration for discount of all items in the catalog." },
@@ -723,5 +723,4 @@
           {  },
         "labels": [] } ],
   "extra":
-    {  } 
-}
+    {  } }
