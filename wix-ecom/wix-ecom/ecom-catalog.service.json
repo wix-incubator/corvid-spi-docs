@@ -2,7 +2,8 @@
   "layoutType": "JS",
   "memberOf": "wix-ecom",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "ecom-catalog-spi-index.js" },
@@ -252,7 +253,7 @@
   "messages":
     [ { "name": "BasicCatalogItem",
         "locations":
-          [ { "lineno": 204,
+          [ { "lineno": 205,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -312,7 +313,7 @@
         "labels": [] },
       { "name": "CatalogItems",
         "locations":
-          [ { "lineno": 94,
+          [ { "lineno": 95,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -331,7 +332,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 78,
+          [ { "lineno": 79,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -354,7 +355,7 @@
         "labels": [] },
       { "name": "CatalogReferenceQuantity",
         "locations":
-          [ { "lineno": 72,
+          [ { "lineno": 73,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -373,7 +374,7 @@
         "labels": [] },
       { "name": "ColorInfo",
         "locations":
-          [ { "lineno": 174,
+          [ { "lineno": 175,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -398,7 +399,7 @@
         "labels": [] },
       { "name": "DescriptionLine",
         "locations":
-          [ { "lineno": 166,
+          [ { "lineno": 167,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -445,7 +446,7 @@
         "labels": [] },
       { "name": "ItemData",
         "locations":
-          [ { "lineno": 100,
+          [ { "lineno": 101,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -511,13 +512,13 @@
               "optional": true },
             { "name": "taxGroupId",
               "type": "string",
-              "doc": "The tax group ID associated with this item." } ],
+              "doc": "The tax group ID associated with this item. Learn more about the [Tax Groups API](https://dev.wix.com/docs/velo/api-reference/wix-billing-v2/tax-groups/introduction)." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "ItemType",
         "locations":
-          [ { "lineno": 157,
+          [ { "lineno": 158,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -533,7 +534,7 @@
         "labels": [] },
       { "name": "Metadata",
         "locations":
-          [ { "lineno": 213,
+          [ { "lineno": 214,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -558,7 +559,7 @@
         "labels": [] },
       { "name": "Name",
         "locations":
-          [ { "lineno": 136,
+          [ { "lineno": 137,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -578,7 +579,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 64,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -601,7 +602,7 @@
         "labels": [] },
       { "name": "OriginalAndTranslatedText",
         "locations":
-          [ { "lineno": 143,
+          [ { "lineno": 144,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -621,7 +622,7 @@
         "labels": [] },
       { "name": "Paging",
         "locations":
-          [ { "lineno": 86,
+          [ { "lineno": 87,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -640,7 +641,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 182,
+          [ { "lineno": 183,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -662,7 +663,7 @@
         "labels": [] },
       { "name": "QueryResponse",
         "locations":
-          [ { "lineno": 198,
+          [ { "lineno": 199,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -684,7 +685,7 @@
         "labels": [] },
       { "name": "ServiceProperties",
         "locations":
-          [ { "lineno": 189,
+          [ { "lineno": 190,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -705,7 +706,7 @@
         "labels": [] },
       { "name": "URL",
         "locations":
-          [ { "lineno": 150,
+          [ { "lineno": 151,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
