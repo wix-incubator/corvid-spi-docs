@@ -2,8 +2,7 @@
   "layoutType": "JS",
   "memberOf": "wix-ecom",
   "mixes": [],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "ecom-catalog-spi-index.js" },
@@ -35,8 +34,7 @@
   "properties": [],
   "operations":
     [ { "name": "getCatalogItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -206,8 +204,7 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -315,7 +312,7 @@
         "labels": [] },
       { "name": "CatalogItems",
         "locations":
-          [ { "lineno": 95,
+          [ { "lineno": 94,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -334,7 +331,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 78,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -357,7 +354,7 @@
         "labels": [] },
       { "name": "CatalogReferenceQuantity",
         "locations":
-          [ { "lineno": 73,
+          [ { "lineno": 72,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -448,7 +445,7 @@
         "labels": [] },
       { "name": "ItemData",
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 100,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -511,7 +508,10 @@
             { "name": "priceDescription",
               "type": "wix-ecom.ecom-catalog.OriginalAndTranslatedText",
               "doc": "Additional price description.\nFor example, \"Starts at $67\".",
-              "optional": true } ],
+              "optional": true },
+            { "name": "taxGroupId",
+              "type": "string",
+              "doc": "The tax group ID associated with this item." } ],
         "extra":
           {  },
         "labels": [] },
@@ -578,7 +578,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 64,
+          [ { "lineno": 63,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -621,7 +621,7 @@
         "labels": [] },
       { "name": "Paging",
         "locations":
-          [ { "lineno": 87,
+          [ { "lineno": 86,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
