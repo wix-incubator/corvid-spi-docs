@@ -16,7 +16,7 @@ To write your action code, use the Velo APIs just like you would in your site's 
   work on Wix.
 - The custom extensions feature currently can’t be added to a site when using Git integration and Wix CLI.
   You need to have permission to publish the site and the site must be published.
-- This custom extension is intended for site owners who want to create custom actions on a single site. If you're a 3rd-party app developer interested in becoming an automation provider, see our documentation [here](https://dev.wix.com/docs/rest/api-reference/wix-automations/introduction).
+- This custom extension is intended for site owners who want to create custom actions on a single site. If you're a 3rd-party app developer interested in becoming an automation provider, see our documentation [here](https://dev.wix.com/docs/rest/business-management/automations/introduction).
 
 ## Create a custom action
 
