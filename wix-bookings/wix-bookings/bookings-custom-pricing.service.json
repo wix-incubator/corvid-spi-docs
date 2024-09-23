@@ -1,9 +1,7 @@
 { "name": "bookings-custom-pricing",
-  "memberOf": "wix-bookings",
-  "layoutType": "JS",
   "mixes": [],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "custom-pricing-index.js" },
@@ -14,7 +12,7 @@
           "to bookings on their site. The custom pricing is calculated and used as the basis for the price",
           "when checking out the booking, overriding the standard Bookings pricing logic. Examples of custom pricing include surcharges for weekend rates or use of special equipment.",
           "",
-          "Wix Bookings calls the [`calculatePrice()`](https://www.wix.com/velo/reference/spis/bookings-custom-pricing/bookings-custom-pricing/calculateprice) ",
+          "Wix Bookings calls the [`calculatePrice()`](https://dev.wix.com/docs/velo/api-reference/wix-bookings-v2/service-plugins-spis/bookings-custom-pricing/calculate-price) ",
           "Velo service plugin function to retrieve the relevant data for a site collaborator to customize the price. ",
           "Site collaborators can then implement their own logic to calculate and return the price. ",
           "",
@@ -37,18 +35,17 @@
   "properties": [],
   "operations":
     [ { "name": "calculatePrice",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "wix-bookings.bookings-custom-pricing.Options",
+              "type": "bookings-custom-pricing.Options",
               "doc": "Options for calculating the price, including the actual booking." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-bookings.bookings-custom-pricing.CalculatePriceResponse" ] },
+                  [ "bookings-custom-pricing.CalculatePriceResponse" ] },
             "doc": "Fulfilled - The calculated price for the booking." },
         "locations":
           [ { "lineno": 268,
@@ -104,15 +101,14 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-bookings.bookings-custom-pricing.CustomPricingConfigResponse" ] },
+                  [ "bookings-custom-pricing.CustomPricingConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -185,11 +181,11 @@
               {  } },
         "members":
           [ { "name": "slot",
-              "type": "wix-bookings.bookings-custom-pricing.Slot",
+              "type": "bookings-custom-pricing.Slot",
               "doc": "The booked slot, once booked becomes a session, The booking is automatically assigned to the session if it already exists, or creates a session if one doesn't already exist.",
               "optional": true },
             { "name": "schedule",
-              "type": "wix-bookings.bookings-custom-pricing.Schedule",
+              "type": "bookings-custom-pricing.Schedule",
               "doc": "The booked schedule. The booking is automatically assigned to the schedule's sessions.",
               "optional": true },
             { "name": "title",
@@ -233,13 +229,13 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.CustomFormField" ] },
+                    [ "bookings-custom-pricing.CustomFormField" ] },
               "doc": "Additional custom fields submitted with the booking form." },
             { "name": "bookedEntity",
-              "type": "wix-bookings.bookings-custom-pricing.BookedEntity",
+              "type": "bookings-custom-pricing.BookedEntity",
               "doc": "An object describing the slot or schedule that was booked." },
             { "name": "contactDetails",
-              "type": "wix-bookings.bookings-custom-pricing.ContactDetails",
+              "type": "bookings-custom-pricing.ContactDetails",
               "doc": "Contact details of the site visitor or member making the booking." },
             { "name": "startDate",
               "type": "string",
@@ -248,7 +244,7 @@
               "type": "string",
               "doc": "The end date of this booking in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format.  For a slot, this is the end date of the slot. For a schedule, this is the end date of the last session." },
             { "name": "createdBy",
-              "type": "wix-bookings.bookings-custom-pricing.CommonIdentificationData",
+              "type": "bookings-custom-pricing.CommonIdentificationData",
               "doc": "ID of the creator of the booking. If `appId` and another ID are present, the other ID takes precedence." },
             { "name": "doubleBooked",
               "type": "boolean",
@@ -276,7 +272,7 @@
               "doc": "Total number of participants. Available only when the booking includes a single service variant.",
               "optional": true },
             { "name": "participantsChoices",
-              "type": "wix-bookings.bookings-custom-pricing.ParticipantsChoices",
+              "type": "bookings-custom-pricing.ParticipantsChoices",
               "doc": "Information about the booked service choices and participants. Available only when the booking includes multiple service variants.",
               "optional": true } ],
         "extra":
@@ -360,7 +356,7 @@
               "type": "string",
               "doc": "Contact's phone number." },
             { "name": "fullAddress",
-              "type": "wix-bookings.bookings-custom-pricing.FullAddress",
+              "type": "bookings-custom-pricing.FullAddress",
               "doc": "Contact's full address." },
             { "name": "countryCode",
               "type": "string",
@@ -469,7 +465,7 @@
               "type": "string",
               "doc": "Contact's phone number." },
             { "name": "geocode",
-              "type": "wix-bookings.bookings-custom-pricing.AddressLocation",
+              "type": "bookings-custom-pricing.AddressLocation",
               "doc": "Coordinates of the physical address." },
             { "name": "hint",
               "type": "string",
@@ -484,14 +480,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.Subdivisions" ] },
+                    [ "bookings-custom-pricing.Subdivisions" ] },
               "doc": "Multi-level subdivisions from top to bottom." },
             { "name": "addressLine",
               "type": "string",
               "doc": "Main address line, usually street and number, as free text.",
               "optional": true },
             { "name": "streetAddress",
-              "type": "wix-bookings.bookings-custom-pricing.StreetAddress",
+              "type": "bookings-custom-pricing.StreetAddress",
               "doc": "Street name, number and apartment number.",
               "optional": true } ],
         "extra":
@@ -541,7 +537,7 @@
               {  } },
         "members":
           [ { "name": "booking",
-              "type": "wix-bookings.bookings-custom-pricing.Booking",
+              "type": "bookings-custom-pricing.Booking",
               "doc": "Booking to calculate custom pricing for." } ],
         "extra":
           {  },
@@ -559,7 +555,7 @@
               {  } },
         "members":
           [ { "name": "serviceChoices",
-              "type": "wix-bookings.bookings-custom-pricing.ServiceChoices",
+              "type": "bookings-custom-pricing.ServiceChoices",
               "doc": "Information about the booked service's choices. Includes the number of participants." } ],
         "extra":
           {  },
@@ -613,7 +609,7 @@
               "type": "string",
               "doc": "The end time of the last session in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format." },
             { "name": "location",
-              "type": "wix-bookings.bookings-custom-pricing.Location",
+              "type": "bookings-custom-pricing.Location",
               "doc": "Location where the schedule's sessions take place." },
             { "name": "serviceId",
               "type": "string",
@@ -665,7 +661,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.ServiceChoice" ] },
+                    [ "bookings-custom-pricing.ServiceChoice" ] },
               "doc": "Service choice for participants." },
             { "name": "numberOfParticipants",
               "type": "number",
@@ -703,19 +699,21 @@
             { "name": "endDate",
               "type": "string",
               "doc": "The end time of this slot in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format." },
+            { "name": "timezone",
+              "type": "string",
+              "doc": "The timezone according to which the slot was shown to the user when booking, and should be shown in future." },
             { "name": "updatedDate",
               "type": "string",
               "doc": "The date the booking was last updated." },
             { "name": "resource",
-              "type": "wix-bookings.bookings-custom-pricing.Resource",
+              "type": "bookings-custom-pricing.Resource",
               "doc": "The resource assigned to the slot." },
             { "name": "location",
-              "type": "wix-bookings.bookings-custom-pricing.Location",
+              "type": "bookings-custom-pricing.Location",
               "doc": "Location where the slot's session takes place." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "StreetAddress",
         "locations":
           [ { "lineno": 98,
@@ -777,7 +775,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.Subdivision" ] },
+                    [ "bookings-custom-pricing.Subdivision" ] },
               "doc": "Subdivision code. Usually state, region, prefecture or province code, according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)." } ],
         "extra":
           {  },
