@@ -1,9 +1,10 @@
-{ "name": "bookings-custom-pricing",
+{ 
+  "name": "bookings-custom-pricing",
   "memberOf": "wix-bookings",
   "layoutType": "JS",
   "mixes": [],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "custom-pricing-index.js" },
@@ -14,7 +15,7 @@
           "to bookings on their site. The custom pricing is calculated and used as the basis for the price",
           "when checking out the booking, overriding the standard Bookings pricing logic. Examples of custom pricing include surcharges for weekend rates or use of special equipment.",
           "",
-          "Wix Bookings calls the [`calculatePrice()`](https://www.wix.com/velo/reference/spis/bookings-custom-pricing/bookings-custom-pricing/calculateprice) ",
+          "Wix Bookings calls the [`calculatePrice()`](https://dev.wix.com/docs/velo/api-reference/wix-bookings-v2/service-plugins-spis/bookings-custom-pricing/calculate-price) ",
           "Velo service plugin function to retrieve the relevant data for a site collaborator to customize the price. ",
           "Site collaborators can then implement their own logic to calculate and return the price. ",
           "",
@@ -37,8 +38,7 @@
   "properties": [],
   "operations":
     [ { "name": "calculatePrice",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -104,8 +104,7 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -254,7 +253,7 @@
               "type": "boolean",
               "doc": "Whether this booking overlaps another existing confirmed booking." },
             { "name": "extendedFields",
-              "type": "bookings-custom-pricing.ExtendedFields",
+              "type": "wix-bookings.bookings-custom-pricing.ExtendedFields",
               "doc": "Additional custom fields. This includes fields managed by Wix, by 3rd-party apps, and by the site." },
             { "name": "externalUserId",
               "type": "string",
@@ -703,6 +702,9 @@
             { "name": "endDate",
               "type": "string",
               "doc": "The end time of this slot in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format." },
+            { "name": "timezone",
+              "type": "string",
+              "doc": "The timezone according to which the slot was shown to the user when booking, and should be shown in future." },
             { "name": "updatedDate",
               "type": "string",
               "doc": "The date the booking was last updated." },
@@ -714,8 +716,7 @@
               "doc": "Location where the slot's session takes place." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "StreetAddress",
         "locations":
           [ { "lineno": 98,
