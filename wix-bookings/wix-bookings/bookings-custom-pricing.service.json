@@ -1,4 +1,7 @@
-{ "name": "bookings-custom-pricing",
+{ 
+  "name": "bookings-custom-pricing",
+  "memberOf": "wix-bookings",
+  "layoutType": "JS",
   "mixes": [],
   "labels":
     [ "new" ],
