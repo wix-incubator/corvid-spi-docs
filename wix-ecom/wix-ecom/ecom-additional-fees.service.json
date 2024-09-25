@@ -51,7 +51,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
+                  [ "wix-ecom.ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
             "doc": "Fulfilled - Additional fees and currency info." },
         "locations":
           [ { "lineno": 26,
@@ -131,7 +131,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-additional-fees.AdditionalFeesConfigResponse" ] },
+                  [ "wix-ecom.ecom-additional-fees.AdditionalFeesConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -320,7 +320,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.AdditionalFee" ] },
+                    [ "wix-ecom.ecom-additional-fees.AdditionalFee" ] },
               "doc": "List of additional fees." },
             { "name": "currency",
               "type": "string",
@@ -564,7 +564,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.TaxRateBreakdown" ] },
+                    [ "wix-ecom.ecom-additional-fees.TaxRateBreakdown" ] },
               "doc": "Tax breakdown." } ],
         "extra":
           {  },
@@ -658,7 +658,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.LineItem" ] },
+                    [ "wix-ecom.ecom-additional-fees.LineItem" ] },
               "doc": "Line items. Max: 300 line items" },
             { "name": "shippingAddress",
               "type": "wix-ecom.ecom-additional-fees.AddressDetails",
@@ -811,7 +811,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.OtherCharges" ] },
+                    [ "wix-ecom.ecom-additional-fees.OtherCharges" ] },
               "doc": "Other charges." } ],
         "extra":
           {  },
@@ -931,7 +931,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-additional-fees.OtherCharge" ] },
+                    [ "wix-ecom.ecom-additional-fees.OtherCharge" ] },
               "doc": "Other costs. For example, insurance or handling and packaging fees." } ],
         "extra":
           {  },
