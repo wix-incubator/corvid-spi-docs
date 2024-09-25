@@ -1,6 +1,6 @@
 { "name": "ecom-catalog",
-  "layoutType": "JS",
-  "memberOf": "wix-ecom",
+  "layoutType": "JS"
+  "memberOf": "wix-ecom"
   "mixes": [],
   "labels":
     [ "new" ],
@@ -40,7 +40,10 @@
         "params":
           [ { "name": "options",
               "type": "wix-ecom.ecom-catalog.Options",
-              "doc": "Catalog and item references (IDs and additional info), weight unit, and quantities requested by Wix eCommerce." } ],
+              "doc": "Catalog and item references (IDs and additional info), weight unit, and quantities requested by Wix eCommerce." },
+            { "name": "context",
+              "type": "wix-ecom.ecom-catalog.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -253,7 +256,7 @@
   "messages":
     [ { "name": "BasicCatalogItem",
         "locations":
-          [ { "lineno": 205,
+          [ { "lineno": 230,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -313,7 +316,7 @@
         "labels": [] },
       { "name": "CatalogItems",
         "locations":
-          [ { "lineno": 95,
+          [ { "lineno": 120,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -332,7 +335,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 104,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -355,7 +358,7 @@
         "labels": [] },
       { "name": "CatalogReferenceQuantity",
         "locations":
-          [ { "lineno": 73,
+          [ { "lineno": 98,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -374,7 +377,7 @@
         "labels": [] },
       { "name": "ColorInfo",
         "locations":
-          [ { "lineno": 175,
+          [ { "lineno": 200,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -397,9 +400,37 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 47,
+              "filename": "ecom-catalog-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "wix-ecom.ecom-catalog.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "DescriptionLine",
         "locations":
-          [ { "lineno": 167,
+          [ { "lineno": 192,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -444,9 +475,47 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 56,
+              "filename": "ecom-catalog-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
+        "labels": [] },
       { "name": "ItemData",
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 126,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -518,7 +587,7 @@
         "labels": [] },
       { "name": "ItemType",
         "locations":
-          [ { "lineno": 158,
+          [ { "lineno": 183,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -534,7 +603,7 @@
         "labels": [] },
       { "name": "Metadata",
         "locations":
-          [ { "lineno": 214,
+          [ { "lineno": 239,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -559,7 +628,7 @@
         "labels": [] },
       { "name": "Name",
         "locations":
-          [ { "lineno": 137,
+          [ { "lineno": 162,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -579,7 +648,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 64,
+          [ { "lineno": 89,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -602,7 +671,7 @@
         "labels": [] },
       { "name": "OriginalAndTranslatedText",
         "locations":
-          [ { "lineno": 144,
+          [ { "lineno": 169,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -622,7 +691,7 @@
         "labels": [] },
       { "name": "Paging",
         "locations":
-          [ { "lineno": 87,
+          [ { "lineno": 112,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -641,7 +710,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 183,
+          [ { "lineno": 208,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -663,7 +732,7 @@
         "labels": [] },
       { "name": "QueryResponse",
         "locations":
-          [ { "lineno": 199,
+          [ { "lineno": 224,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -685,7 +754,7 @@
         "labels": [] },
       { "name": "ServiceProperties",
         "locations":
-          [ { "lineno": 190,
+          [ { "lineno": 215,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -706,7 +775,7 @@
         "labels": [] },
       { "name": "URL",
         "locations":
-          [ { "lineno": 151,
+          [ { "lineno": 176,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
