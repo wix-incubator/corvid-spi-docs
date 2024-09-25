@@ -1,9 +1,9 @@
 { "name": "ecom-additional-fees",
-  "layoutType": "JS",
-  "memberOf": "wix-ecom",
+  "layoutType": "JS"
+"memberOf": "wix-ecom"
   "mixes": [],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "additional-fees-index.js" },
@@ -43,12 +43,15 @@
         "params":
           [ { "name": "options",
               "type": "wix-ecom.ecom-additional-fees.Options",
-              "doc": "Options for line items and shipping options." } ],
+              "doc": "Options for line items and shipping options." },
+            { "name": "context",
+              "type": "wix-ecom.ecom-additional-fees.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
+                  [ "ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
             "doc": "Fulfilled - Additional fees and currency info." },
         "locations":
           [ { "lineno": 26,
@@ -128,7 +131,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-additional-fees.AdditionalFeesConfigResponse" ] },
+                  [ "ecom-additional-fees.AdditionalFeesConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -169,7 +172,7 @@
   "messages":
     [ { "name": "AdditionalFee",
         "locations":
-          [ { "lineno": 68,
+          [ { "lineno": 93,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -207,7 +210,7 @@
         "labels": [] },
       { "name": "AddressDetails",
         "locations":
-          [ { "lineno": 111,
+          [ { "lineno": 136,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -250,7 +253,7 @@
         "labels": [] },
       { "name": "AppliedDiscount",
         "locations":
-          [ { "lineno": 330,
+          [ { "lineno": 355,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -289,7 +292,7 @@
         "labels": [] },
       { "name": "BuyerDetails",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 131,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -305,7 +308,7 @@
         "labels": [] },
       { "name": "CalculateAdditionalFeesResponse",
         "locations":
-          [ { "lineno": 59,
+          [ { "lineno": 84,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -317,7 +320,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-additional-fees.AdditionalFee" ] },
+                    [ "ecom-additional-fees.AdditionalFee" ] },
               "doc": "List of additional fees." },
             { "name": "currency",
               "type": "string",
@@ -327,7 +330,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 150,
+          [ { "lineno": 175,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -349,7 +352,7 @@
         "labels": [] },
       { "name": "ContactDetails",
         "locations":
-          [ { "lineno": 131,
+          [ { "lineno": 156,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -381,9 +384,37 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 50,
+              "filename": "additional-fees.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "wix-ecom.ecom-additional-fees.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "Coupon",
         "locations":
-          [ { "lineno": 346,
+          [ { "lineno": 371,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -408,7 +439,7 @@
         "labels": [] },
       { "name": "DeliveryLogistics",
         "locations":
-          [ { "lineno": 212,
+          [ { "lineno": 237,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -430,7 +461,7 @@
         "labels": [] },
       { "name": "DiscountRule",
         "locations":
-          [ { "lineno": 361,
+          [ { "lineno": 386,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -452,7 +483,7 @@
         "labels": [] },
       { "name": "DiscountRuleName",
         "locations":
-          [ { "lineno": 369,
+          [ { "lineno": 394,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -469,9 +500,47 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 59,
+              "filename": "additional-fees.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
+        "labels": [] },
       { "name": "ItemTaxFullDetails",
         "locations":
-          [ { "lineno": 273,
+          [ { "lineno": 298,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -495,14 +564,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-additional-fees.TaxRateBreakdown" ] },
+                    [ "ecom-additional-fees.TaxRateBreakdown" ] },
               "doc": "Tax breakdown." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "LineItem",
         "locations":
-          [ { "lineno": 94,
+          [ { "lineno": 119,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -536,7 +605,7 @@
         "labels": [] },
       { "name": "MerchantDiscount",
         "locations":
-          [ { "lineno": 355,
+          [ { "lineno": 380,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -552,7 +621,7 @@
         "labels": [] },
       { "name": "MultiCurrencyPrice",
         "locations":
-          [ { "lineno": 264,
+          [ { "lineno": 289,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -577,7 +646,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 50,
+          [ { "lineno": 75,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -589,7 +658,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-additional-fees.LineItem" ] },
+                    [ "ecom-additional-fees.LineItem" ] },
               "doc": "Line items. Max: 300 line items" },
             { "name": "shippingAddress",
               "type": "wix-ecom.ecom-additional-fees.AddressDetails",
@@ -608,7 +677,7 @@
         "labels": [] },
       { "name": "OtherCharge",
         "locations":
-          [ { "lineno": 319,
+          [ { "lineno": 344,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -627,7 +696,7 @@
         "labels": [] },
       { "name": "OtherCharges",
         "locations":
-          [ { "lineno": 231,
+          [ { "lineno": 256,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -649,7 +718,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 158,
+          [ { "lineno": 183,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -671,7 +740,7 @@
         "labels": [] },
       { "name": "PickupDetails",
         "locations":
-          [ { "lineno": 243,
+          [ { "lineno": 268,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -693,7 +762,7 @@
         "labels": [] },
       { "name": "SelectedCarrierSeriveOptionPrices",
         "locations":
-          [ { "lineno": 255,
+          [ { "lineno": 280,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -718,7 +787,7 @@
         "labels": [] },
       { "name": "SelectedCarrierServiceOption",
         "locations":
-          [ { "lineno": 199,
+          [ { "lineno": 224,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -742,14 +811,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-additional-fees.OtherCharges" ] },
+                    [ "ecom-additional-fees.OtherCharges" ] },
               "doc": "Other charges." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "SelectedCarrierServiceOptionCost",
         "locations":
-          [ { "lineno": 224,
+          [ { "lineno": 249,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -768,7 +837,7 @@
         "labels": [] },
       { "name": "SelectedCarrierServiceOptionsOtherCharge",
         "locations":
-          [ { "lineno": 291,
+          [ { "lineno": 316,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -790,7 +859,7 @@
         "labels": [] },
       { "name": "ServiceProperties",
         "locations":
-          [ { "lineno": 178,
+          [ { "lineno": 203,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -809,7 +878,7 @@
         "labels": [] },
       { "name": "ShippingInfo",
         "locations":
-          [ { "lineno": 186,
+          [ { "lineno": 211,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -825,7 +894,7 @@
         "labels": [] },
       { "name": "ShippingOption",
         "locations":
-          [ { "lineno": 303,
+          [ { "lineno": 328,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -847,7 +916,7 @@
         "labels": [] },
       { "name": "ShippingPrice",
         "locations":
-          [ { "lineno": 312,
+          [ { "lineno": 337,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -862,14 +931,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-additional-fees.OtherCharge" ] },
+                    [ "ecom-additional-fees.OtherCharge" ] },
               "doc": "Other costs. For example, insurance or handling and packaging fees." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "ShippingRegion",
         "locations":
-          [ { "lineno": 192,
+          [ { "lineno": 217,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -888,7 +957,7 @@
         "labels": [] },
       { "name": "StreetAddressInfo",
         "locations":
-          [ { "lineno": 125,
+          [ { "lineno": 150,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -907,7 +976,7 @@
         "labels": [] },
       { "name": "SubscriptionSettings",
         "locations":
-          [ { "lineno": 166,
+          [ { "lineno": 191,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -923,7 +992,7 @@
         "labels": [] },
       { "name": "TaxDetails",
         "locations":
-          [ { "lineno": 86,
+          [ { "lineno": 111,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -939,7 +1008,7 @@
         "labels": [] },
       { "name": "TaxRateBreakdown",
         "locations":
-          [ { "lineno": 283,
+          [ { "lineno": 308,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -961,7 +1030,7 @@
         "labels": [] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 141,
+          [ { "lineno": 166,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
