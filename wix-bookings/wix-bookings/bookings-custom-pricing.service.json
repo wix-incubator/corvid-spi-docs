@@ -1,6 +1,6 @@
 { "name": "bookings-custom-pricing",
-  "layoutType": "JS"
-"memberOf": "wix-bookings"
+  "layoutType": "JS",
+"memberOf": "wix-bookings",
   "mixes": [],
   "labels":
     [ "changed" ],
