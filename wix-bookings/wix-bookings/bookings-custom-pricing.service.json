@@ -1,6 +1,6 @@
 { "name": "bookings-custom-pricing",
-  "layoutType": "JS",
-"memberOf": "wix-bookings",
+  "layoutType": "JS"
+"memberOf": "wix-bookings"
   "mixes": [],
   "labels":
     [ "changed" ],
@@ -37,8 +37,7 @@
   "properties": [],
   "operations":
     [ { "name": "calculatePrice",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -370,6 +369,35 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 290,
+              "filename": "custom-pricing.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "billing-tax-calculation.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "CustomFormField",
         "locations":
           [ { "lineno": 157,
@@ -540,8 +568,7 @@
                       "memberId",
                       "wixUserId",
                       "appId" ] } ] },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "Location",
         "locations":
           [ { "lineno": 35,
