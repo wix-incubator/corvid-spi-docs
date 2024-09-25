@@ -1,6 +1,6 @@
 { "name": "ecom-additional-fees",
-  "layoutType": "JS"
-"memberOf": "wix-ecom"
+  "layoutType": "JS",
+"memberOf": "wix-ecom",
   "mixes": [],
   "labels":
     [ "new" ],
