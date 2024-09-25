@@ -1,7 +1,6 @@
-{ 
-  "name": "bookings-custom-pricing",
-  "memberOf": "wix-bookings",
+{ "name": "bookings-custom-pricing",
   "layoutType": "JS",
+  "memberOf": "wix-bookings",
   "mixes": [],
   "labels":
     [ "new" ],
@@ -48,7 +47,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-bookings.bookings-custom-pricing.CalculatePriceResponse" ] },
+                  [ "bookings-custom-pricing.CalculatePriceResponse" ] },
             "doc": "Fulfilled - The calculated price for the booking." },
         "locations":
           [ { "lineno": 268,
@@ -111,7 +110,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-bookings.bookings-custom-pricing.CustomPricingConfigResponse" ] },
+                  [ "bookings-custom-pricing.CustomPricingConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -232,7 +231,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.CustomFormField" ] },
+                    [ "bookings-custom-pricing.CustomFormField" ] },
               "doc": "Additional custom fields submitted with the booking form." },
             { "name": "bookedEntity",
               "type": "wix-bookings.bookings-custom-pricing.BookedEntity",
@@ -483,7 +482,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.Subdivisions" ] },
+                    [ "bookings-custom-pricing.Subdivisions" ] },
               "doc": "Multi-level subdivisions from top to bottom." },
             { "name": "addressLine",
               "type": "string",
@@ -664,7 +663,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.ServiceChoice" ] },
+                    [ "bookings-custom-pricing.ServiceChoice" ] },
               "doc": "Service choice for participants." },
             { "name": "numberOfParticipants",
               "type": "number",
@@ -778,7 +777,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.bookings-custom-pricing.Subdivision" ] },
+                    [ "bookings-custom-pricing.Subdivision" ] },
               "doc": "Subdivision code. Usually state, region, prefecture or province code, according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)." } ],
         "extra":
           {  },
