@@ -1,9 +1,9 @@
 { "name": "bookings-custom-pricing",
   "layoutType": "JS",
-  "memberOf": "wix-bookings",
+"memberOf": "wix-bookings",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "custom-pricing-index.js" },
@@ -37,12 +37,16 @@
   "properties": [],
   "operations":
     [ { "name": "calculatePrice",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
               "type": "wix-bookings.bookings-custom-pricing.Options",
-              "doc": "Options for calculating the price, including the actual booking." } ],
+              "doc": "Options for calculating the price, including the actual booking." },
+            { "name": "context",
+              "type": "wix-bookings.bookings-custom-pricing.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -499,6 +503,45 @@
                     [ "addressLine",
                       "streetAddress" ] } ] },
         "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 299,
+              "filename": "custom-pricing.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
+        "labels":
+          [ "new" ] },
       { "name": "Location",
         "locations":
           [ { "lineno": 35,
@@ -701,9 +744,6 @@
             { "name": "endDate",
               "type": "string",
               "doc": "The end time of this slot in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format." },
-            { "name": "timezone",
-              "type": "string",
-              "doc": "The timezone according to which the slot was shown to the user when booking, and should be shown in future." },
             { "name": "updatedDate",
               "type": "string",
               "doc": "The date the booking was last updated." },
@@ -715,7 +755,8 @@
               "doc": "Location where the slot's session takes place." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "StreetAddress",
         "locations":
           [ { "lineno": 98,
