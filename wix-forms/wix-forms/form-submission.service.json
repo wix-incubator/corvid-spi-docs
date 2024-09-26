@@ -1,9 +1,9 @@
 { "name": "form-submission",
-  "mixes": [],
   "layoutType": "JS",
   "memberOf": "wix-forms",
+  "mixes": [],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "submission-index.js" },
@@ -47,8 +47,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -105,7 +104,10 @@
         "params":
           [ { "name": "options",
               "type": "wix-forms.form-submission.Options",
-              "doc": "Submission validation options." } ],
+              "doc": "Submission validation options." },
+            { "name": "context",
+              "type": "wix-forms.form-submission.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -154,9 +156,37 @@
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
   "messages":
-    [ { "name": "CurrentSubmission",
+    [ { "name": "Context",
         "locations":
-          [ { "lineno": 122,
+          [ { "lineno": 58,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "wix-forms.form-submission.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels": [] },
+      { "name": "CurrentSubmission",
+        "locations":
+          [ { "lineno": 147,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -193,7 +223,7 @@
         "labels": [] },
       { "name": "ExtendedFields",
         "locations":
-          [ { "lineno": 103,
+          [ { "lineno": 128,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -226,6 +256,44 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 67,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
+        "labels": [] },
       { "name": "NamespaceConfigs",
         "locations":
           [ { "lineno": 30,
@@ -249,7 +317,7 @@
         "labels": [] },
       { "name": "Namespaces",
         "locations":
-          [ { "lineno": 108,
+          [ { "lineno": 133,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -265,7 +333,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 57,
+          [ { "lineno": 82,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Form submission information.",
@@ -297,7 +365,7 @@
         "labels": [] },
       { "name": "OrderDetails",
         "locations":
-          [ { "lineno": 113,
+          [ { "lineno": 138,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -325,7 +393,7 @@
         "labels": [] },
       { "name": "Submission",
         "locations":
-          [ { "lineno": 73,
+          [ { "lineno": 98,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -362,7 +430,7 @@
         "labels": [] },
       { "name": "Submissions",
         "locations":
-          [ { "lineno": 98,
+          [ { "lineno": 123,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -378,7 +446,7 @@
         "labels": [] },
       { "name": "UpdateOptions",
         "locations":
-          [ { "lineno": 93,
+          [ { "lineno": 118,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
