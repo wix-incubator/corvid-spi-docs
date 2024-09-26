@@ -23,9 +23,9 @@
           "+ [Create an automatic discount using the dashboard](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts), or by using the [Discount Rules API](https://www.wix.com/velo/reference/wix-ecom-backend/discountrules/creatediscountrule).",
           "",
           "Learn more:",
-          " + [Velo: Custom App Extensions Using Service Plugins](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/service-plugins-formerly-spis/custom-app-extensions-using-spis)",
-          " + [Tutorial: Custom Discount Trigger Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin)",
-          "",          
+          "+ [Velo: Custom App Extensions Using Service Plugins](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/service-plugins-formerly-spis/custom-app-extensions-using-spis)",
+          "+ [Tutorial: Custom Discount Trigger Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin)",
+          "",
           "### To add a service plugin",
           "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
           "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-custom-discount-triggers/getconfig) function in the **-config.js** file that is added to your site during step 1.",
@@ -58,7 +58,7 @@
                 "Currently no configurations are available for this plugin, so set `getConfig()` to return an empty object.",
                 "",
                 "### Where to find `getConfig()`",
-                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#step-1-create-a-new-custom-discount-trigger-plugin), ",
+                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
                 "a folder is automatically added to your site. Use the `<my-plugin-name>-config.js` file in the folder to set the default configuration for your ",
                 "implementation of the service plugin.",
                 "",
@@ -87,7 +87,10 @@
         "params":
           [ { "name": "options",
               "type": "wix-ecom.ecom-custom-discount-triggers.Options",
-              "doc": "Line items and triggers." } ],
+              "doc": "Line items and triggers." },
+            { "name": "context",
+              "type": "wix-ecom.ecom-custom-discount-triggers.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -104,9 +107,7 @@
                 "The function is automatically called by Wix eCommerce when actions are performed on the cart or checkout entities/pages. For example, when adding an item to the cart.",
                 "",
                 "### Where to find `getEligibleTriggers()`",
-                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#step-1-create-a-new-custom-discount-trigger-plugin), ",
-                "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to retrieve custom triggers.",
-                "",
+                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#step-1-create-a-new-custom-discount-trigger-plugin), a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to retrieve custom triggers.",
                 "For more information on setting up your custom triggers, see [Tutorial: Custom Discount Trigger Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#custom-triggersjs)." ],
             "links": [],
             "examples":
@@ -143,7 +144,10 @@
       { "name": "listTriggers",
         "labels": [],
         "nameParams": [],
-        "params": [],
+        "params":
+          [ { "name": "context",
+              "type": "wix-ecom.ecom-custom-discount-triggers.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -151,7 +155,7 @@
                   [ "wix-ecom.ecom-custom-discount-triggers.ListCustomTriggers" ] },
             "doc": "Fulfilled - List of eligible triggers." },
         "locations":
-          [ { "lineno": 41,
+          [ { "lineno": 42,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "summary": "Retrieves all available custom triggers.",
@@ -160,9 +164,7 @@
                 "The function is automatically called by Wix eCommerce to populate the custom [minimum requirements section of an automatic discount](https://support.wix.com/en/article/wix-stores-creating-automatic-discounts#:~:text=Create%20minimum%20requirements).",
                 "",
                 "### Where to find `listTriggers()`",
-                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#step-1-create-a-new-custom-discount-trigger-plugin), ",
-                "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to retrieve all available custom triggers.",
-                "",
+                "When you [add the Custom Discount Trigger plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#step-1-create-a-new-custom-discount-trigger-plugin), a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to retrieve all available custom triggers.",
                 "For more information on setting up your custom triggers, see [Tutorial: Custom Discount Trigger Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-custom-discount-trigger-service-plugin#custom-triggersjs)." ],
             "links": [],
             "examples":
@@ -197,7 +199,7 @@
   "messages":
     [ { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 90,
+          [ { "lineno": 116,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -217,9 +219,37 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 62,
+              "filename": "ecom-custom-discount-triggers-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "wix-ecom.ecom-custom-discount-triggers.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "CustomTrigger",
         "locations":
-          [ { "lineno": 80,
+          [ { "lineno": 106,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -235,7 +265,7 @@
         "labels": [] },
       { "name": "EligibleTrigger",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 132,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -254,7 +284,7 @@
         "labels": [] },
       { "name": "EligibleTriggers",
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 127,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -271,9 +301,47 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 71,
+              "filename": "ecom-custom-discount-triggers-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
+        "labels": [] },
       { "name": "LineItem",
         "locations":
-          [ { "lineno": 66,
+          [ { "lineno": 92,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -298,7 +366,7 @@
         "labels": [] },
       { "name": "ListCustomTrigger",
         "locations":
-          [ { "lineno": 117,
+          [ { "lineno": 143,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -317,7 +385,7 @@
         "labels": [] },
       { "name": "ListCustomTriggers",
         "locations":
-          [ { "lineno": 112,
+          [ { "lineno": 138,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -336,7 +404,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 60,
+          [ { "lineno": 86,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
@@ -361,7 +429,7 @@
         "labels": [] },
       { "name": "Trigger",
         "locations":
-          [ { "lineno": 74,
+          [ { "lineno": 100,
               "filename": "ecom-custom-discount-triggers-spi.js" } ],
         "docs":
           { "links": [],
