@@ -3,7 +3,7 @@
   "memberOf": "wix-ecom",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -720,6 +720,35 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 59,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "ecom-payment-setting.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "CostAmount",
         "locations":
           [ { "lineno": 620,
@@ -1029,6 +1058,45 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 68,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
+        "labels":
+          [ "new" ] },
       { "name": "ItemType",
         "locations":
           [ { "lineno": 243,
