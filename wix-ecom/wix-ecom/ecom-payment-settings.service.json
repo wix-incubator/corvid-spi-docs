@@ -15,7 +15,7 @@
           "Currently, the only payment setting available to customize is whether to apply 3DS to an order. ",
           "If 3DS is required, the customer will have to pass an additional layer of security before completing their payment. For example:",
           "",
-          "![3DS popup](../../media/ecom-payment-settings-3ds.png \"3DS popup\")",
+          "![3DS popup](..assets/images/3ds.png \"3DS popup\")",
           "",
           "Learn more:",
           "+ [Velo: Custom App Extensions Using Service Plugins](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
@@ -97,7 +97,10 @@
         "params":
           [ { "name": "options",
               "type": "wix-ecom.ecom-payment-settings.Options",
-              "doc": "The order information." } ],
+              "doc": "The order information." },
+            { "name": "context",
+              "type": "wix-ecom.ecom-payment-settings.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -120,7 +123,7 @@
                 "When you [add the Payment Settings service plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
                 "a folder is automatically added to your site. Use the `<my-plugin-name>.js` file in the folder to write the code to determine which payment settings to apply to an order. ",
                 "",
-                "For more information on customizing your payment settings, see [Tutorial: Payment Settings Service Plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension)." ],
+                "For more information on customizing your payment settings, see [Tutorial: Payment Settings Service Plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#require-3ds-50js)." ],
             "links": [],
             "examples":
               [ { "title": "Example of a `paymentSettings` return value",
@@ -166,7 +169,7 @@
   "messages":
     [ { "name": "Activities",
         "locations":
-          [ { "lineno": 449,
+          [ { "lineno": 475,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order activities.",
@@ -213,7 +216,7 @@
         "labels": [] },
       { "name": "AdditionalFees",
         "locations":
-          [ { "lineno": 534,
+          [ { "lineno": 560,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Additional fees applied to the order.",
@@ -262,7 +265,7 @@
         "labels": [] },
       { "name": "AdditionalFeesPrice",
         "locations":
-          [ { "lineno": 548,
+          [ { "lineno": 574,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Additional fee's price.",
@@ -284,7 +287,7 @@
         "labels": [] },
       { "name": "AdditionalFeesTaxDetails",
         "locations":
-          [ { "lineno": 556,
+          [ { "lineno": 582,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Tax details.",
@@ -310,7 +313,7 @@
         "labels": [] },
       { "name": "Address",
         "locations":
-          [ { "lineno": 324,
+          [ { "lineno": 350,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing address information.",
@@ -352,7 +355,7 @@
         "labels": [] },
       { "name": "AddressWithContact",
         "locations":
-          [ { "lineno": 639,
+          [ { "lineno": 665,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -373,7 +376,7 @@
         "labels": [] },
       { "name": "AppliedCoupon",
         "locations":
-          [ { "lineno": 650,
+          [ { "lineno": 676,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing a coupon applied to the order.",
@@ -399,7 +402,7 @@
         "labels": [] },
       { "name": "AppliedDiscountAmounts",
         "locations":
-          [ { "lineno": 441,
+          [ { "lineno": 467,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Amounts.",
@@ -421,7 +424,7 @@
         "labels": [] },
       { "name": "AppliedDiscountRule",
         "locations":
-          [ { "lineno": 412,
+          [ { "lineno": 438,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Automatic discount.",
@@ -447,7 +450,7 @@
         "labels": [] },
       { "name": "AppliedDiscounts",
         "locations":
-          [ { "lineno": 384,
+          [ { "lineno": 410,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Applied discounts.",
@@ -493,7 +496,7 @@
         "labels": [] },
       { "name": "AppliedDiscountsCoupon",
         "locations":
-          [ { "lineno": 402,
+          [ { "lineno": 428,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Applied coupon info.",
@@ -523,7 +526,7 @@
         "labels": [] },
       { "name": "AppliedMerchantDiscount",
         "locations":
-          [ { "lineno": 421,
+          [ { "lineno": 447,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Merchant discount.",
@@ -553,7 +556,7 @@
         "labels": [] },
       { "name": "BillingInfo",
         "locations":
-          [ { "lineno": 316,
+          [ { "lineno": 342,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Billing address and contact details.",
@@ -575,7 +578,7 @@
         "labels": [] },
       { "name": "BuyerInfo",
         "locations":
-          [ { "lineno": 284,
+          [ { "lineno": 310,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Buyer information.",
@@ -609,7 +612,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 173,
+          [ { "lineno": 199,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -634,7 +637,7 @@
         "labels": [] },
       { "name": "ChannelInfo",
         "locations":
-          [ { "lineno": 513,
+          [ { "lineno": 539,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Information about the sales channel that submitted this order.",
@@ -660,7 +663,7 @@
         "labels": [] },
       { "name": "Color",
         "locations":
-          [ { "lineno": 204,
+          [ { "lineno": 230,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -685,7 +688,7 @@
         "labels": [] },
       { "name": "ContactDetails",
         "locations":
-          [ { "lineno": 345,
+          [ { "lineno": 371,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Contact details.",
@@ -719,7 +722,7 @@
         "labels": [] },
       { "name": "CostAmount",
         "locations":
-          [ { "lineno": 594,
+          [ { "lineno": 620,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -740,7 +743,7 @@
         "labels": [] },
       { "name": "CostTaxDetails",
         "locations":
-          [ { "lineno": 587,
+          [ { "lineno": 613,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -765,7 +768,7 @@
         "labels": [] },
       { "name": "CreatedBy",
         "locations":
-          [ { "lineno": 502,
+          [ { "lineno": 528,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "ID of the order's initiator.",
@@ -801,7 +804,7 @@
         "labels": [] },
       { "name": "CustomActivity",
         "locations":
-          [ { "lineno": 469,
+          [ { "lineno": 495,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Custom activity details. `activity.type` must be `\"CUSTOM_ACTIVITY\"`.",
@@ -827,7 +830,7 @@
         "labels": [] },
       { "name": "CustomFields",
         "locations":
-          [ { "lineno": 525,
+          [ { "lineno": 551,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Custom fields.",
@@ -853,7 +856,7 @@
         "labels": [] },
       { "name": "DeliveryLogistics",
         "locations":
-          [ { "lineno": 600,
+          [ { "lineno": 626,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Shipping logistics.",
@@ -895,7 +898,7 @@
         "labels": [] },
       { "name": "DeliveryTimeSlot",
         "locations":
-          [ { "lineno": 613,
+          [ { "lineno": 639,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Expected delivery time slot.",
@@ -917,7 +920,7 @@
         "labels": [] },
       { "name": "DepositAmount",
         "locations":
-          [ { "lineno": 184,
+          [ { "lineno": 210,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -938,7 +941,7 @@
         "labels": [] },
       { "name": "DescriptionLineName",
         "locations":
-          [ { "lineno": 198,
+          [ { "lineno": 224,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -959,7 +962,7 @@
         "labels": [] },
       { "name": "DescriptionLines",
         "locations":
-          [ { "lineno": 190,
+          [ { "lineno": 216,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -988,7 +991,7 @@
         "labels": [] },
       { "name": "Discount",
         "locations":
-          [ { "lineno": 658,
+          [ { "lineno": 684,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing a discount applied to the order.",
@@ -1006,7 +1009,7 @@
         "labels": [] },
       { "name": "DiscountRuleName",
         "locations":
-          [ { "lineno": 433,
+          [ { "lineno": 459,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Discount rule name.",
@@ -1028,7 +1031,7 @@
         "labels": [] },
       { "name": "ItemType",
         "locations":
-          [ { "lineno": 217,
+          [ { "lineno": 243,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1049,7 +1052,7 @@
         "labels": [] },
       { "name": "LineItemTaxDetails",
         "locations":
-          [ { "lineno": 256,
+          [ { "lineno": 282,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1074,7 +1077,7 @@
         "labels": [] },
       { "name": "MerchantComment",
         "locations":
-          [ { "lineno": 478,
+          [ { "lineno": 504,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Merchant comment details. `activity.type` must be `\"MERCHANT_COMMENT\"`.",
@@ -1092,7 +1095,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 57,
+          [ { "lineno": 83,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1108,7 +1111,7 @@
         "labels": [] },
       { "name": "Order",
         "locations":
-          [ { "lineno": 75,
+          [ { "lineno": 101,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing an order.",
@@ -1257,7 +1260,7 @@
         "labels": [] },
       { "name": "OrderLineItem",
         "locations":
-          [ { "lineno": 136,
+          [ { "lineno": 162,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order line items.",
@@ -1351,7 +1354,7 @@
         "labels": [] },
       { "name": "OrderRefunded",
         "locations":
-          [ { "lineno": 485,
+          [ { "lineno": 511,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Additional info about order refunded activity. `activity.type` must be `\"ORDER_REFUNDED\"`.",
@@ -1377,7 +1380,7 @@
         "labels": [] },
       { "name": "OrderShippingInfo",
         "locations":
-          [ { "lineno": 565,
+          [ { "lineno": 591,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Shipping info and selected shipping option details.",
@@ -1415,7 +1418,7 @@
         "labels": [] },
       { "name": "PaymentSettings",
         "locations":
-          [ { "lineno": 69,
+          [ { "lineno": 95,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1447,7 +1450,7 @@
         "labels": [] },
       { "name": "PaymentSettingsResponse",
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 89,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1463,7 +1466,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 225,
+          [ { "lineno": 251,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1488,7 +1491,7 @@
         "labels": [] },
       { "name": "PickupAddress",
         "locations":
-          [ { "lineno": 626,
+          [ { "lineno": 652,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Pickup address.",
@@ -1530,7 +1533,7 @@
         "labels": [] },
       { "name": "PickupDetails",
         "locations":
-          [ { "lineno": 620,
+          [ { "lineno": 646,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1551,7 +1554,7 @@
         "labels": [] },
       { "name": "PlainTextValue",
         "locations":
-          [ { "lineno": 211,
+          [ { "lineno": 237,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1572,7 +1575,7 @@
         "labels": [] },
       { "name": "Price",
         "locations":
-          [ { "lineno": 232,
+          [ { "lineno": 258,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1593,7 +1596,7 @@
         "labels": [] },
       { "name": "PriceDescription",
         "locations":
-          [ { "lineno": 238,
+          [ { "lineno": 264,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1614,7 +1617,7 @@
         "labels": [] },
       { "name": "PriceSummary",
         "locations":
-          [ { "lineno": 295,
+          [ { "lineno": 321,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order price summary.",
@@ -1656,7 +1659,7 @@
         "labels": [] },
       { "name": "PriceSummaryAmounts",
         "locations":
-          [ { "lineno": 308,
+          [ { "lineno": 334,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Price summary amounts.",
@@ -1678,7 +1681,7 @@
         "labels": [] },
       { "name": "ProductName",
         "locations":
-          [ { "lineno": 244,
+          [ { "lineno": 270,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1699,7 +1702,7 @@
         "labels": [] },
       { "name": "RefundAmount",
         "locations":
-          [ { "lineno": 494,
+          [ { "lineno": 520,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Refund amount.",
@@ -1721,7 +1724,7 @@
         "labels": [] },
       { "name": "ShippingCost",
         "locations":
-          [ { "lineno": 577,
+          [ { "lineno": 603,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1754,7 +1757,7 @@
         "labels": [] },
       { "name": "ShippingRegion",
         "locations":
-          [ { "lineno": 645,
+          [ { "lineno": 671,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1771,7 +1774,7 @@
         "labels": [] },
       { "name": "StreetAddress",
         "locations":
-          [ { "lineno": 337,
+          [ { "lineno": 363,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Street address.",
@@ -1793,7 +1796,7 @@
         "labels": [] },
       { "name": "SubscriptionInfo",
         "locations":
-          [ { "lineno": 264,
+          [ { "lineno": 290,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1826,7 +1829,7 @@
         "labels": [] },
       { "name": "SubscriptionSettings",
         "locations":
-          [ { "lineno": 274,
+          [ { "lineno": 300,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1851,7 +1854,7 @@
         "labels": [] },
       { "name": "TaxSummary",
         "locations":
-          [ { "lineno": 369,
+          [ { "lineno": 395,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order price summary.",
@@ -1869,7 +1872,7 @@
         "labels": [] },
       { "name": "TaxSummaryAmounts",
         "locations":
-          [ { "lineno": 376,
+          [ { "lineno": 402,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Total tax.",
@@ -1891,7 +1894,7 @@
         "labels": [] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 356,
+          [ { "lineno": 382,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `\"UNSPECIFIED\"` is not allowed.",
