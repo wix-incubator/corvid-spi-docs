@@ -1,27 +1,27 @@
 { "name": "payment-provider",
+   "layoutType": "JS",
    "memberOf": "wix-payments",
-  "layoutType": "JS",
   "mixes": [],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "payment-provider-spi.js" },
   "docs":
     { "summary": "The Payment Provider Service Plugin.",
       "description":
-        [ "The Payment Service Provider service plugin (formerly SPI) provides functionality for integrating your site with payment service providers (PSPs) not currently supported by Wix.",
+        [ "The Payment Provider service plugin (formerly SPI) provides functionality for integrating your site with payment providers not currently supported by Wix.",
           "",
           "With this service plugin, you can:",
           "* Control the way your site connects to a payment provider.",
-          "* Handle transactions processed by a PSP.",
-          "* Handle refunds processed by a PSP.",
+          "* Handle transactions processed by a payment provider.",
+          "* Handle refunds processed by a payment provider.",
           "",
           "Learn more about using the [Payment Provider service plugin](https://dev.wix.com/docs/develop-websites/articles/wix-apps/other-apps/wix-pay/payment-provider-custom-extension).",
           "",
           "### To add a service plugin",
           "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
-          "2. Update the [`getConfig()`](https://dev.wix.com/docs/velo/api-reference/wix-payment/service-plugin-spi/wix-payments/payment-provider/get-config) function in the **-config.js** file that is added to your site during step 1.",
+          "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/getconfig) function in the **-config.js** file that is added to your site during step 1.",
           "3. Update the [`connectAccount()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/connectaccount), [`createTransaction()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/createtransaction), and [`refundTransaction()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/refundtransaction) functions in the **.js** file that is added to your site during step 1." ],
       "links": [],
       "examples": [],
@@ -30,13 +30,15 @@
   "properties": [],
   "operations":
     [ { "name": "connectAccount",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
               "type": "wix-payments.payment-provider.ConnectAccountOptions",
-              "doc": "Information to use when connecting a new payment provider account." } ],
+              "doc": "Information to use when connecting a new payment provider account." },
+            { "name": "context",
+              "type": "wix-payments.payment-provider.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -125,13 +127,15 @@
         "extra":
           {  } },
       { "name": "createTransaction",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
               "type": "wix-payments.payment-provider.CreateTransactionOptions",
-              "doc": "Information to use when creating a new transaction." } ],
+              "doc": "Information to use when creating a new transaction." },
+            { "name": "context",
+              "type": "wix-payments.payment-provider.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -139,7 +143,7 @@
                   [ "wix-payments.payment-provider.CreateTransactionResponse" ] },
             "doc": "Fulfilled - <placeholder>" },
         "locations":
-          [ { "lineno": 176,
+          [ { "lineno": 177,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves information about a newly created payment provider transaction.",
@@ -225,8 +229,7 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -301,13 +304,15 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "refundTransaction",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
               "type": "wix-payments.payment-provider.RefundOptions",
-              "doc": "Information to use when creating a refund request." } ],
+              "doc": "Information to use when creating a refund request." },
+            { "name": "context",
+              "type": "wix-payments.payment-provider.Context",
+              "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -315,7 +320,7 @@
                   [ "wix-payments.payment-provider.RefundResponse" ] },
             "doc": "Fulfilled - <placeholder>" },
         "locations":
-          [ { "lineno": 306,
+          [ { "lineno": 308,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves payment provider information about a newly created refund.",
@@ -374,7 +379,7 @@
   "messages":
     [ { "name": "Address",
         "locations":
-          [ { "lineno": 245,
+          [ { "lineno": 247,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -429,7 +434,7 @@
         "labels": [] },
       { "name": "BuyerInfo",
         "locations":
-          [ { "lineno": 281,
+          [ { "lineno": 283,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -448,7 +453,7 @@
         "labels": [] },
       { "name": "Charges",
         "locations":
-          [ { "lineno": 273,
+          [ { "lineno": 275,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -511,7 +516,7 @@
         "labels": [] },
       { "name": "ConnectAccountOptions",
         "locations":
-          [ { "lineno": 151,
+          [ { "lineno": 152,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -536,7 +541,7 @@
         "labels": [] },
       { "name": "ConnectAccountResponse",
         "locations":
-          [ { "lineno": 162,
+          [ { "lineno": 163,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -566,9 +571,37 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 353,
+              "filename": "payment-provider-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "currency",
+              "type": "string",
+              "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix. The response should be returned in the same currency." },
+            { "name": "identity",
+              "type": "wix-payments.payment-provider.Identity",
+              "doc": "The identity that describes the identity that triggered this request." },
+            { "name": "languages",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "An array of languages in which the response should be returned. Languages are strings in concatenated [ISO 639-1: 2 Alpha language-code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) and [ISO 3166-1: 2 Alpha country-code](https://en.wikipedia.org/wiki/ISO_3166-1) format, such as \"en-US\"." },
+            { "name": "requestId",
+              "type": "string",
+              "doc": "A unique identifier of the request. You may print this ID to your logs to help with future debugging and easier correlation with Wix's logs." } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "CreateTransactionOptions",
         "locations":
-          [ { "lineno": 203,
+          [ { "lineno": 205,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -599,7 +632,7 @@
         "labels": [] },
       { "name": "CreateTransactionResponse",
         "locations":
-          [ { "lineno": 293,
+          [ { "lineno": 295,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -694,7 +727,7 @@
         "labels": [] },
       { "name": "FraudInfo",
         "locations":
-          [ { "lineno": 220,
+          [ { "lineno": 222,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -707,6 +740,44 @@
               "doc": "IP address of the site visitor who initiated the transaction." } ],
         "extra":
           {  },
+        "labels": [] },
+      { "name": "Identity",
+        "locations":
+          [ { "lineno": 362,
+              "filename": "payment-provider-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "identityType",
+              "type": "string",
+              "doc": "Type of identity that triggered the request. Possible values are:\n+ `UNKNOWN`\n+ `ANONYMOUS_VISITOR`\n+ `MEMBER`\n+ `WIX_USER`\n+ `APP`" },
+            { "name": "anonymousVisitorId",
+              "type": "string",
+              "doc": "ID of a site visitor who has not logged in to the site. Only provided if `identityType` is `ANONYMOUS_VISITOR`.",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "ID of a site visitor who has logged in to the site. Only provided if `identityType` is `MEMBER`.",
+              "optional": true },
+            { "name": "wixUserId",
+              "type": "string",
+              "doc": "ID of a Wix user (site owner, contributor, etc.). Only provided if `identityType` is `WIX_USER`.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "ID of an app. Only provided if `identityType` is `APP`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "anonymousVisitorId",
+                      "memberId",
+                      "wixUserId",
+                      "appId" ] } ] },
         "labels": [] },
       { "name": "Logos",
         "locations":
@@ -730,7 +801,7 @@
         "labels": [] },
       { "name": "OrderData",
         "locations":
-          [ { "lineno": 213,
+          [ { "lineno": 215,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -752,7 +823,7 @@
         "labels": [] },
       { "name": "OrderDetails",
         "locations":
-          [ { "lineno": 225,
+          [ { "lineno": 227,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -789,7 +860,7 @@
         "labels": [] },
       { "name": "OrderItem",
         "locations":
-          [ { "lineno": 264,
+          [ { "lineno": 266,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -868,7 +939,7 @@
         "labels": [] },
       { "name": "RefundOptions",
         "locations":
-          [ { "lineno": 332,
+          [ { "lineno": 335,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -899,7 +970,7 @@
         "labels": [] },
       { "name": "RefundResponse",
         "locations":
-          [ { "lineno": 342,
+          [ { "lineno": 345,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -924,7 +995,7 @@
         "labels": [] },
       { "name": "ReturnUrls",
         "locations":
-          [ { "lineno": 236,
+          [ { "lineno": 238,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -968,7 +1039,7 @@
         "labels": [] },
       { "name": "TaxIdentifier",
         "locations":
-          [ { "lineno": 287,
+          [ { "lineno": 289,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
