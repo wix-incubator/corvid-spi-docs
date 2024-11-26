@@ -38,7 +38,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-recommendations.RecommendationsConfigResponse" ] },
+                  [ "ecom-recommendations.RecommendationsConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -97,16 +97,16 @@
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "wix-ecom.ecom-recommendations.Options",
+              "type": "ecom-recommendations.Options",
               "doc": "Recommendation options." },
             { "name": "context",
-              "type": "wix-ecom.ecom-recommendations.Context",
+              "type": "ecom-recommendations.Context",
               "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "wix-ecom.ecom-recommendations.GetRecommendationsResponse" ] },
+                  [ "ecom-recommendations.GetRecommendationsResponse" ] },
             "doc": "Fulfilled - The recommended items." },
         "locations":
           [ { "lineno": 42,
@@ -193,8 +193,7 @@
               "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The options field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about eCommerce integration." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "Context",
         "locations":
           [ { "lineno": 85,
@@ -209,7 +208,7 @@
               "type": "string",
               "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix." },
             { "name": "identity",
-              "type": "wix-ecom.ecom-recommendations.Identity",
+              "type": "ecom-recommendations.Identity",
               "doc": "The identity that describes the entity triggering this request." },
             { "name": "languages",
               "type":
@@ -237,7 +236,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-recommendations.Recommendation" ] },
+                    [ "ecom-recommendations.Recommendation" ] },
               "doc": "Related items returned by each algorithm. Each object in the array contains an `algorithmId` and a list of the item recommendations provided by that algorithm." } ],
         "extra":
           {  },
@@ -300,7 +299,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-recommendations.CatalogReference" ] },
+                    [ "ecom-recommendations.CatalogReference" ] },
               "doc": "The set of items used by algorithms with the `RELATED_ITEMS` `algorithmType` to determine related item recommendations." } ],
         "extra":
           {  },
@@ -322,7 +321,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-recommendations.RecommendedItem" ] },
+                    [ "ecom-recommendations.RecommendedItem" ] },
               "doc": "Item recommendations provided by the algorithm. Depending on the algorithm, these recommendations may be influenced by the items provided in the request." } ],
         "extra":
           {  },
@@ -375,7 +374,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-recommendations.RecommendationAlgorithm" ] },
+                    [ "ecom-recommendations.RecommendationAlgorithm" ] },
               "doc": "List of recommendation algorithms supported by the plugin." } ],
         "extra":
           {  },
@@ -392,12 +391,16 @@
         "members":
           [ { "name": "catalogItemId",
               "type": "string",
-              "doc": "The catalog item ID of the recommended item." },
+              "doc": "ID of the item within the catalog it belongs to." },
             { "name": "appId",
               "type": "string",
-              "doc": "The application ID of the recommended item." } ],
+              "doc": "ID of the app providing the catalog.\n\nYou can get your app's ID from its page in the app dashboard.\n\nFor items from Wix catalogs, the following values always apply:\n- Wix Stores: \"215238eb-22a5-4c36-9e7b-e7c08025e04e\"\n- Wix Bookings: \"13d21c63-b5ec-5912-8397-c3a5ddb27a97\"\n- Wix Restaurants: \"9a5d83fd-8570-482e-81ab-cfa88942ee60\"" },
+            { "name": "options",
+              "type": "Object",
+              "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The options field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about eCommerce integration." } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels":
+          [ "changed" ] } ],
   "extra":
     {  } }
