@@ -31,8 +31,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -94,8 +93,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getRecommendations",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -174,9 +172,32 @@
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
   "messages":
-    [ { "name": "Context",
+    [ { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 75,
+          [ { "lineno": 69,
+              "filename": "recomendations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "appId",
+              "type": "string",
+              "doc": "ID of the app providing the catalog.\n\nYou can get your app's ID from its page in the app dashboard.\n\nFor items from Wix catalogs, the following values always apply:\n- Wix Stores: \"215238eb-22a5-4c36-9e7b-e7c08025e04e\"\n- Wix Bookings: \"13d21c63-b5ec-5912-8397-c3a5ddb27a97\"\n- Wix Restaurants: \"9a5d83fd-8570-482e-81ab-cfa88942ee60\"" },
+            { "name": "catalogItemId",
+              "type": "string",
+              "doc": "ID of the item within the catalog it belongs to." },
+            { "name": "options",
+              "type": "Object",
+              "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The options field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about eCommerce integration." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "changed" ] },
+      { "name": "Context",
+        "locations":
+          [ { "lineno": 85,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -204,7 +225,7 @@
         "labels": [] },
       { "name": "GetRecommendationsResponse",
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 111,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -223,7 +244,7 @@
         "labels": [] },
       { "name": "Identity",
         "locations":
-          [ { "lineno": 84,
+          [ { "lineno": 94,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -259,25 +280,6 @@
                       "wixUserId",
                       "appId" ] } ] },
         "labels": [] },
-      { "name": "Item",
-        "locations":
-          [ { "lineno": 69,
-              "filename": "recomendations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "catalogItemId",
-              "type": "string",
-              "doc": "The catalog item ID." },
-            { "name": "appId",
-              "type": "string",
-              "doc": "The application ID." } ],
-        "extra":
-          {  },
-        "labels": [] },
       { "name": "Options",
         "locations":
           [ { "lineno": 63,
@@ -298,14 +300,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-ecom.ecom-recommendations.Item" ] },
+                    [ "wix-ecom.ecom-recommendations.CatalogReference" ] },
               "doc": "The set of items used by algorithms with the `RELATED_ITEMS` `algorithmType` to determine related item recommendations." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "Recommendation",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 116,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -380,7 +382,7 @@
         "labels": [] },
       { "name": "RecommendedItem",
         "locations":
-          [ { "lineno": 112,
+          [ { "lineno": 122,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
