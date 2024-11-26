@@ -14,7 +14,7 @@
           "",
           "For example, you can provide recommendations based on user behavior, related products, or other custom logic, enriching how Wix apps such as Wix Stores and Wix Bookings display suggestions to users.",
           "",
-          "Wix eCommerce calls the service plugin endpoint [`getRecommendations()`](https://dev.wix.com/docs/velo/api-reference/wix-ecom-backend/recommendations/get-recommendation) to retrieve the relevant product suggestions.",
+          "Wix eCommerce calls the service plugin endpoint [`getRecommendations()`](https://dev.wix.com/docs/velo/api-reference/wix-ecom-v2/service-plugins-spis/ecom-recommendations/get-recommendations) to retrieve the relevant product suggestions.",
           "",
           "Learn more:",
           "   + [Tutorial: Recommendations Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-e-commerce-recommendations-service-plugin)",
