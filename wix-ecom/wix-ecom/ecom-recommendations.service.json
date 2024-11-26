@@ -3,7 +3,7 @@
   "memberOf": "wix-ecom",
   "mixes": [],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "recommendations-index.js" },
@@ -184,19 +184,19 @@
         "members":
           [ { "name": "appId",
               "type": "string",
-              "doc": "ID of the app providing the catalog.\n\nYou can get your app's ID from its page in the app dashboard.\n\nFor items from Wix catalogs, the following values always apply:\n- Wix Stores: \"215238eb-22a5-4c36-9e7b-e7c08025e04e\"\n- Wix Bookings: \"13d21c63-b5ec-5912-8397-c3a5ddb27a97\"\n- Wix Restaurants: \"9a5d83fd-8570-482e-81ab-cfa88942ee60\"" },
+              "doc": "ID of the app providing the catalog.\n\nFor items from Wix catalogs, the following values always apply:\n- Wix Stores: `\"215238eb-22a5-4c36-9e7b-e7c08025e04e\"`\n- Wix Bookings: `\"13d21c63-b5ec-5912-8397-c3a5ddb27a97\"`\n- Wix Restaurants: `\"9a5d83fd-8570-482e-81ab-cfa88942ee60\"`" },
             { "name": "catalogItemId",
               "type": "string",
               "doc": "ID of the item within the catalog it belongs to." },
             { "name": "options",
               "type": "Object",
-              "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The options field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about eCommerce integration." } ],
+              "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The `options` field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about [eCommerce integration](https://dev.wix.com/docs/rest/business-solutions/stores/catalog/e-commerce-integration)." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "Context",
         "locations":
-          [ { "lineno": 85,
+          [ { "lineno": 83,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -224,7 +224,7 @@
         "labels": [] },
       { "name": "GetRecommendationsResponse",
         "locations":
-          [ { "lineno": 111,
+          [ { "lineno": 109,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -243,7 +243,7 @@
         "labels": [] },
       { "name": "Identity",
         "locations":
-          [ { "lineno": 94,
+          [ { "lineno": 92,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -306,7 +306,7 @@
         "labels": [] },
       { "name": "Recommendation",
         "locations":
-          [ { "lineno": 116,
+          [ { "lineno": 114,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -381,7 +381,7 @@
         "labels": [] },
       { "name": "RecommendedItem",
         "locations":
-          [ { "lineno": 122,
+          [ { "lineno": 120,
               "filename": "recomendations.js" } ],
         "docs":
           { "links": [],
@@ -389,18 +389,17 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "catalogItemId",
+          [ { "name": "appId",
+              "type": "string",
+              "doc": "ID of the app providing the catalog.\n\nFor items from Wix catalogs, the following values always apply:\n- Wix Stores: `\"215238eb-22a5-4c36-9e7b-e7c08025e04e\"`\n- Wix Bookings: `\"13d21c63-b5ec-5912-8397-c3a5ddb27a97\"`\n- Wix Restaurants: `\"9a5d83fd-8570-482e-81ab-cfa88942ee60\"`" },
+            { "name": "catalogItemId",
               "type": "string",
               "doc": "ID of the item within the catalog it belongs to." },
-            { "name": "appId",
-              "type": "string",
-              "doc": "ID of the app providing the catalog.\n\nYou can get your app's ID from its page in the app dashboard.\n\nFor items from Wix catalogs, the following values always apply:\n- Wix Stores: \"215238eb-22a5-4c36-9e7b-e7c08025e04e\"\n- Wix Bookings: \"13d21c63-b5ec-5912-8397-c3a5ddb27a97\"\n- Wix Restaurants: \"9a5d83fd-8570-482e-81ab-cfa88942ee60\"" },
             { "name": "options",
               "type": "Object",
-              "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The options field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about eCommerce integration." } ],
+              "doc": "Additional item details in key:value pairs. Use this optional field to provide more specificity with item selection. The `options` field values differ depending on which catalog is providing the items.\n\nFor products and variants from a Wix Stores catalog, learn more about [eCommerce integration](https://dev.wix.com/docs/rest/business-solutions/stores/catalog/e-commerce-integration)." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] } ],
+        "labels": [] } ],
   "extra":
     {  } }
