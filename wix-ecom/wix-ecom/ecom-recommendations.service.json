@@ -38,7 +38,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-recommendations.RecommendationsConfigResponse" ] },
+                  [ "wix-ecom.ecom-recommendations.RecommendationsConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -97,16 +97,16 @@
         "nameParams": [],
         "params":
           [ { "name": "options",
-              "type": "ecom-recommendations.Options",
+              "type": "wix-ecom.ecom-recommendations.Options",
               "doc": "Recommendation options." },
             { "name": "context",
-              "type": "ecom-recommendations.Context",
+              "type": "wix-ecom.ecom-recommendations.Context",
               "doc": "Metadata about the request." } ],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-recommendations.GetRecommendationsResponse" ] },
+                  [ "wix-ecom.ecom-recommendations.GetRecommendationsResponse" ] },
             "doc": "Fulfilled - The recommended items." },
         "locations":
           [ { "lineno": 42,
@@ -208,7 +208,7 @@
               "type": "string",
               "doc": "[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-letter currency code representing the currency used in the request sent from Wix." },
             { "name": "identity",
-              "type": "ecom-recommendations.Identity",
+              "type": "wix-ecom.ecom-recommendations.Identity",
               "doc": "The identity that describes the entity triggering this request." },
             { "name": "languages",
               "type":
@@ -236,7 +236,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-recommendations.Recommendation" ] },
+                    [ "wix-ecom.ecom-recommendations.Recommendation" ] },
               "doc": "Related items returned by each algorithm. Each object in the array contains an `algorithmId` and a list of the item recommendations provided by that algorithm." } ],
         "extra":
           {  },
@@ -299,7 +299,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-recommendations.CatalogReference" ] },
+                    [ "wix-ecom.ecom-recommendations.CatalogReference" ] },
               "doc": "The set of items used by algorithms with the `RELATED_ITEMS` `algorithmType` to determine related item recommendations." } ],
         "extra":
           {  },
@@ -321,7 +321,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-recommendations.RecommendedItem" ] },
+                    [ "wix-ecom.ecom-recommendations.RecommendedItem" ] },
               "doc": "Item recommendations provided by the algorithm. Depending on the algorithm, these recommendations may be influenced by the items provided in the request." } ],
         "extra":
           {  },
@@ -374,7 +374,7 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "ecom-recommendations.RecommendationAlgorithm" ] },
+                    [ "wix-ecom.ecom-recommendations.RecommendationAlgorithm" ] },
               "doc": "List of recommendation algorithms supported by the plugin." } ],
         "extra":
           {  },
