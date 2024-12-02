@@ -32,7 +32,8 @@ Example:
 
 ![alt text](./image-1.png)
 
-5. Push the changes to a branch and verify with branch preview.
-6. Merge the branch into `master`.
+5. Merge the branch into `master`.
+
+6. Conenct the new SPI to the menu via the menu editor & verify & publish if needed.
 
 
