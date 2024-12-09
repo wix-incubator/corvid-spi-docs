@@ -69,8 +69,8 @@
           "",
           "### To add a service plugin",
           "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
-          "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/ecom-recommendations/getconfig) function in the **-config.js** file that is added to your site during step 1.",
-          "3. Update the [`getRecommendations()`](https://www.wix.com/velo/reference/spis/ecom-recommendations/getrecommendations) function in the **.js** file that is added to your site during step 1." ],
+          "2. Update the [`getConfig()`](https://dev.wix.com/docs/velo/api-reference/wix-ecom-v2/service-plugins-spis/ecom-recommendations/get-config) function in the **-config.js** file that is added to your site during step 1.",
+          "3. Update the [`getRecommendations()`](https://dev.wix.com/docs/velo/api-reference/wix-ecom-v2/service-plugins-spis/ecom-recommendations/get-recommendations) function in the **.js** file that is added to your site during step 1." ],
       "links": [],
       "examples": [],
       "extra":
