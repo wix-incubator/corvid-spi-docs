@@ -69,8 +69,9 @@ To use a custom action as part of an automation, start by creating a new automat
 
 8. To test your code, follow the instructions under **Run your code to test this action**, then click **Run Code**.
 
-   Wix provides sample data that matches the structure of your trigger payload. You can edit any of the fields in the sample payload
-   to test your action.
+   Wix provides sample data that matches the structure of your trigger payload. You can edit any of the fields in the sample payload to test your action.
+
+   Be aware that testing the action runs the code live on your site, and may change cause changes in the site or dashboard.
 
    Once you test your code and are sure your action works, activate your automation.
 

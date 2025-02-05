@@ -14,7 +14,7 @@
           "triggered. The actions available to you depend on which apps you have installed on your site. However, you also have the choice ",
           "to create your own action, independent of any app.",
           "",
-          "The Velo Action service plugin (formerly SPI) allows you to provide your own actions for automations on your site. You can use the service plugin to write",
+          "The Velo Action service plugin allows you to provide your own actions for automations on your site. You can use the service plugin to write",
           "code for a custom action instead of selecting a premade ",
           "action. The action you create is specific for your site and cannot be used on other sites." ],
       "links": [],
