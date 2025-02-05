@@ -12,8 +12,7 @@ To write your action code, use the Velo APIs just like you would in your site's 
 
 ## Before you start
 
-- Make sure you're familiar with [Wix Automations](https://support.wix.com/en/article/wix-automations-getting-started) and how they
-  work on Wix.
+- Make sure you're familiar with [Wix Automations](https://support.wix.com/en/article/wix-automations-creating-an-automation-with-the-new-builder) and how they work on Wix.
 - The custom extensions feature currently can’t be added to a site when using Git integration and Wix CLI.
   You need to have permission to publish the site and the site must be published.
 - This custom extension is intended for site owners who want to create custom actions on a single site. If you're a 3rd-party app developer interested in becoming an automation provider, see our documentation [here](https://dev.wix.com/docs/rest/business-management/automations/introduction).
@@ -23,8 +22,8 @@ To write your action code, use the Velo APIs just like you would in your site's 
 To use a custom action as part of an automation, start by creating a new automation in your site dashboard.
 
 1. Go to the [Automations](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Ftriggers) page in your dashboard.
-2. Click **New Automation**, then **Start from Scratch**.
-3. Select and configure a [trigger](https://support.wix.com/en/article/wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
+2. Click **New Automation**, then **Start from Scratch** to open the automation builder.
+3. Select and configure a [trigger](https://support.wix.com/en/article/wix-automations-creating-an-automation-with-the-new-builder#step-2-choose-a-trigger).
 
    <blockquote class="important">
 
@@ -35,18 +34,22 @@ To use a custom action as part of an automation, start by creating a new automat
 
    </blockquote>
 
-4. Under **Choose an Action**, select **Run Velo code**. Then click **Start Coding** to add your code.
+4. Click the **+** to add a step and choose **Action**. In the menu on the left, select **Run Velo code**.
 
-   ![Run velo code action](https://static.wixstatic.com/media/d4dde1_871065f2f911403686fac76cf064629c~mv2.png)
+   ![Run velo code action](../../../../media/select-run-velo-code0.png)
 
-   You'll be prompted to create a new code file.
+5. Click **Start Coding** to add your code. You'll be prompted to create a new code file.
 
-5. Give the file a name and click **Create & Start Coding**.
+   ![Start coding](../../../../media/start-coding0.png)
+
+6. Give the file a name and click **Create & Start Coding**.
+
+   ![Name file and start coding](../../../../media/create-and-start-coding0.png)
 
    > **Note:**
    > A file is created with the name you give under the **Custom Extensions** tab in your site's backend code.
    > Though you can add or edit code in this file, we recommend working only in the file that appears in your
-   > automation. This allows you to verify you're working with the correct trigger, as well as take advantage of features like testing and payload viewer.
+   > automation. This allows you to verify you're working with the correct trigger, as well as take advantage of features like testing and the payload viewer.
 
    You should now see something like this:
 
@@ -59,12 +62,12 @@ To use a custom action as part of an automation, start by creating a new automat
    The second tab, which appears under **Payload view**, lets you view the expected structure of the trigger payload. This changes
    depending on the trigger you select. The displayed payload is read-only.
 
-6. When you finish writing your code, click **Save**.
+7. When you finish writing your code, click **Save**.
 
    Now that you have set up and coded your custom action, you can activate the automation immediately. However, we recommend
    testing the action code first.
 
-7. To test your code, follow the instructions under **Run your code to test this action**, then click **Run Code**.
+8. To test your code, follow the instructions under **Run your code to test this action**, then click **Run Code**.
 
    Wix provides sample data that matches the structure of your trigger payload. You can edit any of the fields in the sample payload
    to test your action.
