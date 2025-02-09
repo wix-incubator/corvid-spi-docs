@@ -56,7 +56,7 @@ To use a custom action as part of an automation, start by creating a new automat
    ![Write velo action code](https://static.wixstatic.com/media/d4dde1_636f1a1ad55c4c0399410db29c86912b~mv2.png)
 
    The **Write Velo Code** modal contains two tabs. The first is the .js file where you write your code. This is a backend file
-   that contains a single function, [`invoke()`](velo-action-spi/invoke).
+   that contains a single function, [`invoke()`](https://dev.wix.com/docs/velo/api-reference/wix-automations/service-plugins/automations-actions/invoke).
    Write any code that you want the action to execute inside `invoke()`. Do not delete the `return` statement.
 
    The second tab, which appears under **Payload view**, lets you view the expected structure of the trigger payload. This changes
@@ -79,4 +79,4 @@ To use a custom action as part of an automation, start by creating a new automat
 
 ## Edit your custom action
 
-To edit your action code, [edit your automation](https://support.wix.com/en/article/wix-automations-managing-your-automations#editing-duplicating-or-renaming-an-automation) and select the **Run Velo code** action, then click on **Edit Code**. Make the changes you want, save the code, and test.
+To edit your action code, [edit your automation](https://support.wix.com/en/article/the-new-automation-builder-managing-your-automations#editing-duplicating-or-renaming-an-automation) and select the **Run Velo code** action, then click on **Edit Code**. Make the changes you want, save the code, and test.
