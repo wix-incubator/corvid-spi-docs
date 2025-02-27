@@ -21,7 +21,7 @@
           "",
           "### To add a service plugin",
           "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
-          "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/getconfig) function in the **-config.js** file that is added to your site during step 1.",
+          "2. Update the [`getConfig()`](https://dev.wix.com/docs/velo/events-service-plugins/payments/service-plugins/wix-payments/payment-provider/get-config) function in the **-config.js** file that is added to your site during step 1.",
           "3. Update the [`connectAccount()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/connectaccount), [`createTransaction()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/createtransaction), and [`refundTransaction()`](https://www.wix.com/velo/reference/spis/wix-payments/payment-provider/refundtransaction) functions in the **.js** file that is added to your site during step 1." ],
       "links": [],
       "examples": [],
