@@ -144,6 +144,9 @@
                 "",
                 "The function is automatically called by Wix eCommerce when certain actions are performed on a cart or checkout. For example, when an item is added to a cart, or when a coupon is added to a checkout.",
                 "",
+                "The function returns a list of violations that include where the violation should be displayed and its severity, as well as a description of the violation.",
+                "The description may contain HTTP or HTTPS links in the following format only: `<a href=\"https://www.wix.com\">Click me</a>`.",
+                "",
                 ">**Note:** By default, the Validations service plugin only validates a site visitor's checkout. If you want to also validate a site visitor's cart, set the `validateInCart` parameter to `true` in the service plugin's config file.",
                 "",
                 "### Where to find `getValidationViolations()`",
@@ -1284,7 +1287,7 @@
               "doc": "Target location on a checkout or cart page where the violation will be displayed." },
             { "name": "description",
               "type": "string",
-              "doc": "Violation description. Can include rich text. Only HTTP or HTTPS links in the following format are allowed: `<a href=\"https://www.wix.com\">Click me</a>`." } ],
+              "doc": "Violation description. Can include rich text. HTTP or HTTPS links are allowed only in the format explained in the method description." } ],
         "extra":
           {  },
         "labels": [] },
