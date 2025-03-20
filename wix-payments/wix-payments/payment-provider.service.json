@@ -52,7 +52,7 @@
           { "summary": "Retrieves information for connecting a new payment provider account.",
             "description":
               [ "This function is called by Wix Payments when you try to connect a custom payment provider from your site's dashboard. ",
-                "When neccessary, the code implemented in this function creates a new account on the payment provider's side. The function",
+                "When necessary, the code implemented in this function creates a new account on the payment provider's side. The function",
                 "returns the payment provider account information, or error information if account creation fails.",
                 "Wix uses the return values from this function when connecting the payment provider to the site.",
                 "",
