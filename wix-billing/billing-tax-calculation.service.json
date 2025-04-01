@@ -71,7 +71,8 @@
             "examples":
               [ { "title": "Example of a `calculateTax()` return value",
                   "body":
-                    [ "export const calculateTax = async (options, context) => {",
+                    [
+                      "export const calculateTax = async (options, context) => {",
                       "  return {",
                       "      \"currency\": \"USD\",",
                       "      \"taxSummary\": {",
@@ -86,7 +87,7 @@
                       "          \"quantity\": 1,",
                       "          \"taxBreakdown\": [{",
                       "              \"jurisdiction\": \"TEXAS\",",
-                      "              \"jurisdictionType\": taxCalculationProvider.JurisdictionType.STATE,",
+                      "              \"jurisdictionType\": \"STATE\",",
                       "              \"nonTaxableAmount\": \"0.00\",",
                       "              \"rate\": \"0.20\",",
                       "              \"taxAmount\": \"15.00\",",
@@ -123,7 +124,8 @@
                       "      }",
                       "      ]",
                       "  }",
-                      "};" ],
+                      "};"
+                    ],
                   "extra":
                     {  } } ],
             "extra":
@@ -158,16 +160,18 @@
             "examples":
               [ { "title": "Example of a configuration file",
                   "body":
-                    [ "// Place this code in the <my-plugin-name>-config.js file",
+                    [
+                      "// Place this code in the <my-plugin-name>-config.js file",
                       "// in the 'tax-calculation-provider' folder of the",
                       "// Service Plugins section on your site.",
                       "",
                       "export function getConfig() {",
                       "  return {",
                       "    calculatorDisplayName: \"Custom Sales Tax\",",
-                      "    unsupportedCountries: \"IN\"",
+                      "    unsupportedCountries: [\"IN\"]",
                       "  };",
-                      "};" ],
+                      "};"
+                    ],
                   "extra":
                     {  } } ],
             "extra":
