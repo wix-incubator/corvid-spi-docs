@@ -3,125 +3,122 @@
   "layoutType": "JS",
   "memberOf": "wix-ecom",
   "mixes": [],
-  "labels": ["new"],
-  "location": { "lineno": 1, "filename": "validations-index.js" },
-  "docs": {
-    "summary": "The eCommerce Validations Service Plugin.",
-    "description": [
-      "The Validations [service plugin](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) (formerly SPI) allows site owners and collaborators to validate a site visitor's cart and checkout. For example, you can validate a specific line item’s quantity if the quantity per order is limited.",
-      "Site owners and collaborators can either write their own custom validation logic, or integrate with a 3rd-party validations provider.",
-      "",
-      "Wix eCommerce calls [`getValidationViolations()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) to retrieve any violations in a site visitor's cart and checkout.",
-      "The custom validation plugin code validates the request, and returns any validation violation data in a site visitor's cart and checkout (using the structure provided by Wix eCommerce).",
-      "If there aren't any validation violations, the endpoint should return an object containing an empty array. Site visitors can see validation violations in their cart and checkout pages. For example, see the images below:",
-      "",
-      "The image below shows a cart page with both a general validation violation warning and a line item validation violation warning.",
-      "",
-      "![Cart page warning](../../media/ecom-validations-img1.png \"Cart page warnings\")",
-      "",
-      "The images below show a checkout page with both a general validation violation error and a line item validation violation error.",
-      "",
-      "The general violation error appears at the top of the checkout page:",
-      "",
-      "![Checkout page errors - top](../../media/ecom-validations-img2a.png \"Checkout page errors\")",
-      "",
-      "The error appears again above the **Place Order & Pay** button at the end of the page. The button is disabled until the errors are resolved.",
-      "",
-      "![Checkout page errors - bottom](../../media/ecom-validations-img3.png \"Checkout page errors\")",
-      "",
-      "For a step-by-step tutorial, see [Validation Violations service plugin](https://support.wix.com/en/article/tutorial-validations-custom-extension). ",
-      "",
-      "Future functionality includes validating products and orders.",
-      "",
-      "## Before you begin",
-      "",
-      "By default, the Validations service plugin only validates a site visitor's checkout. If you want to also validate a site visitor's cart, set the `validateInCart` parameter to `true` in the service plugin's config file.  ",
-      "",
-      "## To add a service plugin",
-      "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
-      "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getconfig) function in the **-config.js** file that is added to your site during step 1.",
-      "3. Update the [`getValidationViolations()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) function in the **.js** file that is added to your site during step 1.",
-      "",
-      "## Use Cases",
-      "",
-      "With the Validations service plugin you can define the validations for a cart and checkout that fit your site's needs. Possible validations include:",
-      " + Minimum subtotal amount to qualify for free shipping.",
-      " + Age of a customer before they proceed to checkout.",
-      " + Specific items to ship only to specific regions.",
-      " + Restrict purchases to site members only.",
-      " + Close checkout on certain days. ",
-      "",
-      "## Terminology",
-      "",
-      "  | Term | Definition |",
-      "  | --- | --- |",
-      "  | Severity |How severe the violation is. The violations are shown on the cart and checkout pages. A warning is displayed as yellow, and allows a site visitor to proceed with caution. An error is displayed as red, and doesn't allow a site visitor to proceed with the eCommerce flow. | ",
-      "  | Subscription Option |A store owner can create [subscriptions](https://support.wix.com/en/article/wix-stores-selling-product-subscriptions) to sell their products on a recurring basis. A line item can be a subscription. |  ",
-      "  | Target |Target location on a checkout or cart page where the violation will be displayed. The target violation can either be in a particular `lineItem`, or in an `other` area of the cart or checkout page. |",
-      "  | Violations |A list of any validation violations in a site visitor's cart or checkout. |"
-    ],
-    "links": [],
-    "examples": [],
-    "extra": {}
-  },
+  "labels":
+    [ "changed" ],
+  "location":
+    { "lineno": 1,
+      "filename": "validations-index.js" },
+  "docs":
+    { "summary": "The eCommerce Validations Service Plugin.",
+      "description":
+        [ "The Validations [service plugin](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) (formerly SPI) allows site owners and collaborators to validate a site visitor's cart and checkout. For example, you can validate a specific line item’s quantity if the quantity per order is limited.",
+          "Site owners and collaborators can either write their own custom validation logic, or integrate with a 3rd-party validations provider.",
+          "",
+          "Wix eCommerce calls [`getValidationViolations()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) to retrieve any violations in a site visitor's cart and checkout.",
+          "The custom validation plugin code validates the request, and returns any validation violation data in a site visitor's cart and checkout (using the structure provided by Wix eCommerce).",
+          "If there aren't any validation violations, the endpoint should return an object containing an empty array. Site visitors can see validation violations in their cart and checkout pages. For example, see the images below:",
+          "",
+          "The image below shows a cart page with both a general validation violation warning and a line item validation violation warning.",
+          "",
+          "![Cart page warning](../assets/images/img1a.png \"Cart page warnings\")",
+          "",
+          "The images below show a checkout page with both a general validation violation error and a line item validation violation error:",
+          "",
+          "The general violation error appears at the top of the checkout page:",
+          "",
+          "![Checkout page errors - top](../assets/images/img2a.png \"Checkout page errors\")",
+          "",
+          "The error appears again above the **Place Order & Pay** button at the end of the page. The button is disabled until the errors are resolved.",
+          "",
+          "![Checkout page errors - bottom](../assets/images/img3a.png \"Checkout page errors\")",
+          "",
+          "For a step-by-step tutorial, see [Validation Violations service plugin](https://support.wix.com/en/article/tutorial-validations-custom-extension).",
+          "",
+          "Future functionality includes validating products and orders.",
+          "",
+          "## Before you begin",
+          "",
+          "By default, the Validations service plugin only validates a site visitor's checkout. If you want to also validate a site visitor's cart, set the `validateInCart` parameter to `true` in the service plugin's config file.",
+          "",
+          "## To add a service plugin",
+          "1. [Add the plugin to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
+          "2. Update the [`getConfig()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getconfig) function in the **-config.js** file that is added to your site during step 1.",
+          "3. Update the [`getValidationViolations()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) function in the **.js** file that is added to your site during step 1.",
+          "",
+          "## Use Cases",
+          "",
+          "With the Validations service plugin you can define the validations for a cart and checkout that fit your site's needs. Possible validations include:",
+          " + Minimum subtotal amount to qualify for free shipping.",
+          " + Age of a customer before they proceed to checkout.",
+          " + Specific items to ship only to specific regions.",
+          " + Restrict purchases to site members only.",
+          " + Close checkout on certain days.",
+          "",
+          "## Terminology",
+          "",
+          "  | Term | Definition |",
+          "  | --- | --- |",
+          "  | Severity |How severe the violation is. The violations are shown on the cart and checkout pages. A warning is displayed as yellow, and allows a site visitor to proceed with caution. An error is displayed as red, and doesn't allow a site visitor to proceed with the eCommerce flow. |",
+          "  | Subscription Option |A store owner can create [subscriptions](https://support.wix.com/en/article/wix-stores-selling-product-subscriptions) to sell their products on a recurring basis. A line item can be a subscription. |",
+          "  | Target |Target location on a checkout or cart page where the violation will be displayed. The target violation can either be in a particular `lineItem`, or in an `other` area of the cart or checkout page. |",
+          "  | Violations |A list of any validation violations in a site visitor's cart or checkout. |" ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
   "properties": [],
-  "operations": [
-    {
-      "name": "getConfig",
-      "labels": [],
-      "nameParams": [],
-      "params": [],
-      "ret": {
-        "type": {
-          "name": "Promise",
-          "typeParams": ["wix-ecom.ecom-validations.ValidationsConfigResponse"]
-        },
-        "doc": "Fulfilled - The configuration settings."
-      },
-      "locations": [{ "lineno": 1, "filename": "validations.js" }],
-      "docs": {
-        "summary": "Retrieves the configuration of your validations plugin.",
-        "description": [
-          "Set your validations configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
-          "Changes to the configuration don't take effect until you publish your site.",
-          "",
-          "By default, the Validations service plugin only validates a site visitor's checkout. To also validate a site visitor's cart, ",
-          "set `validateInCart` to `true`.",
-          "",
-          "### Where to find `getConfig()`",
-          "When you [add the Validations service plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-validations-custom-extension#step-1-create-a-new-validation-extension), ",
-          "a folder is automatically added to your site. Use the `<my-plugin-name>-config.js` file in the folder to set the default configuration for your ",
-          "implementation of the service plugin.",
-          "",
-          "For more information on setting your configuration, see [Tutorial: Validations Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-validations-custom-extension#minimum-configjs)."
-        ],
-        "links": [],
-        "examples": [
-          {
-            "title": "Example of a configuration file",
-            "body": [
-              "// Place this code in the <my-extension-name>-config.js file",
-              "// in the 'ecom-validations' folder of the",
-              "// Custom Extensions section on your site.",
-              "",
-              "export function getConfig() {",
-              "  return {",
-              "    validateInCart: true",
-              "  };",
-              "};"
-            ],
-            "extra": {}
-          }
-        ],
-        "extra": {}
-      },
-      "extra": { "customLabels": [{ "id": "maturity-beta" }] }
-    },
-    {
-      "name": "getValidationViolations",
-      "labels": [],
-      "nameParams": [],
-      "params":
+  "operations":
+    [ { "name": "getConfig",
+        "labels": [],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type":
+              { "name": "Promise",
+                "typeParams":
+                  [ "wix-ecom.ecom-validations.ValidationsConfigResponse" ] },
+            "doc": "Fulfilled - The configuration settings." },
+        "locations":
+          [ { "lineno": 1,
+              "filename": "validations.js" } ],
+        "docs":
+          { "summary": "Retrieves the configuration of your Validations service plugin.",
+            "description":
+              [ "Set your validations configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site.",
+                "Changes to the configuration don't take effect until you publish your site.",
+                "",
+                "By default, the Validations service plugin only validates a site visitor's checkout. To also validate a site visitor's cart,",
+                "set `validateInCart` to `true`.",
+                "",
+                "### Where to find `getConfig()`",
+                "When you [add the Validations service plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-validations-custom-extension#step-1-create-a-new-validation-extension),",
+                "a folder is automatically added to your site. Use the `<my-plugin-name>-config.js` file in the folder to set the default configuration for your",
+                "implementation of the service plugin.",
+                "",
+                "For more information on setting your configuration, see [Tutorial: Validations Service Plugin](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-validations-custom-extension#minimum-configjs)." ],
+            "links": [],
+            "examples":
+              [ { "title": "Example of a configuration file",
+                  "body":
+                    [ "// Place this code in the <my-extension-name>-config.js file",
+                      "// in the 'ecom-validations' folder of the",
+                      "// Custom Extensions section on your site.",
+                      "",
+                      "export function getConfig() {",
+                      "  return {",
+                      "    validateInCart: true",
+                      "  };",
+                      "};" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "getValidationViolations",
+        "labels": [],
+        "nameParams": [],
+        "params":
           [ { "name": "options",
               "type": "wix-ecom.ecom-validations.Options",
               "doc": "Validation options." },
@@ -135,7 +132,7 @@
                   [ "wix-ecom.ecom-validations.GetValidationViolationsResponse" ] },
             "doc": "Fulfilled - Validation violations." },
         "locations":
-          [ { "lineno": 31,
+          [ { "lineno": 30,
               "filename": "validations.js" } ],
         "docs":
           { "summary": "Retrieves any validation violations in a site visitor's cart or checkout.",
@@ -144,8 +141,8 @@
                 "",
                 "The function is automatically called by Wix eCommerce when certain actions are performed on a cart or checkout. For example, when an item is added to a cart, or when a coupon is added to a checkout.",
                 "",
-                "The function returns a list of violations that include where the violation should be displayed and its severity, as well as a description of the violation.",
-                "The description may only contain HTTP or HTTPS links created with an [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a).",
+                "The function returns a list of violations that include where the violation should be displayed and its severity, as well as a description.",
+                "The description may contain HTTP or HTTPS links in the following format only: `<a href=\"https://www.wix.com\">Click me</a>`.",
                 "",
                 ">**Note:** By default, the Validations service plugin only validates a site visitor's checkout. If you want to also validate a site visitor's cart, set the `validateInCart` parameter to `true` in the service plugin's config file.",
                 "",
@@ -218,29 +215,12 @@
             "extra":
               {  } },
         "extra":
-          { "customLabels":
-              [ { "id": "maturity-beta" } ] } } ],
+          {  } } ],
   "callbacks": [],
   "messages":
-    [ { "name": "AdditionalFees",
+    [ { "name": "AddressDetails",
         "locations":
-          [ { "lineno": 270,
-              "filename": "validations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
-        "extra":
-          {  },
-        "labels": [] },
-      { "name": "AddressDetails",
-        "locations":
-          [ { "lineno": 287,
+          [ { "lineno": 318,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -277,7 +257,7 @@
         "labels": [] },
       { "name": "Amount",
         "locations":
-          [ { "lineno": 357,
+          [ { "lineno": 441,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -293,7 +273,7 @@
         "labels": [] },
       { "name": "AmountMerchant",
         "locations":
-          [ { "lineno": 367,
+          [ { "lineno": 451,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -309,7 +289,7 @@
         "labels": [] },
       { "name": "AmountRule",
         "locations":
-          [ { "lineno": 386,
+          [ { "lineno": 470,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -323,9 +303,28 @@
         "extra":
           {  },
         "labels": [] },
-      { "name": "AppliedDiscounts",
+      { "name": "ApplicableLineItems",
         "locations":
-          [ { "lineno": 338,
+          [ { "lineno": 412,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "lineItemIds",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "Line items that the delivery solution applies to. Max: 300 items. Each ID must be between 1 and 100 characters." } ],
+        "extra":
+          {  },
+        "labels": [] },
+      { "name": "AppliedDiscount",
+        "locations":
+          [ { "lineno": 422,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -364,7 +363,7 @@
         "labels": [] },
       { "name": "BillingInfo",
         "locations":
-          [ { "lineno": 275,
+          [ { "lineno": 306,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -383,7 +382,7 @@
         "labels": [] },
       { "name": "BuyerDetails",
         "locations":
-          [ { "lineno": 118,
+          [ { "lineno": 132,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -400,9 +399,28 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Carrier",
+        "locations":
+          [ { "lineno": 404,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "appId",
+              "type": "string",
+              "doc": "Carrier app ID." },
+            { "name": "code",
+              "type": "string",
+              "doc": "Unique code that acts as an ID for a shipping rate. For example, `\"usps_std_overnight\"`.\n\nMax: 250 characters" } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 156,
+          [ { "lineno": 174,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -418,13 +436,13 @@
               "doc": "ID of the Wix Catalog app. For example, the Wix Stores `appId`." },
             { "name": "options",
               "type": "Object",
-              "doc": "Additional info in key:value form.\nFor example, a size medium red t-shirt's options property would hold something like this:\n+ {\"Size\": \"M\", \"Color\": \"Red\"}" } ],
+              "doc": "Additional info in `key:value` form.\nFor example, a size medium red t-shirt's options property would hold something like this:\n+ {\"Size\": \"M\", \"Color\": \"Red\"}" } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "ContactDetails",
         "locations":
-          [ { "lineno": 304,
+          [ { "lineno": 335,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -454,7 +472,7 @@
         "labels": [] },
       { "name": "Context",
         "locations":
-          [ { "lineno": 57,
+          [ { "lineno": 58,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -482,7 +500,7 @@
         "labels": [] },
       { "name": "Coupon",
         "locations":
-          [ { "lineno": 349,
+          [ { "lineno": 433,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -496,18 +514,18 @@
             { "name": "code",
               "type": "string",
               "doc": "Coupon code." },
-            { "name": "amount",
-              "type": "wix-ecom.ecom-validations.Amount",
-              "doc": "Coupon value." },
             { "name": "name",
               "type": "string",
-              "doc": "Coupon name." } ],
+              "doc": "Coupon name." },
+            { "name": "amount",
+              "type": "wix-ecom.ecom-validations.Amount",
+              "doc": "Coupon value." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "CustomFields",
         "locations":
-          [ { "lineno": 333,
+          [ { "lineno": 417,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -524,9 +542,50 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "DeliveryAllocation",
+        "locations":
+          [ { "lineno": 383,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "deliveryCarrier",
+              "type": "wix-ecom.ecom-validations.Carrier",
+              "doc": "The delivery option's carrier details. Can include multiple carriers if the delivery option is a combination of multiple carriers." },
+            { "name": "deliveryRegion",
+              "type": "wix-ecom.ecom-validations.Region",
+              "doc": "The delivery region relevant for this delivery solution." },
+            { "name": "applicableLineItems",
+              "type": "wix-ecom.ecom-validations.ApplicableLineItems",
+              "doc": "Line items this delivery solution applies to, when the delivery solution is partially supplied." } ],
+        "extra":
+          {  },
+        "labels": [] },
+      { "name": "DeliveryTimeSlot",
+        "locations":
+          [ { "lineno": 390,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "from",
+              "type": "Date",
+              "doc": "Starting time of the delivery time slot." },
+            { "name": "to",
+              "type": "Date",
+              "doc": "Ending time of the delivery time slot." } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "Description",
         "locations":
-          [ { "lineno": 229,
+          [ { "lineno": 242,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -543,25 +602,9 @@
         "extra":
           {  },
         "labels": [] },
-      { "name": "Discount",
-        "locations":
-          [ { "lineno": 260,
-              "filename": "validations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
-        "extra":
-          {  },
-        "labels": [] },
       { "name": "DiscountRule",
         "locations":
-          [ { "lineno": 372,
+          [ { "lineno": 456,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -581,9 +624,29 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "ExternalReference",
+        "locations":
+          [ { "lineno": 475,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "appId",
+              "type": "string",
+              "doc": "ID of the app associated with the purchase flow.\nFor example, the Wix Pay Links app ID." },
+            { "name": "resourceId",
+              "type": "string",
+              "doc": "Reference to an external resource ID. Used to link the purchase flow to a specific entity in an external system.\nFor example, a Wix Pay Link ID.\n\nMin: 1 character\nMax: 100 characters",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "Field",
         "locations":
-          [ { "lineno": 403,
+          [ { "lineno": 498,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -605,7 +668,7 @@
         "labels": [] },
       { "name": "GetValidationViolationsResponse",
         "locations":
-          [ { "lineno": 410,
+          [ { "lineno": 505,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -624,7 +687,7 @@
         "labels": [] },
       { "name": "Identity",
         "locations":
-          [ { "lineno": 66,
+          [ { "lineno": 67,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -660,9 +723,37 @@
                       "wixUserId",
                       "appId" ] } ] },
         "labels": [] },
+      { "name": "ItemTaxFullDetails",
+        "locations":
+          [ { "lineno": 262,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "taxableAmount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "The portion of the total amount of this estimate that was taxable." },
+            { "name": "totalTax",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Calculated tax, based on `taxableAmount`." },
+            { "name": "isTaxIncluded",
+              "type": "boolean",
+              "doc": "Whether the price already includes tax." },
+            { "name": "taxBreakdown",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "wix-ecom.ecom-validations.TaxBreakdown" ] },
+              "doc": "A detailed description of all the tax authorities applied on this item. Max: 1000 items" } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "ItemType",
         "locations":
-          [ { "lineno": 190,
+          [ { "lineno": 203,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -687,7 +778,7 @@
         "labels": [] },
       { "name": "LineItem",
         "locations":
-          [ { "lineno": 137,
+          [ { "lineno": 154,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -700,7 +791,7 @@
               "doc": "Line item ID." },
             { "name": "quantity",
               "type": "number",
-              "doc": "Item quantity.\n\nMin: `1`\nMax: `100000`" },
+              "doc": "Item quantity.\n\nMin: `0`\nMax: `100000`" },
             { "name": "catalogReference",
               "type": "wix-ecom.ecom-validations.CatalogReference",
               "doc": "Catalog and item reference. Includes IDs for the item and the catalog it came from, as well as further optional info." },
@@ -708,8 +799,8 @@
               "type": "wix-ecom.ecom-validations.ProductName",
               "doc": "Product name.\nFor example,\n+ Stores: `product.name`\n+ Bookings: `service.info.name`\n+ Events: `ticket.name`" },
             { "name": "price",
-              "type": "wix-ecom.ecom-validations.Price",
-              "doc": "Price of the item **after** catalog-defined discount and line item discounts." },
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Price of the item after catalog-defined discount and line item discounts." },
             { "name": "physicalProperties",
               "type": "wix-ecom.ecom-validations.PhysicalProperties",
               "doc": "Physical properties of the item. When relevant, contains information such as SKU, item weight, and shippability." },
@@ -718,13 +809,53 @@
               "doc": "Item type." },
             { "name": "subscriptionOptionInfo",
               "type": "wix-ecom.ecom-validations.SubscriptionOptionInfo",
-              "doc": "[Subscription option](https://support.wix.com/en/article/wix-stores-selling-product-subscriptions) information. A subscription is a product that is sold on a recurring basis." } ],
+              "doc": "[Subscription option](https://support.wix.com/en/article/wix-stores-selling-product-subscriptions) information. A subscription is a product that is sold on a recurring basis." },
+            { "name": "pricesBreakdown",
+              "type": "wix-ecom.ecom-validations.LineItemPricesData",
+              "doc": "Price breakdown for this line item." } ],
+        "extra":
+          {  },
+        "labels": [] },
+      { "name": "LineItemPricesData",
+        "locations":
+          [ { "lineno": 248,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "totalPriceAfterTax",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total price after discounts and after tax." },
+            { "name": "totalPriceBeforeTax",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total price after discounts, and before tax." },
+            { "name": "taxDetails",
+              "type": "wix-ecom.ecom-validations.ItemTaxFullDetails",
+              "doc": "Tax details." },
+            { "name": "totalDiscount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total discount applied for the line item." },
+            { "name": "price",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Catalog price after catalog-defined discount and automatic discounts." },
+            { "name": "priceBeforeDiscounts",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Item price before automatic discounts, coupons, and global discounts, but after the catalog-defined discount.\nDefault: `price` when not provided." },
+            { "name": "lineItemPrice",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total price after catalog-defined discount and automatic discounts, taking line item's quantity into account." },
+            { "name": "fullPrice",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Item price before all discounts.\nDefault: `price` when not provided." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "LineItemViolation",
         "locations":
-          [ { "lineno": 441,
+          [ { "lineno": 536,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -743,7 +874,7 @@
         "labels": [] },
       { "name": "MerchantDiscount",
         "locations":
-          [ { "lineno": 362,
+          [ { "lineno": 446,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -757,9 +888,34 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "MultiCurrencyPrice",
+        "locations":
+          [ { "lineno": 146,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "string",
+              "doc": "Amount." },
+            { "name": "convertedAmount",
+              "type": "string",
+              "doc": "Converted amount." },
+            { "name": "formattedAmount",
+              "type": "string",
+              "doc": "Amount formatted with currency symbol." },
+            { "name": "formattedConvertedAmount",
+              "type": "string",
+              "doc": "Converted amount formatted with currency symbol." } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "NameRule",
         "locations":
-          [ { "lineno": 379,
+          [ { "lineno": 463,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -778,7 +934,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 81,
+          [ { "lineno": 82,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -791,13 +947,17 @@
               "doc": "Information about the source of the request." },
             { "name": "validationInfo",
               "type": "wix-ecom.ecom-validations.ValidationInfo",
-              "doc": "Information to validate." } ],
+              "doc": "Information to validate." },
+            { "name": "extendedFields",
+              "type": "Object",
+              "doc": "Custom field data.\n[Extended fields](https://dev.wix.com/docs/build-apps/develop-your-app/extensions/backend-extensions/schema-plugins/about-schema-plugin-extensions) must be configured in the app dashboard before they can be accessed with API calls.",
+              "optional": true } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "Other",
         "locations":
-          [ { "lineno": 433,
+          [ { "lineno": 528,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -813,7 +973,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 183,
+          [ { "lineno": 196,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -833,25 +993,9 @@
         "extra":
           {  },
         "labels": [] },
-      { "name": "Price",
-        "locations":
-          [ { "lineno": 178,
-              "filename": "validations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
-        "extra":
-          {  },
-        "labels": [] },
       { "name": "PriceSummary",
         "locations":
-          [ { "lineno": 235,
+          [ { "lineno": 296,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -860,29 +1004,29 @@
               {  } },
         "members":
           [ { "name": "subtotal",
-              "type": "wix-ecom.ecom-validations.Subtotal",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
               "doc": "Subtotal of all line items, before discounts and before tax." },
             { "name": "shipping",
-              "type": "wix-ecom.ecom-validations.Shipping",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
               "doc": "Total shipping price, before discounts and before tax." },
             { "name": "tax",
-              "type": "wix-ecom.ecom-validations.Tax",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
               "doc": "Total tax." },
             { "name": "discount",
-              "type": "wix-ecom.ecom-validations.Discount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
               "doc": "Total calculated discount value." },
             { "name": "total",
-              "type": "wix-ecom.ecom-validations.Total",
-              "doc": "Total price **after** discounts, gift cards, and tax." },
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total price after discounts, gift cards, and tax." },
             { "name": "additionalFees",
-              "type": "wix-ecom.ecom-validations.AdditionalFees",
-              "doc": "Total additional fees price **before** tax." } ],
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total additional fees price before tax." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "ProductName",
         "locations":
-          [ { "lineno": 165,
+          [ { "lineno": 183,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -899,9 +1043,28 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Region",
+        "locations":
+          [ { "lineno": 396,
+              "filename": "validations.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_id",
+              "type": "string",
+              "doc": "Delivery region ID." },
+            { "name": "name",
+              "type": "string",
+              "doc": "Delivery region name.\n\nMax: 100 characters" } ],
+        "extra":
+          {  },
+        "labels": [] },
       { "name": "SelectedCarrierServiceOption",
         "locations":
-          [ { "lineno": 328,
+          [ { "lineno": 359,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -911,13 +1074,34 @@
         "members":
           [ { "name": "code",
               "type": "string",
-              "doc": "Unique identifier of selected option. For example, `\"usps_std_overnight\"`." } ],
+              "doc": "Unique identifier of selected option. For example, `\"usps_std_overnight\"`.\n\nMax: 100 characters" },
+            { "name": "title",
+              "type": "string",
+              "doc": "Title of the option, such as USPS Standard Overnight Delivery (in the requested locale).\nFor example, \"Standard\" or \"First-Class Package International\".\n\nMax: 250 characters" },
+            { "name": "cost",
+              "type": "wix-ecom.ecom-validations.SelectedCarrierServiceOptionPrices",
+              "doc": "Shipping costs." },
+            { "name": "deliveryAllocations",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "wix-ecom.ecom-validations.DeliveryAllocation" ] },
+              "doc": "Delivery solution allocations to different delivery carriers and delivery regions. Max: 300 items",
+              "optional": true },
+            { "name": "partial",
+              "type": "boolean",
+              "doc": "Whether the delivery solution is partial and doesn't apply to all items.",
+              "optional": true },
+            { "name": "deliveryTimeSlot",
+              "type": "wix-ecom.ecom-validations.DeliveryTimeSlot",
+              "doc": "Expected delivery time slot.",
+              "optional": true } ],
         "extra":
           {  },
         "labels": [] },
-      { "name": "Shipping",
+      { "name": "SelectedCarrierServiceOptionPrices",
         "locations":
-          [ { "lineno": 250,
+          [ { "lineno": 374,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -925,15 +1109,27 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
+          [ { "name": "totalPriceAfterTax",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total shipping price, after discount and after tax." },
+            { "name": "totalPriceBeforeTax",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Total price of shipping after discounts (when relevant), and before tax." },
+            { "name": "taxDetails",
+              "type": "wix-ecom.ecom-validations.ItemTaxFullDetails",
+              "doc": "Tax details." },
+            { "name": "totalDiscount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Shipping discount before tax." },
+            { "name": "price",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "Shipping price before discount and before tax." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "ShippingAddress",
         "locations":
-          [ { "lineno": 281,
+          [ { "lineno": 312,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -952,7 +1148,7 @@
         "labels": [] },
       { "name": "ShippingInfo",
         "locations":
-          [ { "lineno": 323,
+          [ { "lineno": 354,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -968,7 +1164,7 @@
         "labels": [] },
       { "name": "SourceInfo",
         "locations":
-          [ { "lineno": 87,
+          [ { "lineno": 90,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -987,7 +1183,7 @@
         "labels": [] },
       { "name": "StreetAddressInfo",
         "locations":
-          [ { "lineno": 298,
+          [ { "lineno": 329,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1006,7 +1202,7 @@
         "labels": [] },
       { "name": "SubscriptionOptionInfo",
         "locations":
-          [ { "lineno": 203,
+          [ { "lineno": 216,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1028,7 +1224,7 @@
         "labels": [] },
       { "name": "SubscriptionSettings",
         "locations":
-          [ { "lineno": 210,
+          [ { "lineno": 223,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1043,30 +1239,14 @@
               "type": "boolean",
               "doc": "Whether subscription is renewed automatically at the end of each period." },
             { "name": "billingCycles",
-              "type": "integer",
+              "type": "number",
               "doc": "Number of billing cycles before subscription ends. Ignored if `autoRenewal` is `true`." } ],
-        "extra":
-          {  },
-        "labels": [] },
-      { "name": "Subtotal",
-        "locations":
-          [ { "lineno": 245,
-              "filename": "validations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "Target",
         "locations":
-          [ { "lineno": 426,
+          [ { "lineno": 521,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1089,9 +1269,9 @@
                     [ "other",
                       "lineItem" ] } ] },
         "labels": [] },
-      { "name": "Tax",
+      { "name": "TaxBreakdown",
         "locations":
-          [ { "lineno": 255,
+          [ { "lineno": 270,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1099,15 +1279,36 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "amount",
+          [ { "name": "jurisdiction",
               "type": "string",
-              "doc": "Amount." } ],
+              "doc": "The name of the jurisdiction to which this tax detail applies. For example, \"New York\" or \"Quebec\".\n\nMax: 200 characters" },
+            { "name": "nonTaxableAmount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "The amount of this line item price that was considered nontaxable." },
+            { "name": "rate",
+              "type": "string",
+              "doc": "The rate at which this tax detail was calculated. For example, `0.1000` signifies 10% tax and `2.0000` signifies 200% tax." },
+            { "name": "taxAmount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "The amount of tax estimated for this line item." },
+            { "name": "taxableAmount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
+              "doc": "The taxable amount of this line item." },
+            { "name": "taxType",
+              "type": "string",
+              "doc": "The type of tax that was calculated. Depends on the jurisdiction's tax laws. For example, \"Sales Tax\", \"Income Tax\", \"Value Added Tax\".\n\nMax: 200 characters" },
+            { "name": "taxName",
+              "type": "string",
+              "doc": "The name of the tax against which this tax amount was calculated. For example, \"NY State Sales Tax\", \"Quebec GST\".\n\nMax: 200 characters" },
+            { "name": "jurisdictionType",
+              "type": "string",
+              "doc": "The type of the jurisdiction in which this tax detail applies.\n\nSupported values:\n+ `\"UNDEFINED\"`\n+ `\"COUNTRY\"`\n+ `\"STATE\"`\n+ `\"COUNTY\"`\n+ `\"CITY\"`\n+ `\"SPECIAL\"`" } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "Title",
         "locations":
-          [ { "lineno": 223,
+          [ { "lineno": 236,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1124,25 +1325,9 @@
         "extra":
           {  },
         "labels": [] },
-      { "name": "Total",
-        "locations":
-          [ { "lineno": 265,
-              "filename": "validations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
-        "extra":
-          {  },
-        "labels": [] },
       { "name": "ValidationInfo",
         "locations":
-          [ { "lineno": 98,
+          [ { "lineno": 101,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1158,7 +1343,7 @@
                 { "name": "Array",
                   "typeParams":
                     [ "wix-ecom.ecom-validations.LineItem" ] },
-              "doc": "Line items. Max: 300 line items" },
+              "doc": "Line items. Max: `300`" },
             { "name": "giftCard",
               "type": "wix-ecom.ecom-validations.giftCard",
               "doc": "Applied gift card details." },
@@ -1181,14 +1366,34 @@
               "type": "wix-ecom.ecom-validations.CustomFields",
               "doc": "Custom fields." },
             { "name": "appliedDiscounts",
-              "type": "wix-ecom.ecom-validations.AppliedDiscounts",
-              "doc": "Applied discounts." } ],
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "wix-ecom.ecom-validations.AppliedDiscount" ] },
+              "doc": "Applied discounts.\n\nMax: 320 discounts" },
+            { "name": "externalReference",
+              "type": "wix-ecom.ecom-validations.ExternalReference",
+              "doc": "References to an external app and resource associated with this checkout. Used for integration and tracking across different platforms.",
+              "optional": true },
+            { "name": "currency",
+              "type": "string",
+              "doc": "The site's default currency, in three-letter [ISO-4217 alphabetic](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) format.\nThis represents the base currency configured for the site and remains constant regardless of the customer's currency selection.",
+              "optional": true },
+            { "name": "conversionCurrency",
+              "type": "string",
+              "doc": "The currency [selected by the customer](https://support.wix.com/en/article/multicurrency-an-overview) during the purchase flow, in three-letter [ISO-4217 alphabetic](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) format.\nThis reflects the customer's preferred display currency and may differ from the site's default currency.\nWhen no specific currency is selected by the customer, this matches the `currency` property.",
+              "optional": true },
+            { "name": "paymentCurrency",
+              "type": "string",
+              "doc": "The currency used for payment, in three-letter [ISO-4217 alphabetic](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) format.\nThis is determined by the customer's selected currency and the site's supported payment currencies.\nIf the customer's selected currency is supported for payment, this matches the `conversionCurrency` property. If not supported, this falls back to the `currency` property.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "ValidationsConfigResponse",
         "locations":
-          [ { "lineno": 24,
+          [ { "lineno": 23,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1204,7 +1409,7 @@
         "labels": [] },
       { "name": "Value",
         "locations":
-          [ { "lineno": 391,
+          [ { "lineno": 486,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1229,7 +1434,7 @@
               "doc": "A boolean value.",
               "optional": true },
             { "name": "structValue",
-              "type": "wix-ecom.ecom-validations.StructValue",
+              "type": "Object",
               "doc": "A structured value.",
               "optional": true },
             { "name": "listValue",
@@ -1252,7 +1457,7 @@
         "labels": [] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 313,
+          [ { "lineno": 344,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1271,7 +1476,7 @@
         "labels": [] },
       { "name": "Violation",
         "locations":
-          [ { "lineno": 415,
+          [ { "lineno": 510,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1287,29 +1492,13 @@
               "doc": "Target location on a checkout or cart page where the violation will be displayed." },
             { "name": "description",
               "type": "string",
-              "doc": "Violation description. Can include rich text. HTTP or HTTPS links are allowed only in the format explained in the method description." } ],
-        "extra":
-          {  },
-        "labels": [] },
-      { "name": "giftAmount",
-        "locations":
-          [ { "lineno": 132,
-              "filename": "validations.js" } ],
-        "docs":
-          { "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "members":
-          [ { "name": "amount",
-              "type": "string",
-              "doc": "Amount." } ],
+              "doc": "Violation description. Can include rich text. HTTP or HTTPS links in the following format are allowed only in the format explained in the method description." } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "giftCard",
         "locations":
-          [ { "lineno": 124,
+          [ { "lineno": 138,
               "filename": "validations.js" } ],
         "docs":
           { "links": [],
@@ -1319,7 +1508,8 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Gift card ID." },
+              "doc": "**Deprecated.** Gift card ID.",
+              "optional": true },
             { "name": "obfuscatedCode",
               "type": "string",
               "doc": "Gift card obfuscated code." },
@@ -1327,7 +1517,7 @@
               "type": "string",
               "doc": "App ID of the gift card provider." },
             { "name": "amount",
-              "type": "wix-ecom.ecom-validations.giftAmount",
+              "type": "wix-ecom.ecom-validations.MultiCurrencyPrice",
               "doc": "Gift card value." } ],
         "extra":
           {  },
